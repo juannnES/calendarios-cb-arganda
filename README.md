@@ -44,6 +44,19 @@ cadete-masculino-1-ano.ics   infantil-masculino-1-ano.ics
 * Cada evento empieza **45 min antes** del partido y termina **2 h después** del inicio
   (partido a las 16:45 → evento de 16:00 a 18:45).
 
+### Cómo se conserva la hora del partido
+
+`Hora FBM (texto «12:30»)` → `Python la guarda tal cual («12:30»)` → `.ics: DTSTART;TZID=Europe/Madrid:…T114500`
+→ `Apple Calendar: 11:45–14:30, hora de Madrid`.
+
+* **No hay ninguna conversión a UTC** ni desfase de zona horaria.
+  La hora se escribe como hora local de Madrid con `TZID=Europe/Madrid`, y el calendario incluye las reglas de verano e invierno.
+* La **única** diferencia entre la hora de la FBM y el inicio del bloque en el calendario son los 45 minutos de antelación acordados.
+  Por eso un partido a las **12:30** aparece como bloque **11:45–14:30**.
+  La hora exacta del partido figura siempre en la descripción: «🕐 Hora: 12:30».
+* Si prefieres que el bloque empiece justo a la hora del partido, cambia `"minutos_antes": 45` por `0` en `config.json`.
+  Hay una prueba que lo verifica: 12:30 en la FBM → 12:30 en el calendario.
+
 ### Horario: «comprobación de las 17:00»
 
 La comprobación **representa la de las 17:00** del lunes y del viernes (hora de Madrid, con horario de verano o invierno automático).
@@ -147,7 +160,7 @@ fbmcal/ics.py                    Generación de los .ics (Europe/Madrid, verano/
 fbmcal/informe.py                Resumen de ejecución, avisos (Issues) y estado.json
 fbmcal/web.py                    Página de suscripción y estado
 fbmcal/main.py                   Orquestación (python -m fbmcal), escritura atómica
-tests/                           37 pruebas con la página real de la FBM guardada
+tests/                           43 pruebas con la página real de la FBM guardada (reducida y anonimizada)
 .github/workflows/actualizar-calendarios.yml   Automatización
 data/estado.json                 (se genera) memoria de partidos y cambios
 docs/                            (se genera) lo que publica GitHub Pages
@@ -163,9 +176,9 @@ docs/                            (se genera) lo que publica GitHub Pages
    * No marques «Add a README».
    * Pulsa **Create repository**.
 2. En esta carpeta (`C:\Users\JER\Documents\baloncesto\calendarios`), abre una terminal y ejecuta
-   (cambia `TU_USUARIO` por tu usuario de GitHub):
+   (ya hecho: el repositorio es <https://github.com/juannnES/calendarios-cb-arganda>):
    ```bash
-   git remote add origin https://github.com/TU_USUARIO/calendarios-cb-arganda.git
+   git remote add origin https://github.com/juannnES/calendarios-cb-arganda.git
    git push -u origin main
    ```
    La primera vez, Windows abrirá una ventana para iniciar sesión **en GitHub**. Es tu sesión de GitHub, no se guarda en el proyecto.
@@ -179,7 +192,7 @@ Repositorio → **Settings** → **Pages** → *Build and deployment* → *Sourc
 1. Repositorio → **Actions**. Si pregunta, pulsa *I understand my workflows, go ahead and enable them*.
 2. **Actualizar calendarios** → **Run workflow** → modo `manual` → **Run workflow**.
 3. Cuando termine con ✅ (1-2 min), los calendarios estarán en
-   `https://TU_USUARIO.github.io/calendarios-cb-arganda/`.
+   <https://juannnes.github.io/calendarios-cb-arganda/>.
    En la pestaña **Issues** aparecerá el aviso «🆕 Nueva competición/fase detectada» del cadete.
 
 ### 6.4 (Opcional) Comprobar que te llegan los avisos
@@ -204,10 +217,10 @@ Repositorio → **Settings** → **Pages** → *Build and deployment* → *Sourc
 
 ## 8. Acceder a los calendarios (móvil y ordenador)
 
-Abre `https://TU_USUARIO.github.io/calendarios-cb-arganda/` en cada dispositivo. Cada calendario tiene su propia URL:
+Abre <https://juannnes.github.io/calendarios-cb-arganda/> en cada dispositivo. Cada calendario tiene su propia URL:
 
-* `https://TU_USUARIO.github.io/calendarios-cb-arganda/cadete-masculino-1-ano.ics`
-* `https://TU_USUARIO.github.io/calendarios-cb-arganda/infantil-masculino-1-ano.ics`
+* Cadete: `https://juannnes.github.io/calendarios-cb-arganda/cadete-masculino-1-ano.ics`
+* Infantil: `https://juannnes.github.io/calendarios-cb-arganda/infantil-masculino-1-ano.ics`
 
 Cómo suscribirse:
 

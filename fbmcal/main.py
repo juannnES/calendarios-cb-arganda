@@ -80,6 +80,9 @@ def ejecutar(args) -> int:
     avisos: list[str] = []
     html = (Path(args.html).read_text(encoding="utf-8-sig") if args.html
             else descargar(fuente_url).decode("utf-8", errors="replace"))
+    if "</html>" not in html[-1000:].lower():
+        raise FuenteError("La página de la FBM ha llegado incompleta (falta el final del documento). "
+                          "No se ha modificado nada.")
     grupos = leer_calendarios(html)
     if not grupos:
         raise FuenteError("La página del club no contiene ningún calendario: probablemente la web de la FBM ha "

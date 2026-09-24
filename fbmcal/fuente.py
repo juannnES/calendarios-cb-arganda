@@ -131,7 +131,7 @@ def leer_calendarios(html: str) -> list[Grupo]:
         grupo = Grupo(gid, titulo, categoria, fase, nombre_grupo)
         capa = soup.find(id=f"capa_calendario_{gid}")
         if capa is None:
-            raise FuenteError(f"El grupo {titulo} no tiene bloque de calendario (¿cambió la web?)")
+            raise FuenteError(f"El grupo {titulo or gid} no tiene bloque de calendario (¿página incompleta o cambió la web?)")
         for bloque in capa.find_all("div", class_="capa_cien_cinco"):
             h6 = bloque.find("h6")
             mj = RE_JORNADA.search(h6.get_text(" ")) if h6 else None

@@ -5,10 +5,11 @@ Ejecutar:  python -m unittest discover -s tests -v
 import copy
 import gzip
 import json
+import os
 import tempfile
 import unittest
 import unittest.mock
-from datetime import datetime
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 from fbmcal.conciliar import conciliar_equipo, resolver_valores
@@ -16,6 +17,11 @@ from fbmcal.fuente import DatosContraste, Grupo, clave_contraste, leer_calendari
 from fbmcal.ics import generar_ics, horario_evento
 from fbmcal.main import main, resolver_modo
 from fbmcal.util import TZ
+
+# Las pruebas deben ser herméticas: en GitHub Actions estas variables existen y, si no se quitan,
+# las ejecuciones simuladas escribirían un aviso falso (que acabaría como Issue) y ensuciarían el resumen.
+for _var in ("AVISO_ARCHIVO", "GITHUB_STEP_SUMMARY", "PAGES_URL"):
+    os.environ.pop(_var, None)
 
 RAIZ = Path(__file__).resolve().parent.parent
 FIX = Path(__file__).resolve().parent / "fixtures"
@@ -328,6 +334,79 @@ class HorariosYZonaHoraria(unittest.TestCase):
         self.assertIn("CONFIRMADO en la comprobación final del viernes 02/10/2026", ics.replace("\r\n ", ""))
 
 
+class HoraDeExtremoAExtremo(unittest.TestCase):
+    """Hora en la FBM → Python → evento → .ics → lo que calcula un cliente de calendario (Apple).
+
+    Única transformación permitida: el evento empieza `minutos_antes` (45) antes del partido, como se
+    pidió («partido 16:45 → evento 16:00-18:45»). La hora del partido se conserva en la descripción."""
+
+    def generar(self, html, config=None):
+        with tempfile.TemporaryDirectory() as tmp:
+            d = Path(tmp)
+            (d / "c.html").write_text(html, encoding="utf-8")
+            (d / "x.xlsx").write_bytes(XLSX)
+            args = ["--html", str(d / "c.html"), "--xlsx", str(d / "x.xlsx"), "--estado", str(d / "e.json"),
+                    "--salida", str(d / "docs"), "--ahora", "2026-09-28T17:03:00+02:00"]
+            if config:
+                (d / "cfg.json").write_text(json.dumps(config, ensure_ascii=False), encoding="utf-8")
+                args += ["--config", str(d / "cfg.json")]
+            self.assertEqual(main(args), 0)
+            ics = (d / "docs" / CADETE["archivo_ics"]).read_bytes().decode("utf-8")  # conservar CRLF
+        eventos = []
+        for bloque in ics.replace("\r\n ", "").split("BEGIN:VEVENT")[1:]:
+            eventos.append(dict(l.split(":", 1) for l in bloque.split("END:VEVENT")[0].split("\r\n") if ":" in l))
+        return eventos
+
+    @staticmethod
+    def evento(eventos, dia):
+        return next(e for e in eventos if e["DTSTART;TZID=Europe/Madrid"].startswith(dia))
+
+    @staticmethod
+    def como_cliente(valor):
+        """Lo que hace Apple Calendar: hora local + TZID=Europe/Madrid -> instante real."""
+        return datetime.strptime(valor, "%Y%m%dT%H%M%S").replace(tzinfo=TZ)
+
+    def test_fbm_1230_se_conserva(self):
+        html = HTML.replace("03/10/2026<br />11:15", "03/10/2026<br />12:30").replace("03/10/2026 11:15", "03/10/2026 12:30")
+        ev = self.evento(self.generar(html), "20261003")
+        ini = self.como_cliente(ev["DTSTART;TZID=Europe/Madrid"])
+        fin = self.como_cliente(ev["DTEND;TZID=Europe/Madrid"])
+        self.assertIn("🕐 Hora: 12:30", ev["DESCRIPTION"])
+        self.assertEqual(ini + timedelta(minutes=45), datetime(2026, 10, 3, 12, 30, tzinfo=TZ))  # partido 12:30
+        self.assertEqual((f"{ini:%H:%M}", f"{fin:%H:%M}"), ("11:45", "14:30"))
+        self.assertEqual(f"{ini.astimezone(timezone.utc):%H:%M}", "09:45")  # 11:45 CEST = 09:45 UTC
+
+    def test_sin_margen_el_evento_empieza_a_la_hora_exacta_de_la_fbm(self):
+        cfg = copy.deepcopy(CONFIG)
+        cfg["evento"]["minutos_antes"] = 0
+        html = HTML.replace("03/10/2026<br />11:15", "03/10/2026<br />12:30").replace("03/10/2026 11:15", "03/10/2026 12:30")
+        ev = self.evento(self.generar(html, cfg), "20261003")
+        self.assertEqual(f"{self.como_cliente(ev['DTSTART;TZID=Europe/Madrid']):%H:%M}", "12:30")
+
+    def test_horas_reales_en_verano_e_invierno(self):
+        eventos = self.generar(HTML)
+        #          día        hora FBM  inicio evento  desfase UTC (h)
+        casos = [("20261003", "11:15", "10:30", 2),   # CEST (verano)
+                 ("20261107", "14:30", "13:45", 1),   # CET (invierno, tras el 25/10/2026)
+                 ("20270403", "16:00", "15:15", 2)]   # CEST de nuevo (tras el 28/03/2027)
+        for dia, hora_fbm, inicio, desfase in casos:
+            with self.subTest(dia=dia):
+                ev = self.evento(eventos, dia)
+                ini = self.como_cliente(ev["DTSTART;TZID=Europe/Madrid"])
+                self.assertIn(f"🕐 Hora: {hora_fbm}", ev["DESCRIPTION"])
+                self.assertEqual(f"{ini:%H:%M}", inicio)
+                self.assertEqual(f"{ini + timedelta(minutes=45):%H:%M}", hora_fbm)
+                self.assertEqual(ini.utcoffset(), timedelta(hours=desfase))
+
+    def test_vtimezone_coincide_con_la_base_de_datos_oficial(self):
+        # El VTIMEZONE del .ics dice: último domingo de marzo 02:00 -> UTC+2; último domingo de octubre 03:00 -> UTC+1.
+        for anio in range(2026, 2031):
+            for mes, antes, despues in ((3, 1, 2), (10, 2, 1)):
+                dia = max(d for d in range(25, 32) if date(anio, mes, d).weekday() == 6)
+                self.assertEqual(datetime(anio, mes, dia, 1, 0, tzinfo=TZ).utcoffset(), timedelta(hours=antes))
+                self.assertEqual(datetime(anio, mes, dia, 4, 0, tzinfo=TZ).utcoffset(), timedelta(hours=despues))
+
+
 class EjecucionCompleta(unittest.TestCase):
     """Simula el workflow: lunes y viernes programados, sin intervención manual."""
 
@@ -358,6 +437,25 @@ class EjecucionCompleta(unittest.TestCase):
         self.assertEqual(self.correr("2026-10-02T15:04:00+00:00", "--programado"), 0)
         estado = json.loads((self.dir / "estado.json").read_text(encoding="utf-8"))
         self.assertIn("2026-10-02-viernes", estado["ejecuciones"])
+
+    def test_respaldo_hace_el_trabajo_si_la_principal_no_se_ejecuto(self):
+        # Viernes 02/10/2026: GitHub se salta la de las 17:05 -> la de las 18:45 hace la confirmación.
+        self.assertEqual(self.correr("2026-10-02T16:45:00+00:00", "--programado"), 0)
+        estado = json.loads((self.dir / "estado.json").read_text(encoding="utf-8"))
+        self.assertIn("2026-10-02-viernes", estado["ejecuciones"])
+        j1 = next(q for q in estado["equipos"]["cadete-masc-1-ano"]["partidos"].values() if q["jornada"] == 1)
+        self.assertEqual(j1["verificacion"]["tipo"], "viernes")
+
+    def test_pagina_apunta_a_los_ics_reales(self):
+        self.correr("2026-09-28T17:03:00+02:00")
+        docs = self.dir / "docs"
+        index = (docs / "index.html").read_text(encoding="utf-8")
+        for cfg in (CADETE, INFANTIL):
+            self.assertTrue((docs / cfg["archivo_ics"]).exists())
+            self.assertIn(f'data-ics="{cfg["archivo_ics"]}" href="{cfg["archivo_ics"]}"', index)
+        self.assertEqual(sorted(p.name for p in docs.iterdir()),
+                         [".nojekyll", "cadete-masculino-1-ano.ics", "estado.json", "index.html",
+                          "infantil-masculino-1-ano.ics"])
 
     def test_invierno_cron_en_hora_de_madrid(self):
         # Lunes 26/10/2026 (ya en CET): 15:30 UTC = 16:30 Madrid -> no toca; 16:05 UTC = 17:05 -> sí.
@@ -404,10 +502,17 @@ class EjecucionCompleta(unittest.TestCase):
         (self.dir / "club.html").write_text(HTML[: HTML.index("capa_calendario_17743") - 200], encoding="utf-8")
         self.assertEqual(self.correr("2026-10-02T17:04:00+02:00"), 1)
         self.assertEqual(self.instantanea(), buenos)
+        # 2b) La descarga se corta DENTRO del calendario del cadete (faltan jornadas): no se marca
+        #     ningún partido como desaparecido; se detecta la página incompleta y no se toca nada.
+        (self.dir / "club.html").write_text(HTML[: HTML.index("capa_calendario_17743") + 20000], encoding="utf-8")
+        self.assertEqual(self.correr("2026-10-02T17:04:00+02:00"), 1)
+        self.assertEqual(self.instantanea(), buenos)
         # 3) Fallo al generar un calendario: no se escribe nada a medias.
+        (self.dir / "club.html").write_text(HTML, encoding="utf-8")
         from unittest import mock
-        with mock.patch("fbmcal.main.generar_ics", side_effect=RuntimeError("fallo simulado")):
+        with mock.patch("fbmcal.main.generar_ics", side_effect=["BEGIN:VCALENDAR", RuntimeError("fallo simulado")]) as m:
             self.assertEqual(self.correr("2026-10-02T17:04:00+02:00"), 1)
+        self.assertEqual(m.call_count, 2)  # el 1er .ics se generó, el 2º falló: aun así nada se escribió
         self.assertEqual(self.instantanea(), buenos)
         self.assertFalse(list(self.dir.rglob("*.tmp")))
 

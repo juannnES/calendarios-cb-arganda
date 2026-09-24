@@ -61,11 +61,14 @@ jobs:
 
       - name: Pruebas automáticas (si fallan, no se toca ningún calendario)
         if: ${{ !inputs.probar_aviso }}
+        env:
+          AVISO_ARCHIVO: ""   # las pruebas nunca deben generar avisos reales
         run: python -m unittest discover -s tests -t .
 
       - name: Consultar la FBM y actualizar calendarios
         if: ${{ !inputs.probar_aviso }}
         run: |
+          rm -f "$AVISO_ARCHIVO"
           owner="${{ github.repository_owner }}"
           export PAGES_URL="https://${owner,,}.github.io/${{ github.event.repository.name }}/"
           if [ "${{ github.event_name }}" = "schedule" ]; then
@@ -85,7 +88,15 @@ jobs:
           git pull --rebase
           git push
 
+      - name: Preparar publicación
+        if: ${{ !inputs.probar_aviso && hashFiles('docs/index.html') != '' }}
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+
+      # Los avisos son secundarios: si GitHub Issues fallara, NO deben impedir publicar los calendarios.
       - name: Crear aviso de cambios (Issue)
+        continue-on-error: true
         run: |
           if [ -s "$AVISO_ARCHIVO" ]; then
             titulo="$(head -n 1 "$AVISO_ARCHIVO")"
@@ -97,19 +108,15 @@ jobs:
 
       - name: Cerrar el aviso de error anterior (ya funciona)
         if: ${{ !inputs.probar_aviso }}
+        continue-on-error: true
         run: |
           for n in $(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "Error en la actualización in:title" --json number --jq '.[].number'); do
             gh issue close "$n" --repo "$GITHUB_REPOSITORY" --comment "✅ Resuelto: la ejecución ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} ha funcionado."
           done
 
-      - name: Preparar publicación
-        if: ${{ !inputs.probar_aviso && hashFiles('docs/index.html') != '' }}
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: docs
-
       - name: Aviso de error (Issue)
         if: ${{ failure() }}
+        continue-on-error: true
         run: |
           url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           texto="La actualización ha fallado. **No se ha modificado ningún calendario**: siguen publicados los de la última ejecución correcta. Se reintentará en la próxima ejecución programada.
