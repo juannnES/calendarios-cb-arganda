@@ -15,7 +15,7 @@ from .util import fecha_es, fin_de_semana, normalizar, slug
 
 EQUIPOS_NULOS = {"", "descansa", "retirado", "bye"}
 
-# Tipos de cambio que NO generan email (acordado: altas de partidos y hora 00:00 -> hora oficial).
+# Tipos de cambio que NO generan aviso (acordado: altas de partidos y hora 00:00 -> hora oficial).
 SILENCIOSOS = {"nuevo", "hora_confirmada", "pabellon_confirmado", "resultado"}
 
 TIPOS = {

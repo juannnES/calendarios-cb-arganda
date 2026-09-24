@@ -7,6 +7,7 @@ import gzip
 import json
 import tempfile
 import unittest
+import unittest.mock
 from datetime import datetime
 from pathlib import Path
 
@@ -342,7 +343,7 @@ class EjecucionCompleta(unittest.TestCase):
     def correr(self, ahora, *extra):
         return main(["--html", str(self.dir / "club.html"), "--xlsx", str(self.dir / "prox.xlsx"),
                      "--estado", str(self.dir / "estado.json"), "--salida", str(self.dir / "docs"),
-                     "--ahora", ahora, "--sin-email", *extra])
+                     "--ahora", ahora, *extra])
 
     def test_lunes_y_viernes_programados(self):
         # Lunes 28/09/2026 15:03 UTC = 17:03 en Madrid (horario de verano).
@@ -387,6 +388,58 @@ class EjecucionCompleta(unittest.TestCase):
         self.assertEqual(self.correr("2026-09-28T17:03:00+02:00"), 1)
         self.assertFalse((self.dir / "estado.json").exists())
         self.assertFalse((self.dir / "docs").exists())
+
+    def instantanea(self):
+        archivos = [self.dir / "estado.json", *sorted((self.dir / "docs").iterdir())]
+        return {p.name: p.read_bytes() for p in archivos}
+
+    def test_fallo_posterior_conserva_los_calendarios_buenos(self):
+        self.assertEqual(self.correr("2026-09-28T17:03:00+02:00"), 0)
+        buenos = self.instantanea()
+        # 1) La web de la FBM devuelve una página sin calendarios.
+        (self.dir / "club.html").write_text("<html><body>Error 500</body></html>", encoding="utf-8")
+        self.assertEqual(self.correr("2026-10-02T17:04:00+02:00"), 1)
+        self.assertEqual(self.instantanea(), buenos)
+        # 2) La web devuelve HTML truncado a mitad de un calendario.
+        (self.dir / "club.html").write_text(HTML[: HTML.index("capa_calendario_17743") - 200], encoding="utf-8")
+        self.assertEqual(self.correr("2026-10-02T17:04:00+02:00"), 1)
+        self.assertEqual(self.instantanea(), buenos)
+        # 3) Fallo al generar un calendario: no se escribe nada a medias.
+        from unittest import mock
+        with mock.patch("fbmcal.main.generar_ics", side_effect=RuntimeError("fallo simulado")):
+            self.assertEqual(self.correr("2026-10-02T17:04:00+02:00"), 1)
+        self.assertEqual(self.instantanea(), buenos)
+        self.assertFalse(list(self.dir.rglob("*.tmp")))
+
+    def test_sin_credenciales_y_estado_publico(self):
+        import os
+        import re
+        # El código solo lee variables NO sensibles (rutas y la URL pública); ninguna credencial.
+        leidas = set()
+        for py in (RAIZ / "fbmcal").glob("*.py"):
+            leidas |= set(re.findall(r'environ\.get\("([A-Z_]+)"', py.read_text(encoding="utf-8")))
+        self.assertEqual(leidas, {"AVISO_ARCHIVO", "GITHUB_STEP_SUMMARY", "PAGES_URL"})
+        aviso = self.dir / "aviso.md"
+        resumen = self.dir / "resumen.md"
+        with unittest.mock.patch.dict(os.environ, {"AVISO_ARCHIVO": str(aviso), "GITHUB_STEP_SUMMARY": str(resumen)}):
+            self.assertEqual(self.correr("2026-09-28T17:03:00+02:00"), 0)
+        estado = json.loads((self.dir / "docs" / "estado.json").read_text(encoding="utf-8"))
+        self.assertEqual(estado["resultado"], "ok")
+        self.assertEqual(estado["equipos"]["cadete-masc-1-ano"]["partidos_en_calendario"], 20)
+        self.assertEqual(estado["equipos"]["infantil-masc-1-ano"]["partidos_en_calendario"], 0)
+        self.assertIn("Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3", resumen.read_text(encoding="utf-8"))
+        # Primera ejecución: avisa de la competición detectada (no de cada partido nuevo).
+        titulo = aviso.read_text(encoding="utf-8").splitlines()[0]
+        self.assertTrue(titulo.startswith("🏀 1 novedad"))
+        # Sin cambios -> sin aviso.
+        aviso.unlink()
+        with unittest.mock.patch.dict(os.environ, {"AVISO_ARCHIVO": str(aviso)}):
+            self.assertEqual(self.correr("2026-10-02T17:04:00+02:00"), 0)
+        self.assertFalse(aviso.exists())
+        # Ningún archivo publicado contiene emails ni credenciales.
+        for p in (self.dir / "docs").iterdir():
+            texto = p.read_text(encoding="utf-8")
+            self.assertIsNone(re.search(r"[\w.+-]+@(?!calendarios-cb-arganda)[\w-]+\.[a-z]{2,}", texto), p.name)
 
 
 if __name__ == "__main__":

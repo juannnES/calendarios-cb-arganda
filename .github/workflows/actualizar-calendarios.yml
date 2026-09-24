@@ -1,12 +1,16 @@
 name: Actualizar calendarios
 
+# No necesita secretos ni credenciales personales. Solo usa el token automático que GitHub
+# da a cada ejecución (GITHUB_TOKEN) para guardar los cambios y crear avisos (Issues).
+
 on:
   schedule:
-    # Lunes y viernes a las 17:05, hora de Madrid (GitHub aplica solo el horario de verano/invierno).
-    # 17:05 y no 17:00 en punto: GitHub recomienda evitar el minuto 0, que es cuando más se retrasa.
+    # COMPROBACIÓN DE LAS 17:00 DEL LUNES Y DEL VIERNES (hora de Madrid, verano/invierno automático).
+    # Se lanza a las 17:05 y no a las 17:00 en punto porque GitHub avisa de que las tareas en el
+    # minuto 0 son las que más se retrasan o se descartan. A efectos del sistema es la de las 17:00.
     - cron: "5 17 * * 1,5"
       timezone: "Europe/Madrid"
-    # Respaldo: si GitHub retrasa o se salta la de las 17:05, esta la cubre. Si ya se hizo, no repite nada.
+    # Respaldo: si GitHub retrasa o se salta la anterior, esta la cubre. Si ya se hizo, no repite nada.
     - cron: "45 18 * * 1,5"
       timezone: "Europe/Madrid"
   workflow_dispatch:
@@ -16,28 +20,30 @@ on:
         type: choice
         options: [manual, lunes, viernes]
         default: manual
-      probar_email:
-        description: "Solo enviar un email de prueba"
+      probar_aviso:
+        description: "Solo crear un aviso de prueba (Issue)"
         type: boolean
         default: false
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: write   # guardar data/estado.json y docs/
+  pages: write      # publicar en GitHub Pages
+  id-token: write   # requerido por GitHub Pages
+  issues: write     # avisos de cambios y errores
 
 concurrency:
   group: calendarios
   cancel-in-progress: false
 
+env:
+  AVISO_ARCHIVO: /tmp/aviso-calendarios.md
+  GH_TOKEN: ${{ github.token }}
+  TITULO_ERROR: "❌ Error en la actualización de los calendarios"
+
 jobs:
   actualizar:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    env:
-      GMAIL_USER: ${{ secrets.GMAIL_USER }}
-      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-      NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
     steps:
       - uses: actions/checkout@v5
 
@@ -49,16 +55,16 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
-      - name: Email de prueba
-        if: ${{ inputs.probar_email }}
-        run: python -m fbmcal --probar-email
+      - name: Aviso de prueba
+        if: ${{ inputs.probar_aviso }}
+        run: python -m fbmcal --probar-aviso
 
       - name: Pruebas automáticas (si fallan, no se toca ningún calendario)
-        if: ${{ !inputs.probar_email }}
+        if: ${{ !inputs.probar_aviso }}
         run: python -m unittest discover -s tests -t .
 
       - name: Consultar la FBM y actualizar calendarios
-        if: ${{ !inputs.probar_email }}
+        if: ${{ !inputs.probar_aviso }}
         run: |
           owner="${{ github.repository_owner }}"
           export PAGES_URL="https://${owner,,}.github.io/${{ github.event.repository.name }}/"
@@ -69,7 +75,7 @@ jobs:
           fi
 
       - name: Guardar estado y calendarios en el repositorio
-        if: ${{ !inputs.probar_email }}
+        if: ${{ !inputs.probar_aviso }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -79,15 +85,46 @@ jobs:
           git pull --rebase
           git push
 
+      - name: Crear aviso de cambios (Issue)
+        run: |
+          if [ -s "$AVISO_ARCHIVO" ]; then
+            titulo="$(head -n 1 "$AVISO_ARCHIVO")"
+            tail -n +2 "$AVISO_ARCHIVO" > /tmp/cuerpo.md
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$titulo" --body-file /tmp/cuerpo.md
+          else
+            echo "Sin novedades que avisar."
+          fi
+
+      - name: Cerrar el aviso de error anterior (ya funciona)
+        if: ${{ !inputs.probar_aviso }}
+        run: |
+          for n in $(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "Error en la actualización in:title" --json number --jq '.[].number'); do
+            gh issue close "$n" --repo "$GITHUB_REPOSITORY" --comment "✅ Resuelto: la ejecución ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} ha funcionado."
+          done
+
       - name: Preparar publicación
-        if: ${{ !inputs.probar_email && hashFiles('docs/index.html') != '' }}
+        if: ${{ !inputs.probar_aviso && hashFiles('docs/index.html') != '' }}
         uses: actions/upload-pages-artifact@v4
         with:
           path: docs
 
+      - name: Aviso de error (Issue)
+        if: ${{ failure() }}
+        run: |
+          url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          texto="La actualización ha fallado. **No se ha modificado ningún calendario**: siguen publicados los de la última ejecución correcta. Se reintentará en la próxima ejecución programada.
+
+          Detalles: $url"
+          n=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "Error en la actualización in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$n" ]; then
+            gh issue comment "$n" --repo "$GITHUB_REPOSITORY" --body "Ha vuelto a fallar: $url"
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$TITULO_ERROR" --body "$texto"
+          fi
+
   publicar:
     needs: actualizar
-    if: ${{ !inputs.probar_email }}
+    if: ${{ !inputs.probar_aviso }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages

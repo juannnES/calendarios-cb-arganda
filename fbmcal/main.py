@@ -1,4 +1,8 @@
-"""Punto de entrada: python -m fbmcal [--modo auto|lunes|viernes|manual] ..."""
+"""Punto de entrada: python -m fbmcal [--modo auto|lunes|viernes|manual] ...
+
+No necesita ninguna credencial: solo lee la web pública de la FBM y escribe archivos.
+Si algo falla, termina con código 1 (el workflow queda en rojo) y NO modifica ningún archivo.
+"""
 import argparse
 import json
 import os
@@ -7,10 +11,10 @@ import traceback
 from datetime import datetime
 from pathlib import Path
 
-from .avisos import componer_informe, enviar_email
 from .conciliar import conciliar_equipo
 from .fuente import FuenteError, descargar, leer_calendarios, leer_proximos_html, leer_proximos_xlsx
 from .ics import generar_ics
+from .informe import componer_aviso, escribir_aviso, escribir_resumen, estado_publico, resumen_ejecucion
 from .util import DIAS, TZ, ahora_madrid, temporada_de
 from .web import generar_indice
 
@@ -29,9 +33,27 @@ def cargar_json(ruta: Path, defecto):
     return defecto
 
 
-def guardar_json(ruta: Path, datos) -> None:
-    ruta.parent.mkdir(parents=True, exist_ok=True)
-    ruta.write_text(json.dumps(datos, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+def a_json(datos) -> bytes:
+    return (json.dumps(datos, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode("utf-8")
+
+
+def escribir_todo(archivos: dict[Path, bytes]) -> None:
+    """Escribe cada archivo en un .tmp y lo sustituye de golpe (os.replace es atómico).
+
+    Todo el contenido se ha generado ANTES de llamar a esta función, así que un error de la FBM,
+    del análisis o de la conciliación nunca deja un calendario a medias ni vacío."""
+    temporales = []
+    try:
+        for ruta, datos in archivos.items():
+            ruta.parent.mkdir(parents=True, exist_ok=True)
+            tmp = ruta.with_name(ruta.name + ".tmp")
+            tmp.write_bytes(datos)
+            temporales.append((tmp, ruta))
+        for tmp, ruta in temporales:
+            os.replace(tmp, ruta)
+    finally:
+        for tmp, _ in temporales:
+            tmp.unlink(missing_ok=True)
 
 
 def ejecutar(args) -> int:
@@ -43,13 +65,15 @@ def ejecutar(args) -> int:
     print(f"▶ {DIAS[ahora.weekday()]} {ahora:%d/%m/%Y %H:%M} (Europe/Madrid) · modo: {modo}")
 
     if args.programado:
-        # El workflow tiene una ejecución principal (17:05) y otra de respaldo (18:45) por si GitHub
-        # retrasa o se salta la primera. Si la principal ya terminó bien, la de respaldo no hace nada.
+        # La «comprobación de las 17:00» se lanza a las 17:05 (GitHub retrasa más las tareas en punto) y
+        # hay otra de respaldo a las 18:45. Si la principal ya terminó bien, la de respaldo no repite nada.
         if modo not in ("lunes", "viernes") or ahora.hour < 17:
             print("Fuera de la ventana programada (lunes/viernes desde las 17:00). No se hace nada.")
             return 0
         if f"{ahora.date()}-{modo}" in estado["ejecuciones"]:
             print("La comprobación de hoy ya se hizo correctamente. No se repite.")
+            escribir_resumen(f"ℹ️ La comprobación del {modo} ya se había completado hoy; "
+                             "esta ejecución de respaldo no hace nada.\n")
             return 0
 
     fuente_url = config["fuente"]["club_url"]
@@ -83,21 +107,26 @@ def ejecutar(args) -> int:
         estado["ejecuciones"] = dict(sorted(estado["ejecuciones"].items())[-40:])
     estado["ultima_ejecucion"] = {"en": ahora.isoformat(timespec="minutes"), "modo": modo, "temporada": temporada}
 
+    # 1) Generar TODO en memoria.
     salida = Path(args.salida)
-    salida.mkdir(parents=True, exist_ok=True)
     pabellones = {k: v for k, v in cargar_json(RAIZ / "pabellones.json", {}).items() if not k.startswith("_")}
+    archivos: dict[Path, bytes] = {}
     for cfg in config["equipos"]:
         ics = generar_ics(cfg, estado["equipos"][cfg["id"]], config["evento"], fuente_url, pabellones, ahora)
-        (salida / cfg["archivo_ics"]).write_bytes(ics.encode("utf-8"))
-    (salida / "index.html").write_text(generar_indice(config, estado, ahora), encoding="utf-8")
-    (salida / ".nojekyll").write_text("", encoding="utf-8")
-    guardar_json(ruta_estado, estado)
+        archivos[salida / cfg["archivo_ics"]] = ics.encode("utf-8")
+    publico = estado_publico(cambios, avisos, config, estado, modo, ahora)
+    archivos[salida / "estado.json"] = a_json(publico)
+    archivos[salida / "index.html"] = generar_indice(config, estado, ahora).encode("utf-8")
+    archivos[salida / ".nojekyll"] = b""
+    archivos[ruta_estado] = a_json(estado)
 
-    informe = componer_informe(cambios, avisos, config, modo, ahora, os.environ.get("PAGES_URL"))
-    if informe and not args.sin_email:
-        enviar_email(*informe)
-    elif informe:
-        print(f"(sin email) {informe[0]}\n{informe[1]}")
+    # 2) Escribir de golpe.
+    escribir_todo(archivos)
+
+    escribir_resumen(resumen_ejecucion(cambios, avisos, config, estado, modo, ahora))
+    aviso = componer_aviso(cambios, avisos, config, modo, ahora, os.environ.get("PAGES_URL"))
+    if aviso:
+        escribir_aviso(*aviso)
     print("✔ Terminado.")
     return 0
 
@@ -112,25 +141,19 @@ def main(argv=None) -> int:
     ap.add_argument("--html", help="usar un HTML guardado en vez de descargar (pruebas)")
     ap.add_argument("--xlsx", help="usar un XLSX guardado en vez de descargar (pruebas)")
     ap.add_argument("--ahora", help="simular fecha/hora ISO, p. ej. 2026-09-28T17:00+02:00 (pruebas)")
-    ap.add_argument("--sin-email", action="store_true")
-    ap.add_argument("--probar-email", action="store_true", help="solo envía un email de prueba")
+    ap.add_argument("--probar-aviso", action="store_true", help="solo prepara un aviso de prueba (Issue)")
     args = ap.parse_args(argv)
-    if args.probar_email:
-        ok = enviar_email("🏀 Calendarios CB Arganda: email de prueba",
-                          "Si lees esto, los avisos por email están bien configurados.")
-        return 0 if ok else 1
+    if args.probar_aviso:
+        escribir_aviso("🏀 Aviso de prueba de los calendarios CB Arganda",
+                       "Si te ha llegado esta notificación, los avisos funcionan. Ya puedes cerrar este Issue.")
+        return 0
     try:
         return ejecutar(args)
-    except Exception as e:  # noqa: BLE001 - cualquier fallo se notifica por email y marca el workflow en rojo
+    except Exception as e:  # noqa: BLE001 - cualquier fallo deja el workflow en rojo sin tocar los calendarios
         traceback.print_exc()
-        if not args.sin_email:
-            try:
-                enviar_email("❌ Calendarios CB Arganda: error en la actualización",
-                             "La actualización automática ha fallado y NO se ha modificado ningún calendario.\n\n"
-                             f"Error: {e}\n\n{traceback.format_exc()}\n"
-                             "Se reintentará en la siguiente ejecución programada. Revisa la pestaña Actions del repositorio.")
-            except Exception:  # noqa: BLE001
-                traceback.print_exc()
+        print(f"\n❌ ERROR: {e}\nNo se ha modificado ningún calendario. Se reintentará en la próxima ejecución.")
+        escribir_resumen(f"## ❌ Error en la actualización\n\n`{e}`\n\n"
+                         "No se ha modificado ningún calendario; siguen publicados los de la última ejecución correcta.\n")
         return 1
 
 

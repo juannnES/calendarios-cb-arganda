@@ -1,12 +1,21 @@
 """Página índice (GitHub Pages) con los botones de suscripción a cada calendario."""
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from html import escape
 
 from .ics import titulo_evento
 from .util import DIAS, fecha_es
 
 
+def proxima_comprobacion(ahora: datetime) -> datetime:
+    """Siguiente lunes o viernes a las 17:00 (hora de Madrid) posterior a `ahora`."""
+    d = ahora.replace(hour=17, minute=0, second=0, microsecond=0)
+    while d <= ahora or d.weekday() not in (0, 4):
+        d = (d + timedelta(days=1)).replace(hour=17, minute=0)
+    return d
+
+
 def generar_indice(config: dict, estado: dict, ahora: datetime) -> str:
+    prox = proxima_comprobacion(ahora)
     tarjetas = []
     hoy = ahora.date().isoformat()
     for cfg in config["equipos"]:
@@ -56,6 +65,8 @@ def generar_indice(config: dict, estado: dict, ahora: datetime) -> str:
   li:last-child {{ border-bottom:0; }}
   .f {{ display:block; font-size:.85rem; color:var(--muted); }}
   .vacio {{ color:var(--muted); }}
+  .estado {{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 18px; margin-bottom:18px; font-size:.95rem; }}
+  .estado small {{ color:var(--muted); display:block; margin-top:6px; }}
   details {{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 18px; margin-bottom:12px; }}
   summary {{ cursor:pointer; font-weight:600; }}
   footer {{ color:var(--muted); font-size:.85rem; margin-top:24px; }}
@@ -64,7 +75,14 @@ def generar_indice(config: dict, estado: dict, ahora: datetime) -> str:
 <body>
 <main>
   <h1>🏀 Calendarios CB Arganda</h1>
-  <p class="sub">Partidos oficiales de la Federación de Baloncesto de Madrid. Se comprueban automáticamente cada lunes y viernes a las 17:05 (hora de Madrid).</p>
+  <p class="sub">Partidos oficiales de la Federación de Baloncesto de Madrid. Se comprueban automáticamente
+    cada <b>lunes a las 17:00</b> (partidos de la semana) y cada <b>viernes a las 17:00</b> (confirmación final).</p>
+  <section class="estado">
+    <b>✅ Última comprobación correcta:</b> {DIAS[ahora.weekday()]} {ahora:%d/%m/%Y %H:%M}<br>
+    <b>Próxima comprobación:</b> {DIAS[prox.weekday()]} {prox:%d/%m/%Y} a las 17:00<br>
+    <small>Si la última comprobación correcta tiene más de 4 días, alguna ejecución ha fallado: los calendarios
+    conservan los últimos datos buenos. Detalle técnico: <a href="estado.json">estado.json</a>.</small>
+  </section>
   {''.join(tarjetas)}
   <details><summary>Cómo suscribirse en iPhone / iPad</summary>
     <p>Pulsa el botón del calendario desde el iPhone → «Suscribirse» → en «Cuenta» elige <b>iCloud</b> (así aparece también en el Mac y en el resto de dispositivos) → «Añadir».</p>
@@ -75,7 +93,7 @@ def generar_indice(config: dict, estado: dict, ahora: datetime) -> str:
   <details><summary>Google Calendar / Outlook / Android</summary>
     <p>Copia el enlace del calendario y añádelo como «Desde URL» (Google Calendar web → Otros calendarios → + → Desde URL).</p>
   </details>
-  <footer>Última actualización: {ahora:%d/%m/%Y %H:%M} (hora de Madrid) · Fuente: <a href="{config['fuente']['club_url']}">fbm.es</a></footer>
+  <footer>Fuente oficial: <a href="{config['fuente']['club_url']}">Federación de Baloncesto de Madrid (fbm.es)</a> · Horas en hora de Madrid</footer>
 </main>
 <script>
   const base = location.href.replace(/[#?].*$/, '').replace(/[^/]*$/, '');
