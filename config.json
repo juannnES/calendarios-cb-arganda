@@ -1,0 +1,39 @@
+{
+  "fuente": {
+    "nombre": "Federación de Baloncesto de Madrid (FBM) · Resultados del club BALONCESTO ARGANDA",
+    "club_url": "https://www.fbm.es/resultados-club-6917/baloncesto-arganda",
+    "xlsx_url": "https://www.fbm.es/informes.aspx?delegacion=1&club=6917&informe=proximos-partidos-club&formato=xlsx"
+  },
+  "evento": {
+    "minutos_antes": 45,
+    "duracion_partido_min": 120,
+    "hora_pendiente": "00:00",
+    "duracion_pendiente_min": 120
+  },
+  "equipos": [
+    {
+      "id": "cadete-masc-1-ano",
+      "categoria_fbm": ["Cadete Masc. 1ºaño"],
+      "categoria_mostrada": "Cadete Masculino Primer Año",
+      "palabras_categoria": ["cadete", "masc"],
+      "patrones_nombre": ["arganda"],
+      "nombre_fbm": null,
+      "nombre_corto": "CB Arganda",
+      "archivo_ics": "cadete-masculino-1-ano.ics",
+      "nombre_calendario": "CB Arganda · Cadete Masc. 1º año",
+      "color": "#1F6FEB"
+    },
+    {
+      "id": "infantil-masc-1-ano",
+      "categoria_fbm": ["Infantil Masc. 1ºaño"],
+      "categoria_mostrada": "Infantil Masculino Primer Año",
+      "palabras_categoria": ["infantil", "masc"],
+      "patrones_nombre": ["arganda"],
+      "nombre_fbm": null,
+      "nombre_corto": "CB Arganda",
+      "archivo_ics": "infantil-masculino-1-ano.ics",
+      "nombre_calendario": "CB Arganda · Infantil Masc. 1º año",
+      "color": "#E5534B"
+    }
+  ]
+}

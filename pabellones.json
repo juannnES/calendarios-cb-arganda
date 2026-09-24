@@ -1,0 +1,3 @@
+{
+  "_ayuda": "Correcciones manuales de dirección. Clave = pabellón y dirección de la FBM normalizados (minúsculas, sin tildes ni símbolos) separados por '|'. Ejemplo: \"elplantiopabellon|callealameda7coslada\": \"Calle Alameda, 7, 28821 Coslada, Madrid\". Solo añade direcciones comprobadas en una fuente oficial."
+}
