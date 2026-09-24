@@ -1,0 +1,530 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Calendarios CB Arganda//FBM//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB Arganda · Cadete Masc. 1º año
+X-WR-CALDESC:Partidos oficiales (FBM) de CB Arganda · Cadete Masculino Pri
+ mer Año
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#1F6FEB
+REFRESH-INTERVAL;VALUE=DURATION:PT1H
+X-PUBLISHED-TTL:PT1H
+BEGIN:VTIMEZONE
+TZID:Europe/Madrid
+X-LIC-LOCATION:Europe/Madrid
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:75ec120443f0ccd7d8517a7b@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261003T103000
+DTEND;TZID=Europe/Madrid:20261003T131500
+SUMMARY:C.B. COSLADA vs CB Arganda
+LOCATION:CALLE ALAMEDA\, 7\, Coslada\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 1\nRival
+ : C.B. COSLADA\nLocal/Visitante: Visitante\n\n📍 Pabellón: EL PLANTIO\,
+  PABELLON\n🗺️ Dirección: CALLE ALAMEDA\, 7\, Coslada\, Madrid\, Espa
+ ña\n📅 Fecha: sábado 03/10/2026\n🕐 Hora: 11:15\n⏰ En el calendari
+ o: 10:30–13:15 (45 min antes + 2 h de partido)\n\nEstado: 📅 Según el
+  calendario oficial. Se verificará el lunes y se confirmará el viernes d
+ e la semana del partido\n✅ Última comprobación: 24/09/2026 21:23\n\nFu
+ ente oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:1534eb24de28d17c39faf020@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261010T000000
+DTEND;TZID=Europe/Madrid:20261010T020000
+SUMMARY:⏳ CB Arganda vs LICEO FRANCES
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 2\nRival
+ : LICEO FRANCES\nLocal/Visitante: Local\n\n📍 Pabellón: VIRGEN DEL CARM
+ EN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MALLORCA\, S/N\, Argand
+ a del Rey\, Madrid\, España\n📅 Fecha: sábado 10/10/2026\n🕐 Hora: H
+ ora pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que la FB
+ M publique la hora oficial\n\nEstado: 📅 Según el calendario oficial. S
+ e verificará el lunes y se confirmará el viernes de la semana del partid
+ o\n✅ Última comprobación: 24/09/2026 21:23\n\nFuente oficial:\nhttps:/
+ /www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:231ed9bb7a409a1a25e2bcc2@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261017T000000
+DTEND;TZID=Europe/Madrid:20261017T020000
+SUMMARY:⏳ JANSEN BT "B" vs CB Arganda
+LOCATION:PLAZA JOSE MARIA UNCETA\, 4\, Torrelodones\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 3\nRival
+ : JANSEN BT "B"\nLocal/Visitante: Visitante\n\n📍 Pabellón: TORRELODONE
+ S\, PABELLON pequeño\n🗺️ Dirección: PLAZA JOSE MARIA UNCETA\, 4\, T
+ orrelodones\, Madrid\, España\n📅 Fecha: sábado 17/10/2026\n🕐 Hora:
+  Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que la 
+ FBM publique la hora oficial\n\nEstado: 📅 Según el calendario oficial.
+  Se verificará el lunes y se confirmará el viernes de la semana del part
+ ido\n✅ Última comprobación: 24/09/2026 21:23\n\nFuente oficial:\nhttps
+ ://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:a4b413f20f036d7438ab5420@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261024T000000
+DTEND;TZID=Europe/Madrid:20261024T020000
+SUMMARY:⏳ CB Arganda vs CB POZUELO VERDE
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 4\nRival
+ : CB POZUELO VERDE\nLocal/Visitante: Local\n\n📍 Pabellón: VIRGEN DEL C
+ ARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MALLORCA\, S/N\, Arg
+ anda del Rey\, Madrid\, España\n📅 Fecha: sábado 24/10/2026\n🕐 Hora
+ : Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que la
+  FBM publique la hora oficial\n\nEstado: 📅 Según el calendario oficial
+ . Se verificará el lunes y se confirmará el viernes de la semana del par
+ tido\n✅ Última comprobación: 24/09/2026 21:23\n\nFuente oficial:\nhttp
+ s://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:5e45d2d5a13f64dd26861491@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261107T134500
+DTEND;TZID=Europe/Madrid:20261107T163000
+SUMMARY:SAN BLAS BASKET vs CB Arganda
+LOCATION:EDUARDO TERAN\, 8\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 5\nRival
+ : SAN BLAS BASKET\nLocal/Visitante: Visitante\n\n📍 Pabellón: SANTO ANG
+ EL DE LA GUARDA\, PABELLON COLEGIO\n🗺️ Dirección: EDUARDO TERAN\, 8\
+ , Madrid\, España\n📅 Fecha: sábado 07/11/2026\n🕐 Hora: 14:30\n⏰ 
+ En el calendario: 13:45–16:30 (45 min antes + 2 h de partido)\n\nEstado:
+  📅 Según el calendario oficial. Se verificará el lunes y se confirmar
+ á el viernes de la semana del partido\n✅ Última comprobación: 24/09/2
+ 026 21:23\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917/balo
+ ncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:a3d34502da0a256ea378ed35@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261114T000000
+DTEND;TZID=Europe/Madrid:20261114T020000
+SUMMARY:⏳ CB Arganda vs MADRID FSM C.D.B.
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 6\nRival
+ : MADRID FSM C.D.B.\nLocal/Visitante: Local\n\n📍 Pabellón: VIRGEN DEL 
+ CARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MALLORCA\, S/N\, Ar
+ ganda del Rey\, Madrid\, España\n📅 Fecha: sábado 14/11/2026\n🕐 Hor
+ a: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que l
+ a FBM publique la hora oficial\n\nEstado: 📅 Según el calendario oficia
+ l. Se verificará el lunes y se confirmará el viernes de la semana del pa
+ rtido\n✅ Última comprobación: 24/09/2026 21:23\n\nFuente oficial:\nhtt
+ ps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:426beb68918a87ca8e0383a9@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261121T000000
+DTEND;TZID=Europe/Madrid:20261121T020000
+SUMMARY:⏳ C.B. GETAFE "MOLERA" vs CB Arganda
+LOCATION:AV. ESPAÑA\, 90\, Getafe\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 7\nRival
+ : C.B. GETAFE "MOLERA"\nLocal/Visitante: Visitante\n\n📍 Pabellón: JUAN
+  DE LA CIERVA\, PABELLON PISTA CENTRAL\n🗺️ Dirección: AV. ESPAÑA\, 
+ 90\, Getafe\, Madrid\, España\n📅 Fecha: sábado 21/11/2026\n🕐 Hora:
+  Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que la 
+ FBM publique la hora oficial\n\nEstado: 📅 Según el calendario oficial.
+  Se verificará el lunes y se confirmará el viernes de la semana del part
+ ido\n✅ Última comprobación: 24/09/2026 21:23\n\nFuente oficial:\nhttps
+ ://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:bd376e299f5a30f985793969@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261212T000000
+DTEND;TZID=Europe/Madrid:20261212T020000
+SUMMARY:⏳ BALONCESTO FUENLABRADA 2012 vs CB Arganda
+LOCATION:FUENTESAUCO\, 1\, Fuenlabrada\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 9\nRival
+ : BALONCESTO FUENLABRADA 2012\nLocal/Visitante: Visitante\n\n📍 Pabelló
+ n: EL ARROYO\, PABELLON\n🗺️ Dirección: FUENTESAUCO\, 1\, Fuenlabrada
+ \, Madrid\, España\n📅 Fecha: sábado 12/12/2026\n🕐 Hora: Hora pendi
+ ente de confirmación\n⏰ Se muestra a las 00:00 hasta que la FBM publiqu
+ e la hora oficial\n\nEstado: 📅 Según el calendario oficial. Se verific
+ ará el lunes y se confirmará el viernes de la semana del partido\n✅ Ú
+ ltima comprobación: 24/09/2026 21:23\n\nFuente oficial:\nhttps://www.fbm.
+ es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:f8886aaee04133a2721becd4@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261219T000000
+DTEND;TZID=Europe/Madrid:20261219T020000
+SUMMARY:⏳ CB Arganda vs FUNDAL ALCOBENDAS "C"
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 10\nRiva
+ l: FUNDAL ALCOBENDAS "C"\nLocal/Visitante: Local\n\n📍 Pabellón: VIRGEN
+  DEL CARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MALLORCA\, S/N
+ \, Arganda del Rey\, Madrid\, España\n📅 Fecha: sábado 19/12/2026\n
+ 🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 has
+ ta que la FBM publique la hora oficial\n\nEstado: 📅 Según el calendari
+ o oficial. Se verificará el lunes y se confirmará el viernes de la seman
+ a del partido\n✅ Última comprobación: 24/09/2026 21:23\n\nFuente ofici
+ al:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:8386830104e9356c8f5db420@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270109T000000
+DTEND;TZID=Europe/Madrid:20270109T020000
+SUMMARY:⏳ OLIMPICO 64 vs CB Arganda
+LOCATION:ESCALONA\, 59\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 11\nRiva
+ l: OLIMPICO 64\nLocal/Visitante: Visitante\n\n📍 Pabellón: SAGE 2000\, 
+ PABELLON\n🗺️ Dirección: ESCALONA\, 59\, Madrid\, España\n📅 Fecha
+ : sábado 09/01/2027\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se m
+ uestra a las 00:00 hasta que la FBM publique la hora oficial\n\nEstado: 
+ 📅 Según el calendario oficial. Se verificará el lunes y se confirmar
+ á el viernes de la semana del partido\n✅ Última comprobación: 24/09/2
+ 026 21:23\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917/balo
+ ncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:b766969a0870198b440cb57e@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270116T000000
+DTEND;TZID=Europe/Madrid:20270116T020000
+SUMMARY:⏳ CB Arganda vs C.B. COSLADA
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 12\nRiva
+ l: C.B. COSLADA\nLocal/Visitante: Local\n\n📍 Pabellón: VIRGEN DEL CARM
+ EN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MALLORCA\, S/N\, Argand
+ a del Rey\, Madrid\, España\n📅 Fecha: sábado 16/01/2027\n🕐 Hora: H
+ ora pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que la FB
+ M publique la hora oficial\n\nEstado: 📅 Según el calendario oficial. S
+ e verificará el lunes y se confirmará el viernes de la semana del partid
+ o\n✅ Última comprobación: 24/09/2026 21:23\n\nFuente oficial:\nhttps:/
+ /www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:9ec20b66d40e6b9f071cc997@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270123T000000
+DTEND;TZID=Europe/Madrid:20270123T020000
+SUMMARY:⏳ LICEO FRANCES vs CB Arganda
+LOCATION:AVDA. DE LOS MADROÑOS frente nº 42\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 13\nRiva
+ l: LICEO FRANCES\nLocal/Visitante: Visitante\n\n📍 Pabellón: LICEO FRAN
+ CES\, PABELLON COLEGIO\n🗺️ Dirección: AVDA. DE LOS MADROÑOS frente 
+ nº 42\, Madrid\, España\n📅 Fecha: sábado 23/01/2027\n🕐 Hora: Hora
+  pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que la FBM p
+ ublique la hora oficial\n\nEstado: 📅 Según el calendario oficial. Se v
+ erificará el lunes y se confirmará el viernes de la semana del partido\n
+ ✅ Última comprobación: 24/09/2026 21:23\n\nFuente oficial:\nhttps://ww
+ w.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:e257db6074f4a71e7442527a@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270130T000000
+DTEND;TZID=Europe/Madrid:20270130T020000
+SUMMARY:⏳ CB Arganda vs JANSEN BT "B"
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 14\nRiva
+ l: JANSEN BT "B"\nLocal/Visitante: Local\n\n📍 Pabellón: VIRGEN DEL CAR
+ MEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MALLORCA\, S/N\, Argan
+ da del Rey\, Madrid\, España\n📅 Fecha: sábado 30/01/2027\n🕐 Hora: 
+ Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que la F
+ BM publique la hora oficial\n\nEstado: 📅 Según el calendario oficial. 
+ Se verificará el lunes y se confirmará el viernes de la semana del parti
+ do\n✅ Última comprobación: 24/09/2026 21:23\n\nFuente oficial:\nhttps:
+ //www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:c9edfc920e10fdb6ab7811b1@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270206T000000
+DTEND;TZID=Europe/Madrid:20270206T020000
+SUMMARY:⏳ CB POZUELO VERDE vs CB Arganda
+LOCATION:IRLANDA\, S/N\, Pozuelo de Alarcón\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 15\nRiva
+ l: CB POZUELO VERDE\nLocal/Visitante: Visitante\n\n📍 Pabellón: GERARDO
+  DIEGO\, I.E.S.\n🗺️ Dirección: IRLANDA\, S/N\, Pozuelo de Alarcón\,
+  Madrid\, España\n📅 Fecha: sábado 06/02/2027\n🕐 Hora: Hora pendien
+ te de confirmación\n⏰ Se muestra a las 00:00 hasta que la FBM publique 
+ la hora oficial\n\nEstado: 📅 Según el calendario oficial. Se verificar
+ á el lunes y se confirmará el viernes de la semana del partido\n✅ Últ
+ ima comprobación: 24/09/2026 21:23\n\nFuente oficial:\nhttps://www.fbm.es
+ /resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:495b6c42dcb62540e37b3b41@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270213T000000
+DTEND;TZID=Europe/Madrid:20270213T020000
+SUMMARY:⏳ CB Arganda vs SAN BLAS BASKET
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 16\nRiva
+ l: SAN BLAS BASKET\nLocal/Visitante: Local\n\n📍 Pabellón: VIRGEN DEL C
+ ARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MALLORCA\, S/N\, Arg
+ anda del Rey\, Madrid\, España\n📅 Fecha: sábado 13/02/2027\n🕐 Hora
+ : Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que la
+  FBM publique la hora oficial\n\nEstado: 📅 Según el calendario oficial
+ . Se verificará el lunes y se confirmará el viernes de la semana del par
+ tido\n✅ Última comprobación: 24/09/2026 21:23\n\nFuente oficial:\nhttp
+ s://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:22be1bb406dadd2cd0c07881@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270221T000000
+DTEND;TZID=Europe/Madrid:20270221T020000
+SUMMARY:⏳ MADRID FSM C.D.B. vs CB Arganda
+LOCATION:Pabellón pendiente de confirmación
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 17\nRiva
+ l: MADRID FSM C.D.B.\nLocal/Visitante: Visitante\n\n📍 Pabellón: Pendie
+ nte de confirmación\n🗺️ Dirección: Pendiente de confirmación\n📅
+  Fecha: domingo 21/02/2027\n🕐 Hora: Hora pendiente de confirmación\n
+ ⏰ Se muestra a las 00:00 hasta que la FBM publique la hora oficial\n\nEs
+ tado: 📅 Según el calendario oficial. Se verificará el lunes y se conf
+ irmará el viernes de la semana del partido\n✅ Última comprobación: 24
+ /09/2026 21:23\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917
+ /baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:94a1c2f9ce7d45e4ffb5cb04@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270227T000000
+DTEND;TZID=Europe/Madrid:20270227T020000
+SUMMARY:⏳ CB Arganda vs C.B. GETAFE "MOLERA"
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 18\nRiva
+ l: C.B. GETAFE "MOLERA"\nLocal/Visitante: Local\n\n📍 Pabellón: VIRGEN 
+ DEL CARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MALLORCA\, S/N\
+ , Arganda del Rey\, Madrid\, España\n📅 Fecha: sábado 27/02/2027\n🕐
+  Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta q
+ ue la FBM publique la hora oficial\n\nEstado: 📅 Según el calendario of
+ icial. Se verificará el lunes y se confirmará el viernes de la semana de
+ l partido\n✅ Última comprobación: 24/09/2026 21:23\n\nFuente oficial:\
+ nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:85000579a5aabb30dd0813a1@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270313T000000
+DTEND;TZID=Europe/Madrid:20270313T020000
+SUMMARY:⏳ CB Arganda vs BALONCESTO FUENLABRADA 2012
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 20\nRiva
+ l: BALONCESTO FUENLABRADA 2012\nLocal/Visitante: Local\n\n📍 Pabellón: 
+ VIRGEN DEL CARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MALLORCA
+ \, S/N\, Arganda del Rey\, Madrid\, España\n📅 Fecha: sábado 13/03/202
+ 7\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 
+ hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según el calend
+ ario oficial. Se verificará el lunes y se confirmará el viernes de la se
+ mana del partido\n✅ Última comprobación: 24/09/2026 21:23\n\nFuente of
+ icial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:fbdeea6199c8a4cb2e19b563@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270403T151500
+DTEND;TZID=Europe/Madrid:20270403T180000
+SUMMARY:FUNDAL ALCOBENDAS "C" vs CB Arganda
+LOCATION:AVDA. OLIMPICA\, 20\, Alcobendas\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 21\nRiva
+ l: FUNDAL ALCOBENDAS "C"\nLocal/Visitante: Visitante\n\n📍 Pabellón: PE
+ DRO FERRANDIZ\, PABELLON\n🗺️ Dirección: AVDA. OLIMPICA\, 20\, Alcobe
+ ndas\, Madrid\, España\n📅 Fecha: sábado 03/04/2027\n🕐 Hora: 16:00\
+ n⏰ En el calendario: 15:15–18:00 (45 min antes + 2 h de partido)\n\nEs
+ tado: 📅 Según el calendario oficial. Se verificará el lunes y se conf
+ irmará el viernes de la semana del partido\n✅ Última comprobación: 24
+ /09/2026 21:23\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917
+ /baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:c8f5b057be677cc9be96b2ba@calendarios-cb-arganda
+DTSTAMP:20260924T192330Z
+CREATED:20260924T192300Z
+LAST-MODIFIED:20260924T192300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270410T000000
+DTEND;TZID=Europe/Madrid:20270410T020000
+SUMMARY:⏳ CB Arganda vs OLIMPICO 64
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Cadete Masculino Primer Año\nComp
+ etición: Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3\nJornada: 22\nRiva
+ l: OLIMPICO 64\nLocal/Visitante: Local\n\n📍 Pabellón: VIRGEN DEL CARME
+ N\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MALLORCA\, S/N\, Arganda
+  del Rey\, Madrid\, España\n📅 Fecha: sábado 10/04/2027\n🕐 Hora: Ho
+ ra pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que la FBM
+  publique la hora oficial\n\nEstado: 📅 Según el calendario oficial. Se
+  verificará el lunes y se confirmará el viernes de la semana del partido
+ \n✅ Última comprobación: 24/09/2026 21:23\n\nFuente oficial:\nhttps://
+ www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+END:VCALENDAR

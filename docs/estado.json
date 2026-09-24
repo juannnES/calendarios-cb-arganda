@@ -1,0 +1,40 @@
+{
+  "avisos": [],
+  "cambios": [
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "Equipo en la FBM: «CB ARGANDA». Sus partidos se han añadido.",
+      "partido": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
+      "tipo": "grupo_nuevo"
+    }
+  ],
+  "equipos": {
+    "cadete-masc-1-ano": {
+      "archivo_ics": "cadete-masculino-1-ano.ics",
+      "calendario": "CB Arganda · Cadete Masc. 1º año",
+      "competiciones": [
+        "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3"
+      ],
+      "partidos_en_calendario": 20,
+      "partidos_sin_hora": 17,
+      "proximo_partido": {
+        "fecha": "2026-10-03",
+        "hora": "11:15",
+        "local": "C.B. COSLADA",
+        "pabellon": "EL PLANTIO, PABELLON",
+        "visitante": "CB ARGANDA"
+      }
+    },
+    "infantil-masc-1-ano": {
+      "archivo_ics": "infantil-masculino-1-ano.ics",
+      "calendario": "CB Arganda · Infantil Masc. 1º año",
+      "competiciones": [],
+      "partidos_en_calendario": 0,
+      "partidos_sin_hora": 0,
+      "proximo_partido": null
+    }
+  },
+  "resultado": "ok",
+  "tipo": "comprobación manual",
+  "ultima_comprobacion_correcta": "2026-09-24T21:23+02:00"
+}

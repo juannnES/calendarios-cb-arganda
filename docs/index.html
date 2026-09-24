@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendarios CB Arganda</title>
+<style>
+  :root { --bg:#f6f7f9; --fg:#1b1f24; --muted:#5b6470; --card:#fff; --line:#e3e6ea; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3ad; --card:#181b21; --line:#2a2f37; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:24px 16px 48px; }
+  h1 { font-size:1.6rem; margin:0 0 4px; }
+  .sub { color:var(--muted); margin:0 0 24px; }
+  .card { background:var(--card); border:1px solid var(--line); border-top:4px solid var(--c); border-radius:12px; padding:18px; margin-bottom:18px; }
+  .card h2 { font-size:1.2rem; margin:0 0 12px; }
+  .card h3 { font-size:.95rem; color:var(--muted); margin:16px 0 6px; }
+  .btn { display:inline-block; background:var(--c); color:#fff; text-decoration:none; padding:10px 16px; border-radius:8px; font-weight:600; }
+  .url { font-size:.85rem; color:var(--muted); overflow-wrap:anywhere; }
+  ul { list-style:none; padding:0; margin:0; }
+  li { padding:8px 0; border-bottom:1px solid var(--line); }
+  li:last-child { border-bottom:0; }
+  .f { display:block; font-size:.85rem; color:var(--muted); }
+  .vacio { color:var(--muted); }
+  .estado { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 18px; margin-bottom:18px; font-size:.95rem; }
+  .estado small { color:var(--muted); display:block; margin-top:6px; }
+  details { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 18px; margin-bottom:12px; }
+  summary { cursor:pointer; font-weight:600; }
+  footer { color:var(--muted); font-size:.85rem; margin-top:24px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>🏀 Calendarios CB Arganda</h1>
+  <p class="sub">Partidos oficiales de la Federación de Baloncesto de Madrid. Se comprueban automáticamente
+    cada <b>lunes a las 17:00</b> (partidos de la semana) y cada <b>viernes a las 17:00</b> (confirmación final).</p>
+  <section class="estado">
+    <b>✅ Última comprobación correcta:</b> jueves 24/09/2026 21:23<br>
+    <b>Próxima comprobación:</b> viernes 25/09/2026 a las 17:00<br>
+    <small>Si la última comprobación correcta tiene más de 4 días, alguna ejecución ha fallado: los calendarios
+    conservan los últimos datos buenos. Detalle técnico: <a href="estado.json">estado.json</a>.</small>
+  </section>
+  
+      <section class="card" style="--c:#1F6FEB">
+        <h2>CB Arganda · Cadete Masc. 1º año</h2>
+        <a class="btn" data-ics="cadete-masculino-1-ano.ics" href="cadete-masculino-1-ano.ics">Suscribirse en Apple Calendar</a>
+        <p class="url">Enlace para otros calendarios: <code data-url="cadete-masculino-1-ano.ics">cadete-masculino-1-ano.ics</code></p>
+        <h3>Próximos partidos</h3><ul><li><span class='f'>sáb 03/10/2026 · 11:15</span>C.B. COSLADA vs CB Arganda</li><li><span class='f'>sáb 10/10/2026 · hora pendiente</span>⏳ CB Arganda vs LICEO FRANCES</li><li><span class='f'>sáb 17/10/2026 · hora pendiente</span>⏳ JANSEN BT &quot;B&quot; vs CB Arganda</li><li><span class='f'>sáb 24/10/2026 · hora pendiente</span>⏳ CB Arganda vs CB POZUELO VERDE</li><li><span class='f'>sáb 07/11/2026 · 14:30</span>SAN BLAS BASKET vs CB Arganda</li></ul>
+      </section>
+      <section class="card" style="--c:#E5534B">
+        <h2>CB Arganda · Infantil Masc. 1º año</h2>
+        <a class="btn" data-ics="infantil-masculino-1-ano.ics" href="infantil-masculino-1-ano.ics">Suscribirse en Apple Calendar</a>
+        <p class="url">Enlace para otros calendarios: <code data-url="infantil-masculino-1-ano.ics">infantil-masculino-1-ano.ics</code></p>
+        <h3>Próximos partidos</h3><p class='vacio'>La FBM todavía no ha publicado partidos de este equipo. El calendario se rellenará solo en cuanto aparezcan.</p>
+      </section>
+  <details><summary>Cómo suscribirse en iPhone / iPad</summary>
+    <p>Pulsa el botón del calendario desde el iPhone → «Suscribirse» → en «Cuenta» elige <b>iCloud</b> (así aparece también en el Mac y en el resto de dispositivos) → «Añadir».</p>
+  </details>
+  <details><summary>Cómo suscribirse en Mac</summary>
+    <p>Pulsa el botón → se abre Calendario → en «Ubicación» elige <b>iCloud</b> y en «Actualización automática» elige <b>Cada 15 minutos</b> (o cada hora) → OK.</p>
+  </details>
+  <details><summary>Google Calendar / Outlook / Android</summary>
+    <p>Copia el enlace del calendario y añádelo como «Desde URL» (Google Calendar web → Otros calendarios → + → Desde URL).</p>
+  </details>
+  <footer>Fuente oficial: <a href="https://www.fbm.es/resultados-club-6917/baloncesto-arganda">Federación de Baloncesto de Madrid (fbm.es)</a> · Horas en hora de Madrid</footer>
+</main>
+<script>
+  const base = location.href.replace(/[#?].*$/, '').replace(/[^/]*$/, '');
+  document.querySelectorAll('[data-ics]').forEach(a => a.href = base.replace(/^https?:/, 'webcal:') + a.dataset.ics);
+  document.querySelectorAll('[data-url]').forEach(c => c.textContent = base + c.dataset.url);
+</script>
+</body>
+</html>
