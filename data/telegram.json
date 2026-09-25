@@ -2,353 +2,52 @@
   "avisos_sistema": {
     "sistema|infantil-masc-pref|48711de1feaa45df": "2026-09-25T21:13+02:00"
   },
-  "enviados": [],
-  "pendientes": [
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "75ec120443f0ccd7d8517a7b@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: C.B. COSLADA\n\n📅 Fecha: Sábado 03/10/2026\n🕐 Hora: 11:15\n📍 Pabellón: EL PLANTIO, PABELLON\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 1\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "75ec120443f0ccd7d8517a7b@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "1534eb24de28d17c39faf020@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: LICEO FRANCES\n\n📅 Fecha: Sábado 10/10/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 2\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "1534eb24de28d17c39faf020@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "231ed9bb7a409a1a25e2bcc2@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: JANSEN BT \"B\"\n\n📅 Fecha: Sábado 17/10/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: TORRELODONES, PABELLON pequeño\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 3\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "231ed9bb7a409a1a25e2bcc2@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "a4b413f20f036d7438ab5420@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: CB POZUELO VERDE\n\n📅 Fecha: Sábado 24/10/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 4\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "a4b413f20f036d7438ab5420@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "5e45d2d5a13f64dd26861491@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: SAN BLAS BASKET\n\n📅 Fecha: Sábado 07/11/2026\n🕐 Hora: 14:30\n📍 Pabellón: SANTO ANGEL DE LA GUARDA, PABELLON COLEGIO\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 5\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "5e45d2d5a13f64dd26861491@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "a3d34502da0a256ea378ed35@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: MADRID FSM C.D.B.\n\n📅 Fecha: Sábado 14/11/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 6\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "a3d34502da0a256ea378ed35@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "426beb68918a87ca8e0383a9@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: C.B. GETAFE \"MOLERA\"\n\n📅 Fecha: Sábado 21/11/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: JUAN DE LA CIERVA, PABELLON PISTA CENTRAL\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 7\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "426beb68918a87ca8e0383a9@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "bd376e299f5a30f985793969@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: BALONCESTO FUENLABRADA 2012\n\n📅 Fecha: Sábado 12/12/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: EL ARROYO, PABELLON\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 9\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "bd376e299f5a30f985793969@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "f8886aaee04133a2721becd4@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: FUNDAL ALCOBENDAS \"C\"\n\n📅 Fecha: Sábado 19/12/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 10\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "f8886aaee04133a2721becd4@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "8386830104e9356c8f5db420@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: OLIMPICO 64\n\n📅 Fecha: Sábado 09/01/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: SAGE 2000, PABELLON\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 11\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "8386830104e9356c8f5db420@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "b766969a0870198b440cb57e@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: C.B. COSLADA\n\n📅 Fecha: Sábado 16/01/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 12\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "b766969a0870198b440cb57e@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "9ec20b66d40e6b9f071cc997@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: LICEO FRANCES\n\n📅 Fecha: Sábado 23/01/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: LICEO FRANCES, PABELLON COLEGIO\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 13\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "9ec20b66d40e6b9f071cc997@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "e257db6074f4a71e7442527a@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: JANSEN BT \"B\"\n\n📅 Fecha: Sábado 30/01/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 14\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "e257db6074f4a71e7442527a@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "c9edfc920e10fdb6ab7811b1@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: CB POZUELO VERDE\n\n📅 Fecha: Sábado 06/02/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: GERARDO DIEGO, I.E.S.\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 15\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "c9edfc920e10fdb6ab7811b1@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "495b6c42dcb62540e37b3b41@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: SAN BLAS BASKET\n\n📅 Fecha: Sábado 13/02/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 16\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "495b6c42dcb62540e37b3b41@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "22be1bb406dadd2cd0c07881@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: MADRID FSM C.D.B.\n\n📅 Fecha: Domingo 21/02/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: Pendiente de confirmación\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 17\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "22be1bb406dadd2cd0c07881@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "94a1c2f9ce7d45e4ffb5cb04@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: C.B. GETAFE \"MOLERA\"\n\n📅 Fecha: Sábado 27/02/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 18\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "94a1c2f9ce7d45e4ffb5cb04@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "85000579a5aabb30dd0813a1@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: BALONCESTO FUENLABRADA 2012\n\n📅 Fecha: Sábado 13/03/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 20\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "85000579a5aabb30dd0813a1@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "fbdeea6199c8a4cb2e19b563@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: FUNDAL ALCOBENDAS \"C\"\n\n📅 Fecha: Sábado 03/04/2027\n🕐 Hora: 16:00\n📍 Pabellón: PEDRO FERRANDIZ, PABELLON\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 21\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "fbdeea6199c8a4cb2e19b563@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "c8f5b057be677cc9be96b2ba@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Cadete 1º Año\n🆚 Rival: OLIMPICO 64\n\n📅 Fecha: Sábado 10/04/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 22\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "c8f5b057be677cc9be96b2ba@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "ef1228f6574737b502b06a93@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: C.B. MORATALAZ \"A\"\n\n📅 Fecha: Sábado 03/10/2026\n🕐 Hora: 11:30\n📍 Pabellón: VIRGEN DEL CARMEN, Pista 3\n🏠 Local/Visitante: Local\n🏆 Jornada: 1\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "ef1228f6574737b502b06a93@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "c4636bb1c32428318580de8a@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: ARGANZUELA CENTRO\n\n📅 Fecha: Sábado 17/10/2026\n🕐 Hora: 12:00\n📍 Pabellón: PERU, C.E.I.P.\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 2\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "c4636bb1c32428318580de8a@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: MAJADAHONDA BLANCO\n\n📅 Fecha: Sábado 24/10/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 3\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "5f7d170cc9b20396a653cb33@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: CLUB BALONCESTO ZONA PRESS\n\n📅 Fecha: Sábado 07/11/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: DEHESA BOYAL, PABELLON PISTA CENTRAL\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 4\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "5f7d170cc9b20396a653cb33@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: ISAAC NEWTON \"A\"\n\n📅 Fecha: Sábado 14/11/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 5\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "77b62fd89cf4a1526aa80649@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: PATROCINIO SAN JOSE\n\n📅 Fecha: Sábado 21/11/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: PATROCINIO SAN JOSE, COLEGIO\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 6\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "77b62fd89cf4a1526aa80649@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "aa44e7f4d69924c4bdf2cbf5@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: VALCUDE ALCOBENDAS VERDE\n\n📅 Fecha: Sábado 28/11/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: DISTRITO CENTRO, PABELLON\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 7\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "aa44e7f4d69924c4bdf2cbf5@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "7ecaeab301ddbdefd1d0e7a4@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: JYA FOTOVOLTAICA CB NAVALCARNERO\n\n📅 Fecha: Sábado 12/12/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 8\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "7ecaeab301ddbdefd1d0e7a4@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "c8d7cf73feecb19ac39105ce@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: C.D.I. ROZASBASKET \"B\"\n\n📅 Fecha: Sábado 19/12/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: I.E.S. JOSE GARCIA NIETO, PABELLON\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 9\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "c8d7cf73feecb19ac39105ce@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "9f8be9d52fb38ae0e094ca19@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: FUNDAL ALCOBENDAS \"C\"\n\n📅 Fecha: Sábado 16/01/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 10\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "9f8be9d52fb38ae0e094ca19@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "cbe25a3e8f61b80b7d51947b@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: SALTIUM ALCORCÓN BASKET \"B\"\n\n📅 Fecha: Sábado 23/01/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: LA CANALEJA, PABELLON PISTA 3\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 11\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "cbe25a3e8f61b80b7d51947b@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "463c0caef13b709a94a4051e@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: C.B. MORATALAZ \"A\"\n\n📅 Fecha: Sábado 30/01/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: JOSE LUIS FERNANDEZ CANO, PABELLON\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 12\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "463c0caef13b709a94a4051e@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "f2340b06d8459a60ff26e089@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: ARGANZUELA CENTRO\n\n📅 Fecha: Sábado 06/02/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 13\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "f2340b06d8459a60ff26e089@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "14b8893b7b7a7d79b3d408a7@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: MAJADAHONDA BLANCO\n\n📅 Fecha: Sábado 13/02/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: EL TEJAR, PABELLON\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 14\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "14b8893b7b7a7d79b3d408a7@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "09f07edf958bbfc2764ac68d@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: CLUB BALONCESTO ZONA PRESS\n\n📅 Fecha: Sábado 20/02/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 15\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "09f07edf958bbfc2764ac68d@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "fe0349c78be031e604fe23db@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: ISAAC NEWTON \"A\"\n\n📅 Fecha: Sábado 27/02/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: ISAAC NEWTON, I.E.S.\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 16\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "fe0349c78be031e604fe23db@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "40cfaae7629d0bbd036b9e7e@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: PATROCINIO SAN JOSE\n\n📅 Fecha: Sábado 06/03/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 17\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "40cfaae7629d0bbd036b9e7e@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "28233e46303352c0ab4d3f0f@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: VALCUDE ALCOBENDAS VERDE\n\n📅 Fecha: Sábado 13/03/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 18\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "28233e46303352c0ab4d3f0f@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "5aaf25f6978296cad69c3519@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: JYA FOTOVOLTAICA CB NAVALCARNERO\n\n📅 Fecha: Sábado 03/04/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: LA ESTACION, PABELLON MUNICIPAL\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 19\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "5aaf25f6978296cad69c3519@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "7009f81b87f7600b8420097d@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: C.D.I. ROZASBASKET \"B\"\n\n📅 Fecha: Sábado 10/04/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 20\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "7009f81b87f7600b8420097d@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "cad60f4102a3d542bd852f33@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: FUNDAL ALCOBENDAS \"C\"\n\n📅 Fecha: Sábado 17/04/2027\n🕐 Hora: 13:15\n📍 Pabellón: PEDRO FERRANDIZ, PABELLON\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 21\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "cad60f4102a3d542bd852f33@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "2340963cf18f1aa7e086d055@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil Preferente Masc.\n🆚 Rival: SALTIUM ALCORCÓN BASKET \"B\"\n\n📅 Fecha: Sábado 24/04/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Local\n🏆 Jornada: 22\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "2340963cf18f1aa7e086d055@calendarios-cb-arganda"
-    },
-    {
-      "clase": "AVISO",
-      "creado": "2026-09-25T21:13+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "sistema|infantil-masc-pref|48711de1feaa45df",
-      "texto": "🆕 NUEVA COMPETICIÓN DETECTADA\n\n🏀 CB Arganda Infantil Preferente Masc.\n🏆 Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\n\nEquipo en la FBM: «CB ARGANDA». Sus partidos se han añadido.\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": null
-    }
+  "enviados": [
+    "75ec120443f0ccd7d8517a7b@calendarios-cb-arganda|nuevo",
+    "1534eb24de28d17c39faf020@calendarios-cb-arganda|nuevo",
+    "231ed9bb7a409a1a25e2bcc2@calendarios-cb-arganda|nuevo",
+    "a4b413f20f036d7438ab5420@calendarios-cb-arganda|nuevo",
+    "5e45d2d5a13f64dd26861491@calendarios-cb-arganda|nuevo",
+    "a3d34502da0a256ea378ed35@calendarios-cb-arganda|nuevo",
+    "426beb68918a87ca8e0383a9@calendarios-cb-arganda|nuevo",
+    "bd376e299f5a30f985793969@calendarios-cb-arganda|nuevo",
+    "f8886aaee04133a2721becd4@calendarios-cb-arganda|nuevo",
+    "8386830104e9356c8f5db420@calendarios-cb-arganda|nuevo",
+    "b766969a0870198b440cb57e@calendarios-cb-arganda|nuevo",
+    "9ec20b66d40e6b9f071cc997@calendarios-cb-arganda|nuevo",
+    "e257db6074f4a71e7442527a@calendarios-cb-arganda|nuevo",
+    "c9edfc920e10fdb6ab7811b1@calendarios-cb-arganda|nuevo",
+    "495b6c42dcb62540e37b3b41@calendarios-cb-arganda|nuevo",
+    "22be1bb406dadd2cd0c07881@calendarios-cb-arganda|nuevo",
+    "94a1c2f9ce7d45e4ffb5cb04@calendarios-cb-arganda|nuevo",
+    "85000579a5aabb30dd0813a1@calendarios-cb-arganda|nuevo",
+    "fbdeea6199c8a4cb2e19b563@calendarios-cb-arganda|nuevo",
+    "c8f5b057be677cc9be96b2ba@calendarios-cb-arganda|nuevo",
+    "ef1228f6574737b502b06a93@calendarios-cb-arganda|nuevo",
+    "c4636bb1c32428318580de8a@calendarios-cb-arganda|nuevo",
+    "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda|nuevo",
+    "5f7d170cc9b20396a653cb33@calendarios-cb-arganda|nuevo",
+    "b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda|nuevo",
+    "77b62fd89cf4a1526aa80649@calendarios-cb-arganda|nuevo",
+    "aa44e7f4d69924c4bdf2cbf5@calendarios-cb-arganda|nuevo",
+    "7ecaeab301ddbdefd1d0e7a4@calendarios-cb-arganda|nuevo",
+    "c8d7cf73feecb19ac39105ce@calendarios-cb-arganda|nuevo",
+    "9f8be9d52fb38ae0e094ca19@calendarios-cb-arganda|nuevo",
+    "cbe25a3e8f61b80b7d51947b@calendarios-cb-arganda|nuevo",
+    "463c0caef13b709a94a4051e@calendarios-cb-arganda|nuevo",
+    "f2340b06d8459a60ff26e089@calendarios-cb-arganda|nuevo",
+    "14b8893b7b7a7d79b3d408a7@calendarios-cb-arganda|nuevo",
+    "09f07edf958bbfc2764ac68d@calendarios-cb-arganda|nuevo",
+    "fe0349c78be031e604fe23db@calendarios-cb-arganda|nuevo",
+    "40cfaae7629d0bbd036b9e7e@calendarios-cb-arganda|nuevo",
+    "28233e46303352c0ab4d3f0f@calendarios-cb-arganda|nuevo",
+    "5aaf25f6978296cad69c3519@calendarios-cb-arganda|nuevo",
+    "7009f81b87f7600b8420097d@calendarios-cb-arganda|nuevo",
+    "cad60f4102a3d542bd852f33@calendarios-cb-arganda|nuevo",
+    "2340963cf18f1aa7e086d055@calendarios-cb-arganda|nuevo",
+    "sistema|infantil-masc-pref|48711de1feaa45df"
   ],
-  "ultimo_envio": null,
+  "pendientes": [],
+  "ultimo_envio": "2026-09-25T21:14+02:00",
   "ultimo_error": null
 }
