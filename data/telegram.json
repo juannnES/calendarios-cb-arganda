@@ -45,18 +45,10 @@
     "7009f81b87f7600b8420097d@calendarios-cb-arganda|nuevo",
     "cad60f4102a3d542bd852f33@calendarios-cb-arganda|nuevo",
     "2340963cf18f1aa7e086d055@calendarios-cb-arganda|nuevo",
-    "sistema|infantil-masc-pref|48711de1feaa45df"
+    "sistema|infantil-masc-pref|48711de1feaa45df",
+    "linea-base|2026-09-25T21:33+02:00|cadete-masc-1-ano,infantil-masc-1-ano,infantil-masc-pref"
   ],
-  "pendientes": [
-    {
-      "clase": "INICIO",
-      "creado": "2026-09-25T21:33+02:00",
-      "equipo": "todos",
-      "id": "linea-base|2026-09-25T21:33+02:00|cadete-masc-1-ano,infantil-masc-1-ano,infantil-masc-pref",
-      "texto": "📋 AVISOS DE TELEGRAM ACTIVADOS\n\nSe ha registrado el estado inicial de los calendarios (sin avisar partido a partido):\n\n🏀 Cadete 1º Año: 20 partidos\n🏀 Infantil 1º Año: 0 partidos (la FBM aún no los ha publicado)\n🏀 Infantil Preferente Masc.: 22 partidos\n\nA partir de ahora recibirás un aviso por cada partido nuevo, cada cambio, la verificación del lunes y la confirmación del viernes.",
-      "uid": null
-    }
-  ],
-  "ultimo_envio": "2026-09-25T21:14+02:00",
+  "pendientes": [],
+  "ultimo_envio": "2026-09-25T21:34+02:00",
   "ultimo_error": null
 }
