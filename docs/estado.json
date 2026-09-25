@@ -2,9 +2,9 @@
   "avisos": [],
   "cambios": [
     {
-      "calendario": "cadete-masc-1-ano",
+      "calendario": "infantil-masc-pref",
       "detalle": "Equipo en la FBM: «CB ARGANDA». Sus partidos se han añadido.",
-      "partido": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
+      "partido": "Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2",
       "tipo": "grupo_nuevo"
     }
   ],
@@ -32,9 +32,25 @@
       "partidos_en_calendario": 0,
       "partidos_sin_hora": 0,
       "proximo_partido": null
+    },
+    "infantil-masc-pref": {
+      "archivo_ics": "infantil-masculino-preferente.ics",
+      "calendario": "CB Arganda · Infantil Masc. Preferente",
+      "competiciones": [
+        "Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2"
+      ],
+      "partidos_en_calendario": 22,
+      "partidos_sin_hora": 19,
+      "proximo_partido": {
+        "fecha": "2026-10-03",
+        "hora": "11:30",
+        "local": "CB ARGANDA",
+        "pabellon": "VIRGEN DEL CARMEN, Pista 3",
+        "visitante": "C.B. MORATALAZ \"A\""
+      }
     }
   },
   "resultado": "ok",
-  "tipo": "comprobación manual",
-  "ultima_comprobacion_correcta": "2026-09-24T21:23+02:00"
+  "tipo": "confirmación final de las 17:00 del viernes",
+  "ultima_comprobacion_correcta": "2026-09-25T21:13+02:00"
 }

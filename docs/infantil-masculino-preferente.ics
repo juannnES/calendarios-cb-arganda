@@ -1,0 +1,586 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Calendarios CB Arganda//FBM//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CB Arganda · Infantil Masc. Preferente
+X-WR-CALDESC:Partidos oficiales (FBM) de CB Arganda · Infantil Masculino P
+ referente
+X-WR-TIMEZONE:Europe/Madrid
+X-APPLE-CALENDAR-COLOR:#2DA44E
+REFRESH-INTERVAL;VALUE=DURATION:PT1H
+X-PUBLISHED-TTL:PT1H
+BEGIN:VTIMEZONE
+TZID:Europe/Madrid
+X-LIC-LOCATION:Europe/Madrid
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ef1228f6574737b502b06a93@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261003T104500
+DTEND;TZID=Europe/Madrid:20261003T133000
+SUMMARY:CB Arganda vs C.B. MORATALAZ "A"
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  1\nRival: C.B. MORATALAZ "A"\nLocal/Visitante: Local\n\n📍 Pabellón: V
+ IRGEN DEL CARMEN\, Pista 3\n🗺️ Dirección: MALLORCA\, S/N\, Arganda d
+ el Rey\, Madrid\, España\n📅 Fecha: sábado 03/10/2026\n🕐 Hora: 11:3
+ 0\n⏰ En el calendario: 10:45–13:30 (45 min antes + 2 h de partido)\n\n
+ Estado: 📅 Según el calendario oficial. Se verificará el lunes y se co
+ nfirmará el viernes de la semana del partido\n✅ Última comprobación: 
+ 25/09/2026 21:13\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-69
+ 17/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:c4636bb1c32428318580de8a@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261017T111500
+DTEND;TZID=Europe/Madrid:20261017T140000
+SUMMARY:ARGANZUELA CENTRO vs CB Arganda
+LOCATION:CALLE BALEARES\, 18\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  2\nRival: ARGANZUELA CENTRO\nLocal/Visitante: Visitante\n\n📍 Pabellón
+ : PERU\, C.E.I.P.\n🗺️ Dirección: CALLE BALEARES\, 18\, Madrid\, Espa
+ ña\n📅 Fecha: sábado 17/10/2026\n🕐 Hora: 12:00\n⏰ En el calendari
+ o: 11:15–14:00 (45 min antes + 2 h de partido)\n\nEstado: 📅 Según el
+  calendario oficial. Se verificará el lunes y se confirmará el viernes d
+ e la semana del partido\n✅ Última comprobación: 25/09/2026 21:13\n\nFu
+ ente oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261024T000000
+DTEND;TZID=Europe/Madrid:20261024T020000
+SUMMARY:⏳ CB Arganda vs MAJADAHONDA BLANCO
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  3\nRival: MAJADAHONDA BLANCO\nLocal/Visitante: Local\n\n📍 Pabellón: V
+ IRGEN DEL CARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MALLORCA\
+ , S/N\, Arganda del Rey\, Madrid\, España\n📅 Fecha: sábado 24/10/2026
+ \n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 h
+ asta que la FBM publique la hora oficial\n\nEstado: 📅 Según el calenda
+ rio oficial. Se verificará el lunes y se confirmará el viernes de la sem
+ ana del partido\n✅ Última comprobación: 25/09/2026 21:13\n\nFuente ofi
+ cial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:5f7d170cc9b20396a653cb33@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261107T000000
+DTEND;TZID=Europe/Madrid:20261107T020000
+SUMMARY:⏳ CLUB BALONCESTO ZONA PRESS vs CB Arganda
+LOCATION:AVDA. DE NAVARRONDAN\, S/N\, San Sebastián de Los Reyes\, Madrid\
+ , España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  4\nRival: CLUB BALONCESTO ZONA PRESS\nLocal/Visitante: Visitante\n\n📍 
+ Pabellón: DEHESA BOYAL\, PABELLON PISTA CENTRAL\n🗺️ Dirección: AVDA
+ . DE NAVARRONDAN\, S/N\, San Sebastián de Los Reyes\, Madrid\, España\n
+ 📅 Fecha: sábado 07/11/2026\n🕐 Hora: Hora pendiente de confirmación
+ \n⏰ Se muestra a las 00:00 hasta que la FBM publique la hora oficial\n\n
+ Estado: 📅 Según el calendario oficial. Se verificará el lunes y se co
+ nfirmará el viernes de la semana del partido\n✅ Última comprobación: 
+ 25/09/2026 21:13\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-69
+ 17/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261114T000000
+DTEND;TZID=Europe/Madrid:20261114T020000
+SUMMARY:⏳ CB Arganda vs ISAAC NEWTON "A"
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  5\nRival: ISAAC NEWTON "A"\nLocal/Visitante: Local\n\n📍 Pabellón: VIR
+ GEN DEL CARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MALLORCA\, 
+ S/N\, Arganda del Rey\, Madrid\, España\n📅 Fecha: sábado 14/11/2026\n
+ 🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 has
+ ta que la FBM publique la hora oficial\n\nEstado: 📅 Según el calendari
+ o oficial. Se verificará el lunes y se confirmará el viernes de la seman
+ a del partido\n✅ Última comprobación: 25/09/2026 21:13\n\nFuente ofici
+ al:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:77b62fd89cf4a1526aa80649@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261121T000000
+DTEND;TZID=Europe/Madrid:20261121T020000
+SUMMARY:⏳ PATROCINIO SAN JOSE vs CB Arganda
+LOCATION:CALLE BASÍLICA\, frente nº 17\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  6\nRival: PATROCINIO SAN JOSE\nLocal/Visitante: Visitante\n\n📍 Pabell
+ ón: PATROCINIO SAN JOSE\, COLEGIO\n🗺️ Dirección: CALLE BASÍLICA\, 
+ frente nº 17\, Madrid\, España\n📅 Fecha: sábado 21/11/2026\n🕐 Hor
+ a: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que l
+ a FBM publique la hora oficial\n\nEstado: 📅 Según el calendario oficia
+ l. Se verificará el lunes y se confirmará el viernes de la semana del pa
+ rtido\n✅ Última comprobación: 25/09/2026 21:13\n\nFuente oficial:\nhtt
+ ps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:aa44e7f4d69924c4bdf2cbf5@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261128T000000
+DTEND;TZID=Europe/Madrid:20261128T020000
+SUMMARY:⏳ VALCUDE ALCOBENDAS VERDE vs CB Arganda
+LOCATION:AVDA. OLIMPICA\, 22 (pasaje)\, Alcobendas\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  7\nRival: VALCUDE ALCOBENDAS VERDE\nLocal/Visitante: Visitante\n\n📍 Pa
+ bellón: DISTRITO CENTRO\, PABELLON\n🗺️ Dirección: AVDA. OLIMPICA\, 
+ 22 (pasaje)\, Alcobendas\, Madrid\, España\n📅 Fecha: sábado 28/11/202
+ 6\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 
+ hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según el calend
+ ario oficial. Se verificará el lunes y se confirmará el viernes de la se
+ mana del partido\n✅ Última comprobación: 25/09/2026 21:13\n\nFuente of
+ icial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:7ecaeab301ddbdefd1d0e7a4@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261212T000000
+DTEND;TZID=Europe/Madrid:20261212T020000
+SUMMARY:⏳ CB Arganda vs JYA FOTOVOLTAICA CB NAVALCARNERO
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  8\nRival: JYA FOTOVOLTAICA CB NAVALCARNERO\nLocal/Visitante: Local\n\n
+ 📍 Pabellón: VIRGEN DEL CARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dire
+ cción: MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España\n📅 Fecha: s
+ ábado 12/12/2026\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se mues
+ tra a las 00:00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 
+ Según el calendario oficial. Se verificará el lunes y se confirmará el 
+ viernes de la semana del partido\n✅ Última comprobación: 25/09/2026 21
+ :13\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto
+ -arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:c8d7cf73feecb19ac39105ce@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261219T000000
+DTEND;TZID=Europe/Madrid:20261219T020000
+SUMMARY:⏳ C.D.I. ROZASBASKET "B" vs CB Arganda
+LOCATION:CAMILO JOSE CELA\, 24\, Rozas de Madrid\, Las\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  9\nRival: C.D.I. ROZASBASKET "B"\nLocal/Visitante: Visitante\n\n📍 Pabe
+ llón: I.E.S. JOSE GARCIA NIETO\, PABELLON\n🗺️ Dirección: CAMILO JOS
+ E CELA\, 24\, Rozas de Madrid\, Las\, Madrid\, España\n📅 Fecha: sábad
+ o 19/12/2026\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a
+  las 00:00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Segú
+ n el calendario oficial. Se verificará el lunes y se confirmará el viern
+ es de la semana del partido\n✅ Última comprobación: 25/09/2026 21:13\n
+ \nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arga
+ nda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:9f8be9d52fb38ae0e094ca19@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270116T000000
+DTEND;TZID=Europe/Madrid:20270116T020000
+SUMMARY:⏳ CB Arganda vs FUNDAL ALCOBENDAS "C"
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  10\nRival: FUNDAL ALCOBENDAS "C"\nLocal/Visitante: Local\n\n📍 Pabelló
+ n: VIRGEN DEL CARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MALLO
+ RCA\, S/N\, Arganda del Rey\, Madrid\, España\n📅 Fecha: sábado 16/01/
+ 2027\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:
+ 00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según el cal
+ endario oficial. Se verificará el lunes y se confirmará el viernes de la
+  semana del partido\n✅ Última comprobación: 25/09/2026 21:13\n\nFuente
+  oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:cbe25a3e8f61b80b7d51947b@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270123T000000
+DTEND;TZID=Europe/Madrid:20270123T020000
+SUMMARY:⏳ SALTIUM ALCORCÓN BASKET "B" vs CB Arganda
+LOCATION:AVENIDA CIRCUNVALACION NORTE\, 1\, Alcorcón\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  11\nRival: SALTIUM ALCORCÓN BASKET "B"\nLocal/Visitante: Visitante\n\n
+ 📍 Pabellón: LA CANALEJA\, PABELLON PISTA 3\n🗺️ Dirección: AVENID
+ A CIRCUNVALACION NORTE\, 1\, Alcorcón\, Madrid\, España\n📅 Fecha: sá
+ bado 23/01/2027\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestr
+ a a las 00:00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Se
+ gún el calendario oficial. Se verificará el lunes y se confirmará el vi
+ ernes de la semana del partido\n✅ Última comprobación: 25/09/2026 21:1
+ 3\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-a
+ rganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:463c0caef13b709a94a4051e@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270130T000000
+DTEND;TZID=Europe/Madrid:20270130T020000
+SUMMARY:⏳ C.B. MORATALAZ "A" vs CB Arganda
+LOCATION:HACIENDA DE PAVONES\, 223\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  12\nRival: C.B. MORATALAZ "A"\nLocal/Visitante: Visitante\n\n📍 Pabell
+ ón: JOSE LUIS FERNANDEZ CANO\, PABELLON\n🗺️ Dirección: HACIENDA DE 
+ PAVONES\, 223\, Madrid\, España\n📅 Fecha: sábado 30/01/2027\n🕐 Hor
+ a: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que l
+ a FBM publique la hora oficial\n\nEstado: 📅 Según el calendario oficia
+ l. Se verificará el lunes y se confirmará el viernes de la semana del pa
+ rtido\n✅ Última comprobación: 25/09/2026 21:13\n\nFuente oficial:\nhtt
+ ps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:f2340b06d8459a60ff26e089@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270206T000000
+DTEND;TZID=Europe/Madrid:20270206T020000
+SUMMARY:⏳ CB Arganda vs ARGANZUELA CENTRO
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  13\nRival: ARGANZUELA CENTRO\nLocal/Visitante: Local\n\n📍 Pabellón: V
+ IRGEN DEL CARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MALLORCA\
+ , S/N\, Arganda del Rey\, Madrid\, España\n📅 Fecha: sábado 06/02/2027
+ \n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 h
+ asta que la FBM publique la hora oficial\n\nEstado: 📅 Según el calenda
+ rio oficial. Se verificará el lunes y se confirmará el viernes de la sem
+ ana del partido\n✅ Última comprobación: 25/09/2026 21:13\n\nFuente ofi
+ cial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:14b8893b7b7a7d79b3d408a7@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270213T000000
+DTEND;TZID=Europe/Madrid:20270213T020000
+SUMMARY:⏳ MAJADAHONDA BLANCO vs CB Arganda
+LOCATION:ROMERO\, 1\, Majadahonda\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  14\nRival: MAJADAHONDA BLANCO\nLocal/Visitante: Visitante\n\n📍 Pabell
+ ón: EL TEJAR\, PABELLON\n🗺️ Dirección: ROMERO\, 1\, Majadahonda\, M
+ adrid\, España\n📅 Fecha: sábado 13/02/2027\n🕐 Hora: Hora pendiente
+  de confirmación\n⏰ Se muestra a las 00:00 hasta que la FBM publique la
+  hora oficial\n\nEstado: 📅 Según el calendario oficial. Se verificará
+  el lunes y se confirmará el viernes de la semana del partido\n✅ Últim
+ a comprobación: 25/09/2026 21:13\n\nFuente oficial:\nhttps://www.fbm.es/r
+ esultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:09f07edf958bbfc2764ac68d@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270220T000000
+DTEND;TZID=Europe/Madrid:20270220T020000
+SUMMARY:⏳ CB Arganda vs CLUB BALONCESTO ZONA PRESS
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  15\nRival: CLUB BALONCESTO ZONA PRESS\nLocal/Visitante: Local\n\n📍 Pab
+ ellón: VIRGEN DEL CARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: 
+ MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España\n📅 Fecha: sábado 2
+ 0/02/2027\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a la
+ s 00:00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según e
+ l calendario oficial. Se verificará el lunes y se confirmará el viernes 
+ de la semana del partido\n✅ Última comprobación: 25/09/2026 21:13\n\nF
+ uente oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:fe0349c78be031e604fe23db@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270227T000000
+DTEND;TZID=Europe/Madrid:20270227T020000
+SUMMARY:⏳ ISAAC NEWTON "A" vs CB Arganda
+LOCATION:ISLA MALAITA\, 9\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  16\nRival: ISAAC NEWTON "A"\nLocal/Visitante: Visitante\n\n📍 Pabellón
+ : ISAAC NEWTON\, I.E.S.\n🗺️ Dirección: ISLA MALAITA\, 9\, Madrid\, E
+ spaña\n📅 Fecha: sábado 27/02/2027\n🕐 Hora: Hora pendiente de confi
+ rmación\n⏰ Se muestra a las 00:00 hasta que la FBM publique la hora ofi
+ cial\n\nEstado: 📅 Según el calendario oficial. Se verificará el lunes
+  y se confirmará el viernes de la semana del partido\n✅ Última comprob
+ ación: 25/09/2026 21:13\n\nFuente oficial:\nhttps://www.fbm.es/resultados
+ -club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:40cfaae7629d0bbd036b9e7e@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270306T000000
+DTEND;TZID=Europe/Madrid:20270306T020000
+SUMMARY:⏳ CB Arganda vs PATROCINIO SAN JOSE
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  17\nRival: PATROCINIO SAN JOSE\nLocal/Visitante: Local\n\n📍 Pabellón:
+  VIRGEN DEL CARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MALLORC
+ A\, S/N\, Arganda del Rey\, Madrid\, España\n📅 Fecha: sábado 06/03/20
+ 27\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00
+  hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según el calen
+ dario oficial. Se verificará el lunes y se confirmará el viernes de la s
+ emana del partido\n✅ Última comprobación: 25/09/2026 21:13\n\nFuente o
+ ficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:28233e46303352c0ab4d3f0f@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270313T000000
+DTEND;TZID=Europe/Madrid:20270313T020000
+SUMMARY:⏳ CB Arganda vs VALCUDE ALCOBENDAS VERDE
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  18\nRival: VALCUDE ALCOBENDAS VERDE\nLocal/Visitante: Local\n\n📍 Pabel
+ lón: VIRGEN DEL CARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MA
+ LLORCA\, S/N\, Arganda del Rey\, Madrid\, España\n📅 Fecha: sábado 13/
+ 03/2027\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 
+ 00:00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según el 
+ calendario oficial. Se verificará el lunes y se confirmará el viernes de
+  la semana del partido\n✅ Última comprobación: 25/09/2026 21:13\n\nFue
+ nte oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:5aaf25f6978296cad69c3519@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270403T000000
+DTEND;TZID=Europe/Madrid:20270403T020000
+SUMMARY:⏳ JYA FOTOVOLTAICA CB NAVALCARNERO vs CB Arganda
+LOCATION:RIO EBRO\, S/N\, Navalcarnero\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  19\nRival: JYA FOTOVOLTAICA CB NAVALCARNERO\nLocal/Visitante: Visitante\n
+ \n📍 Pabellón: LA ESTACION\, PABELLON MUNICIPAL\n🗺️ Dirección: RI
+ O EBRO\, S/N\, Navalcarnero\, Madrid\, España\n📅 Fecha: sábado 03/04/
+ 2027\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:
+ 00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según el cal
+ endario oficial. Se verificará el lunes y se confirmará el viernes de la
+  semana del partido\n✅ Última comprobación: 25/09/2026 21:13\n\nFuente
+  oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:7009f81b87f7600b8420097d@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270410T000000
+DTEND;TZID=Europe/Madrid:20270410T020000
+SUMMARY:⏳ CB Arganda vs C.D.I. ROZASBASKET "B"
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  20\nRival: C.D.I. ROZASBASKET "B"\nLocal/Visitante: Local\n\n📍 Pabell
+ ón: VIRGEN DEL CARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: MAL
+ LORCA\, S/N\, Arganda del Rey\, Madrid\, España\n📅 Fecha: sábado 10/0
+ 4/2027\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 0
+ 0:00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según el c
+ alendario oficial. Se verificará el lunes y se confirmará el viernes de 
+ la semana del partido\n✅ Última comprobación: 25/09/2026 21:13\n\nFuen
+ te oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:cad60f4102a3d542bd852f33@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270417T123000
+DTEND;TZID=Europe/Madrid:20270417T151500
+SUMMARY:FUNDAL ALCOBENDAS "C" vs CB Arganda
+LOCATION:AVDA. OLIMPICA\, 20\, Alcobendas\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  21\nRival: FUNDAL ALCOBENDAS "C"\nLocal/Visitante: Visitante\n\n📍 Pabe
+ llón: PEDRO FERRANDIZ\, PABELLON\n🗺️ Dirección: AVDA. OLIMPICA\, 20
+ \, Alcobendas\, Madrid\, España\n📅 Fecha: sábado 17/04/2027\n🕐 Hor
+ a: 13:15\n⏰ En el calendario: 12:30–15:15 (45 min antes + 2 h de parti
+ do)\n\nEstado: 📅 Según el calendario oficial. Se verificará el lunes 
+ y se confirmará el viernes de la semana del partido\n✅ Última comproba
+ ción: 25/09/2026 21:13\n\nFuente oficial:\nhttps://www.fbm.es/resultados-
+ club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:2340963cf18f1aa7e086d055@calendarios-cb-arganda
+DTSTAMP:20260925T191332Z
+CREATED:20260925T191300Z
+LAST-MODIFIED:20260925T191300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270424T000000
+DTEND;TZID=Europe/Madrid:20270424T020000
+SUMMARY:⏳ CB Arganda vs SALTIUM ALCORCÓN BASKET "B"
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
+ petición: Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2\nJornada:
+  22\nRival: SALTIUM ALCORCÓN BASKET "B"\nLocal/Visitante: Local\n\n📍 P
+ abellón: VIRGEN DEL CARMEN\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección
+ : MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España\n📅 Fecha: sábado
+  24/04/2027\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a 
+ las 00:00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según
+  el calendario oficial. Se verificará el lunes y se confirmará el vierne
+ s de la semana del partido\n✅ Última comprobación: 25/09/2026 21:13\n\
+ nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-argan
+ da
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+END:VCALENDAR
