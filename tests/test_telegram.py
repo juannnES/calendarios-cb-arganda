@@ -7,6 +7,7 @@ import copy
 import io
 import json
 import os
+import re
 import tempfile
 import unittest
 import unittest.mock
@@ -309,6 +310,102 @@ class TresEquipos(unittest.TestCase):
         self.assertIn("otro equipo del club", " ".join(x["texto"] for x in m if x["clase"] == "AVISO"))
 
 
+class InfantilPreferenteDeExtremoAExtremo(unittest.TestCase):
+    """El tercer equipo con la misma conciliación y los mismos avisos que los otros dos (grupo FBM 17686)."""
+
+    def setUp(self):
+        self.est = {}
+        self.iniciales = correr(self.est, grupos(), JUEVES, cfg=PREF)
+        self.uid_j1 = next(q["uid"] for q in self.est["partidos"].values() if q["jornada"] == 1)
+
+    def cambiar(self, **campos):
+        gs = grupos()
+        p = partido(grupo(gs, "17686"), 1)
+        for k, v in campos.items():
+            setattr(p, k, v)
+        return gs
+
+    def un_aviso(self, gs, ahora=MARTES, clase="MODIFICADO"):
+        m = correr(self.est, gs, ahora, cfg=PREF)
+        self.assertEqual([(x["clase"], x["uid"], x["equipo"]) for x in m], [(clase, self.uid_j1, "infantil-masc-pref")])
+        self.assertIn("🏀 CB Arganda Infantil Preferente Masc.", m[0]["texto"])
+        self.assertIn("🆚 C.B. MORATALAZ \"A\"", m[0]["texto"])
+        self.assertEqual(correr(self.est, gs, ahora, cfg=PREF), [])  # misma actualización otra vez: nada
+        self.assertEqual(len(self.est["partidos"]), 22)              # nunca duplica
+        return m[0]["texto"]
+
+    def test_fuente_equipo_y_partidos(self):
+        g = grupo(GRUPOS, "17686")
+        self.assertEqual((g.categoria, g.fase, g.grupo), ("Infantil Masc. Pref.", "PRIMERA 1ª DIVISION", "GRUPO 2"))
+        self.assertEqual({q["equipo_fbm"] for q in self.est["partidos"].values()}, {"CB ARGANDA"})
+        self.assertEqual({q["grupo_id"] for q in self.est["partidos"].values()}, {"17686"})
+        self.assertTrue(all("CB ARGANDA" in (q["local"], q["visitante"]) for q in self.est["partidos"].values()))
+
+    def test_nuevo_partido(self):
+        nuevos = de_clase(self.iniciales, "NUEVO")
+        self.assertEqual(len(nuevos), 22)
+        for linea in ("🏀 NUEVO PARTIDO", "Equipo: CB Arganda Infantil Preferente Masc.", "🆚 Rival: C.B. MORATALAZ \"A\"",
+                      "📅 Fecha: Sábado 03/10/2026", "🕐 Hora: 11:30", "📍 Pabellón: VIRGEN DEL CARMEN, Pista 3"):
+            self.assertIn(linea, nuevos[0]["texto"])
+
+    def test_cambio_de_hora(self):
+        t = self.un_aviso(self.cambiar(hora="12:15"))
+        self.assertIn("🔄 CAMBIO DE HORA", t)
+        self.assertIn("🕐 Antes: 11:30", t)
+        self.assertIn("🕐 Ahora: 12:15", t)
+
+    def test_cambio_de_fecha(self):
+        t = self.un_aviso(self.cambiar(fecha="2026-10-04"))
+        self.assertIn("📅 Antes: Sábado 03/10/2026", t)
+        self.assertIn("📅 Ahora: Domingo 04/10/2026", t)
+
+    def test_cambio_de_pabellon(self):
+        t = self.un_aviso(self.cambiar(pabellon="VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)"))
+        self.assertIn("📍 CAMBIO DE PABELLÓN", t)
+        self.assertIn("Pista 3", t)
+        self.assertIn("PISTA CENTRAL", t)
+
+    def test_aplazamiento(self):
+        t = self.un_aviso(self.cambiar(texto_estado="APLAZADO"), clase="APLAZADO")
+        self.assertIn("⚠️ PARTIDO APLAZADO", t)
+        ics = generar_ics(PREF, self.est, CONFIG["evento"], "https://x", {}, MARTES)
+        self.assertIn("⏸️ APLAZADO · CB Arganda vs C.B. MORATALAZ", ics.replace("\r\n ", ""))
+
+    def test_cancelacion(self):
+        t = self.un_aviso(self.cambiar(texto_estado="ANULADO"), clase="CANCELADO")
+        self.assertIn("❌ PARTIDO CANCELADO", t)
+        ics = generar_ics(PREF, self.est, CONFIG["evento"], "https://x", {}, MARTES)
+        self.assertNotIn(self.uid_j1, ics)
+        self.assertEqual(ics.count("BEGIN:VEVENT"), 21)
+
+    def test_eliminacion_segura(self):
+        gs = grupos()
+        g = grupo(gs, "17686")
+        g.partidos.remove(partido(g, 3))
+        uid_j3 = next(q["uid"] for q in self.est["partidos"].values() if q["jornada"] == 3)
+        m = correr(self.est, gs, MARTES, cfg=PREF)
+        self.assertIn("⚠️ POSIBLE DESAPARICIÓN", m[0]["texto"])
+        self.assertEqual(generar_ics(PREF, self.est, CONFIG["evento"], "https://x", {}, MARTES).count("BEGIN:VEVENT"), 22)
+        self.assertEqual(correr(self.est, gs, VIERNES, cfg=PREF), [])
+        m = correr(self.est, gs, datetime(2026, 10, 6, 17, 5, tzinfo=TZ), cfg=PREF)
+        self.assertEqual([(x["clase"], x["uid"]) for x in m], [("ELIMINADO", uid_j3)])
+        self.assertNotIn(uid_j3, generar_ics(PREF, self.est, CONFIG["evento"], "https://x", {}, MARTES))
+
+    def test_confirmacion_del_viernes(self):
+        m = correr(self.est, grupos(), VIERNES, "viernes", cfg=PREF)
+        self.assertEqual([(x["clase"], x["uid"]) for x in m], [("CONFIRMADO", self.uid_j1)])
+        self.assertIn("✅ PARTIDO CONFIRMADO", m[0]["texto"])
+        self.assertEqual(correr(self.est, grupos(), VIERNES_RESPALDO, "viernes", cfg=PREF), [])
+
+    def test_uid_deterministas_y_distintos_de_los_otros_equipos(self):
+        otro = {}
+        correr(otro, grupos(), MARTES, cfg=PREF)  # generación independiente desde cero
+        self.assertEqual({q["uid"] for q in otro["partidos"].values()}, {q["uid"] for q in self.est["partidos"].values()})
+        cadete = {}
+        correr(cadete, grupos(), JUEVES, cfg=CADETE)
+        self.assertFalse({q["uid"] for q in cadete["partidos"].values()} & {q["uid"] for q in self.est["partidos"].values()})
+
+
 class ColaYEnvio(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
@@ -428,8 +525,14 @@ class Integracion(unittest.TestCase):
         self.assertEqual(por_equipo["infantil-masc-pref"].count("NUEVO"), 22)
         self.assertNotIn("infantil-masc-1-ano", por_equipo)
         index = (self.dir / "docs" / "index.html").read_text(encoding="utf-8")
-        for cfg in (CADETE, INFANTIL, PREF):
-            self.assertIn(f'data-ics="{cfg["archivo_ics"]}"', index)
+        enlaces = re.findall(r'<h2>([^<]*)</h2>\s*<a class="btn" data-ics="([^"]+)" href="([^"]+)"', index)
+        self.assertEqual([(t, d) for t, d, _ in enlaces],
+                         [("CB Arganda · Cadete Masc. 1º año", "cadete-masculino-1-ano.ics"),
+                          ("CB Arganda · Infantil Masc. 1º año", "infantil-masculino-1-ano.ics"),
+                          ("CB Arganda · Infantil Masc. Preferente", "infantil-masculino-preferente.ics")])
+        self.assertEqual(len({h for _, _, h in enlaces}), 3)  # tres URLs distintas
+        for _, _, href in enlaces:
+            self.assertTrue((self.dir / "docs" / href).is_file())
         # Ejecuciones repetidas sin cambios: la cola no crece.
         antes = len(cola["pendientes"])
         self.assertEqual(self.correr("2026-09-29T17:05:00+02:00"), 0)
