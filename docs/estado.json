@@ -1,13 +1,6 @@
 {
   "avisos": [],
-  "cambios": [
-    {
-      "calendario": "infantil-masc-pref",
-      "detalle": "Equipo en la FBM: «CB ARGANDA». Sus partidos se han añadido.",
-      "partido": "Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2",
-      "tipo": "grupo_nuevo"
-    }
-  ],
+  "cambios": [],
   "equipos": {
     "cadete-masc-1-ano": {
       "archivo_ics": "cadete-masculino-1-ano.ics",
@@ -51,6 +44,6 @@
     }
   },
   "resultado": "ok",
-  "tipo": "confirmación final de las 17:00 del viernes",
-  "ultima_comprobacion_correcta": "2026-09-25T21:13+02:00"
+  "tipo": "comprobación manual",
+  "ultima_comprobacion_correcta": "2026-09-25T21:33+02:00"
 }
