@@ -26,7 +26,7 @@ for _var in ("AVISO_ARCHIVO", "GITHUB_STEP_SUMMARY", "PAGES_URL"):
 RAIZ = Path(__file__).resolve().parent.parent
 FIX = Path(__file__).resolve().parent / "fixtures"
 CONFIG = json.loads((RAIZ / "config.json").read_text(encoding="utf-8"))
-CADETE, INFANTIL = CONFIG["equipos"]
+CADETE, INFANTIL, INFANTIL_PREF = CONFIG["equipos"]
 HTML = gzip.decompress((FIX / "club_arganda_2026-09-24.html.gz").read_bytes()).decode("utf-8-sig")
 XLSX = (FIX / "proximos_2026-09-24.xlsx").read_bytes()
 GRUPOS = leer_calendarios(HTML)
@@ -450,12 +450,12 @@ class EjecucionCompleta(unittest.TestCase):
         self.correr("2026-09-28T17:03:00+02:00")
         docs = self.dir / "docs"
         index = (docs / "index.html").read_text(encoding="utf-8")
-        for cfg in (CADETE, INFANTIL):
+        for cfg in (CADETE, INFANTIL, INFANTIL_PREF):
             self.assertTrue((docs / cfg["archivo_ics"]).exists())
             self.assertIn(f'data-ics="{cfg["archivo_ics"]}" href="{cfg["archivo_ics"]}"', index)
         self.assertEqual(sorted(p.name for p in docs.iterdir()),
                          [".nojekyll", "cadete-masculino-1-ano.ics", "estado.json", "index.html",
-                          "infantil-masculino-1-ano.ics"])
+                          "infantil-masculino-1-ano.ics", "infantil-masculino-preferente.ics"])
 
     def test_invierno_cron_en_hora_de_madrid(self):
         # Lunes 26/10/2026 (ya en CET): 15:30 UTC = 16:30 Madrid -> no toca; 16:05 UTC = 17:05 -> sí.
@@ -519,11 +519,15 @@ class EjecucionCompleta(unittest.TestCase):
     def test_sin_credenciales_y_estado_publico(self):
         import os
         import re
-        # El código solo lee variables NO sensibles (rutas y la URL pública); ninguna credencial.
-        leidas = set()
+        # El código de los calendarios solo lee variables NO sensibles (rutas y la URL pública).
+        # Los secretos de Telegram solo los lee fbmcal/telegram.py (el paso de envío, que va DESPUÉS de publicar).
+        leidas = {}
         for py in (RAIZ / "fbmcal").glob("*.py"):
-            leidas |= set(re.findall(r'environ\.get\("([A-Z_]+)"', py.read_text(encoding="utf-8")))
-        self.assertEqual(leidas, {"AVISO_ARCHIVO", "GITHUB_STEP_SUMMARY", "PAGES_URL"})
+            leidas[py.name] = set(re.findall(r'environ\.get\("([A-Z_]+)"', py.read_text(encoding="utf-8")))
+        calendarios = set().union(*(v for k, v in leidas.items() if k != "telegram.py"))
+        self.assertEqual(calendarios, {"AVISO_ARCHIVO", "GITHUB_STEP_SUMMARY", "PAGES_URL", "ERROR_ARCHIVO"})
+        self.assertEqual(leidas["telegram.py"] - {"GITHUB_STEP_SUMMARY", "ERROR_ARCHIVO"},
+                         {"TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"})
         aviso = self.dir / "aviso.md"
         resumen = self.dir / "resumen.md"
         with unittest.mock.patch.dict(os.environ, {"AVISO_ARCHIVO": str(aviso), "GITHUB_STEP_SUMMARY": str(resumen)}):
@@ -532,10 +536,11 @@ class EjecucionCompleta(unittest.TestCase):
         self.assertEqual(estado["resultado"], "ok")
         self.assertEqual(estado["equipos"]["cadete-masc-1-ano"]["partidos_en_calendario"], 20)
         self.assertEqual(estado["equipos"]["infantil-masc-1-ano"]["partidos_en_calendario"], 0)
+        self.assertEqual(estado["equipos"]["infantil-masc-pref"]["partidos_en_calendario"], 22)
         self.assertIn("Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3", resumen.read_text(encoding="utf-8"))
         # Primera ejecución: avisa de la competición detectada (no de cada partido nuevo).
         titulo = aviso.read_text(encoding="utf-8").splitlines()[0]
-        self.assertTrue(titulo.startswith("🏀 1 novedad"))
+        self.assertTrue(titulo.startswith("🏀 2 novedades"))  # cadete + infantil preferente
         # Sin cambios -> sin aviso.
         aviso.unlink()
         with unittest.mock.patch.dict(os.environ, {"AVISO_ARCHIVO": str(aviso)}):

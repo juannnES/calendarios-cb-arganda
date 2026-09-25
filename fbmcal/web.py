@@ -2,6 +2,7 @@
 from datetime import date, datetime, timedelta
 from html import escape
 
+from .conciliar import activo
 from .ics import titulo_evento
 from .util import DIAS, fecha_es
 
@@ -22,7 +23,7 @@ def generar_indice(config: dict, estado: dict, ahora: datetime) -> str:
         est = estado["equipos"].get(cfg["id"], {})
         proximos = sorted(
             (q for q in est.get("partidos", {}).values()
-             if q["estado"] != "cancelado" and q["fecha"] and q["fecha"] >= hoy),
+             if activo(q) and q["fecha"] and q["fecha"] >= hoy),
             key=lambda q: (q["fecha"], q["hora"] or ""))[:5]
         if proximos:
             filas = "".join(

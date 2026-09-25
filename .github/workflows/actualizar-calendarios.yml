@@ -1,7 +1,9 @@
 name: Actualizar calendarios
 
-# No necesita secretos ni credenciales personales. Solo usa el token automático que GitHub
-# da a cada ejecución (GITHUB_TOKEN) para guardar los cambios y crear avisos (Issues).
+# Los calendarios NO necesitan secretos: usan solo el token automático de GitHub (GITHUB_TOKEN).
+# Los avisos de Telegram (opcionales) usan los secrets TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID, que solo
+# se entregan a los pasos de Telegram, y se envían en el último trabajo, DESPUÉS de publicar.
+# Orden: datos FBM → verificar → conciliar → generar calendarios → publicar → Telegram.
 
 on:
   schedule:
@@ -24,6 +26,10 @@ on:
         description: "Solo crear un aviso de prueba (Issue)"
         type: boolean
         default: false
+      probar_telegram:
+        description: "Solo enviar un mensaje de prueba por Telegram"
+        type: boolean
+        default: false
 
 permissions:
   contents: write   # guardar data/estado.json y docs/
@@ -37,6 +43,7 @@ concurrency:
 
 env:
   AVISO_ARCHIVO: /tmp/aviso-calendarios.md
+  ERROR_ARCHIVO: /tmp/error-calendarios.txt
   GH_TOKEN: ${{ github.token }}
   TITULO_ERROR: "❌ Error en la actualización de los calendarios"
 
@@ -60,15 +67,15 @@ jobs:
         run: python -m fbmcal --probar-aviso
 
       - name: Pruebas automáticas (si fallan, no se toca ningún calendario)
-        if: ${{ !inputs.probar_aviso }}
+        if: ${{ !inputs.probar_aviso && !inputs.probar_telegram }}
         env:
           AVISO_ARCHIVO: ""   # las pruebas nunca deben generar avisos reales
         run: python -m unittest discover -s tests -t .
 
       - name: Consultar la FBM y actualizar calendarios
-        if: ${{ !inputs.probar_aviso }}
+        if: ${{ !inputs.probar_aviso && !inputs.probar_telegram }}
         run: |
-          rm -f "$AVISO_ARCHIVO"
+          rm -f "$AVISO_ARCHIVO" "$ERROR_ARCHIVO"
           owner="${{ github.repository_owner }}"
           export PAGES_URL="https://${owner,,}.github.io/${{ github.event.repository.name }}/"
           if [ "${{ github.event_name }}" = "schedule" ]; then
@@ -78,7 +85,7 @@ jobs:
           fi
 
       - name: Guardar estado y calendarios en el repositorio
-        if: ${{ !inputs.probar_aviso }}
+        if: ${{ !inputs.probar_aviso && !inputs.probar_telegram }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -89,7 +96,7 @@ jobs:
           git push
 
       - name: Preparar publicación
-        if: ${{ !inputs.probar_aviso && hashFiles('docs/index.html') != '' }}
+        if: ${{ !inputs.probar_aviso && !inputs.probar_telegram && hashFiles('docs/index.html') != '' }}
         uses: actions/upload-pages-artifact@v4
         with:
           path: docs
@@ -107,12 +114,20 @@ jobs:
           fi
 
       - name: Cerrar el aviso de error anterior (ya funciona)
-        if: ${{ !inputs.probar_aviso }}
+        if: ${{ !inputs.probar_aviso && !inputs.probar_telegram }}
         continue-on-error: true
         run: |
           for n in $(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "Error en la actualización in:title" --json number --jq '.[].number'); do
             gh issue close "$n" --repo "$GITHUB_REPOSITORY" --comment "✅ Resuelto: la ejecución ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} ha funcionado."
           done
+
+      - name: Aviso de error (Telegram)
+        if: ${{ failure() }}
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m fbmcal.telegram error --causa "Ha fallado un paso de la actualización (ver GitHub Actions)."
 
       - name: Aviso de error (Issue)
         if: ${{ failure() }}
@@ -131,7 +146,7 @@ jobs:
 
   publicar:
     needs: actualizar
-    if: ${{ !inputs.probar_aviso }}
+    if: ${{ !inputs.probar_aviso && !inputs.probar_telegram }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -139,3 +154,50 @@ jobs:
     steps:
       - id: deploy
         uses: actions/deploy-pages@v4
+
+  # Avisos de Telegram: SIEMPRE después de publicar y sin poder hacer fallar la actualización.
+  # Si Telegram no responde o faltan los secrets, los avisos quedan en data/telegram.json y se
+  # reintentan en la siguiente ejecución.
+  telegram:
+    needs: [actualizar, publicar]
+    if: ${{ always() && !inputs.probar_aviso && needs.actualizar.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    continue-on-error: true
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main   # incluye la cola que acaba de guardar el trabajo «actualizar»
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Prueba de Telegram
+        if: ${{ inputs.probar_telegram }}
+        run: python -m fbmcal.telegram prueba
+
+      - name: Aviso si la publicación en GitHub Pages ha fallado
+        if: ${{ !inputs.probar_telegram && needs.publicar.result == 'failure' }}
+        run: python -m fbmcal.telegram error --causa "Los calendarios se generaron, pero GitHub Pages no pudo publicarlos. Siguen visibles los anteriores."
+
+      - name: Enviar avisos pendientes
+        if: ${{ !inputs.probar_telegram }}
+        run: python -m fbmcal.telegram enviar
+
+      - name: Guardar registro de avisos enviados
+        if: ${{ !inputs.probar_telegram }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/telegram.json 2>/dev/null || exit 0
+          if git diff --cached --quiet; then echo "Sin cambios en la cola"; exit 0; fi
+          git commit -m "Avisos de Telegram enviados $(TZ=Europe/Madrid date '+%d/%m/%Y %H:%M')"
+          for intento in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 5
+          done
+          echo "::warning::No se pudo guardar el registro de avisos enviados."

@@ -1,7 +1,7 @@
 """Generación de calendarios iCalendar (RFC 5545) compatibles con Apple Calendar, Google y Outlook."""
 from datetime import date, datetime, time, timedelta, timezone
 
-from .conciliar import titulo_base
+from .conciliar import INACTIVOS, titulo_base
 from .util import DIAS, TZ, fecha_es, normalizar
 
 VTIMEZONE_MADRID = [
@@ -164,8 +164,8 @@ def generar_ics(cfg: dict, est: dict, conf: dict, fuente_url: str, pabellones: d
     dtstamp = _utc(ahora)
     partidos = sorted(est.get("partidos", {}).values(), key=lambda q: (q["fecha"] or "", q["hora"] or "", q["clave"]))
     for q in partidos:
-        if q["estado"] == "cancelado" or not q["fecha"]:
-            continue  # cancelado -> se elimina del calendario (acordado)
+        if q["estado"] in INACTIVOS or not q["fecha"]:
+            continue  # cancelado o eliminado -> fuera del calendario (acordado)
         inicio, fin = horario_evento(q, conf)
         lineas += [
             "BEGIN:VEVENT",

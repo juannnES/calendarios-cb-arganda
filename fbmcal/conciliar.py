@@ -41,7 +41,46 @@ TIPOS = {
     "grupo_desaparecido": "⚠️ Una competición ya no aparece en la web del club",
     "categoria_desconocida": "⚠️ Posible categoría no reconocida",
     "error": "❌ Problema",
+    "eliminado": "🗑️ Partido eliminado del calendario (la FBM ya no lo publica)",
+    "competicion": "🏆 Cambio de competición",
+    "grupo_ignorado": "ℹ️ Grupo de otro equipo del club (ignorado)",
 }
+
+# Resultado de la conciliación de cada cambio. Es la ÚNICA clasificación: la usan el resumen de la
+# ejecución y los avisos de Telegram (que no reinterpretan los datos). "CONFIRMADO" (viernes) y
+# "VERIFICADO" (lunes) salen del campo `verificacion` que fija esta misma conciliación.
+CLASES = {
+    "nuevo": "NUEVO",
+    "cambio_hora": "MODIFICADO", "hora_confirmada": "MODIFICADO", "hora_retirada": "MODIFICADO",
+    "cambio_fecha": "MODIFICADO", "cambio_pabellon": "MODIFICADO", "pabellon_confirmado": "MODIFICADO",
+    "rival_renombrado": "MODIFICADO", "competicion": "MODIFICADO", "reaparecido": "MODIFICADO",
+    "reactivado": "MODIFICADO", "aplazamiento_retirado": "MODIFICADO", "resultado": "MODIFICADO",
+    "discrepancia": "MODIFICADO", "aviso_fbm": "MODIFICADO", "desaparecido": "MODIFICADO",
+    "aplazado": "APLAZADO",
+    "cancelado": "CANCELADO",
+    "eliminado": "ELIMINADO",
+    "error": "ERROR",
+    "grupo_nuevo": "AVISO", "grupo_desaparecido": "AVISO", "categoria_desconocida": "AVISO",
+    "grupo_ignorado": "AVISO", "sin_fecha": "AVISO",
+}
+
+# Estados en los que el partido NO está en el calendario.
+INACTIVOS = ("cancelado", "eliminado")
+
+# Política ante partidos que dejan de aparecer (config.json → "desaparecidos").
+POLITICA_DESAPARECIDOS = {"eliminar_tras_comprobaciones": 3, "dias_minimos": 7}
+
+# Campos que se guardan como «antes» de cada cambio (los usan los avisos de Telegram).
+CAMPOS_INSTANTANEA = ("fecha", "hora", "pabellon", "direccion", "local", "visitante", "rival",
+                      "arganda_local", "jornada", "competicion", "estado", "marcador")
+
+
+def activo(q: dict) -> bool:
+    return q["estado"] not in INACTIVOS
+
+
+def instantanea(q: dict) -> dict:
+    return {k: q.get(k) for k in CAMPOS_INSTANTANEA}
 
 
 @dataclass
@@ -49,6 +88,8 @@ class Cambio:
     tipo: str
     titulo: str
     detalle: str = ""
+    uid: str | None = None      # partido afectado (None = aviso general del equipo)
+    antes: dict | None = None   # datos del partido antes de esta ejecución
 
     @property
     def notificar(self) -> bool:
@@ -109,12 +150,11 @@ def resolver_valores(p: PartidoFuente, contraste: list[tuple[str, dict]]) -> tup
     return valores, discrepancias
 
 
-def _equipo_del_club(g: Grupo, cfg: dict) -> str:
+def _equipo_del_club(g: Grupo, cfg: dict) -> str | None:
+    """Nombre del equipo del club en el grupo. None si `nombre_fbm` está fijado y el grupo es de otro equipo."""
     nombres = {t for p in g.partidos for t in (p.local, p.visitante)}
     if cfg.get("nombre_fbm"):
-        if cfg["nombre_fbm"] in nombres:
-            return cfg["nombre_fbm"]
-        raise ValueError(f"No aparece el equipo «{cfg['nombre_fbm']}» (config nombre_fbm) en {g.competicion}")
+        return cfg["nombre_fbm"] if cfg["nombre_fbm"] in nombres else None
     candidatos = sorted(n for n in nombres if any(pat in normalizar(n) for pat in cfg["patrones_nombre"]))
     if len(candidatos) == 1:
         return candidatos[0]
@@ -134,19 +174,21 @@ def _uid(clave: str) -> str:
 
 
 def conciliar_equipo(cfg: dict, est: dict, grupos: list[Grupo], contraste: list[tuple[str, dict]],
-                     ahora: datetime, modo: str, temporada: str) -> list[Cambio]:
+                     ahora: datetime, modo: str, temporada: str, politica: dict | None = None) -> list[Cambio]:
     """Actualiza `est` (estado guardado de un equipo) y devuelve la lista de cambios detectados."""
+    politica = {**POLITICA_DESAPARECIDOS, **(politica or {})}
     cambios: list[Cambio] = []
     ahora_iso = ahora.isoformat(timespec="minutes")
     hoy = ahora.date().isoformat()
     est.setdefault("grupos", {})
     est.setdefault("partidos", {})
     est.setdefault("categorias_avisadas", [])
+    est.setdefault("grupos_ignorados", [])
     partidos: dict = est["partidos"]
     corto = cfg["nombre_corto"]
 
-    def anotar(q: dict | None, tipo: str, titulo: str, detalle: str = ""):
-        cambios.append(Cambio(tipo, titulo, detalle))
+    def anotar(q: dict | None, tipo: str, titulo: str, detalle: str = "", antes: dict | None = None):
+        cambios.append(Cambio(tipo, titulo, detalle, q["uid"] if q else None, antes))
         if q is not None:
             q.setdefault("historial", []).append({"en": ahora_iso, "tipo": tipo, "detalle": detalle})
 
@@ -177,6 +219,12 @@ def conciliar_equipo(cfg: dict, est: dict, grupos: list[Grupo], contraste: list[
         except ValueError as e:
             anotar(None, "error", g.competicion, str(e))
             continue
+        if nombre is None:
+            if g.id not in est["grupos_ignorados"]:
+                est["grupos_ignorados"].append(g.id)
+                anotar(None, "grupo_ignorado", g.competicion,
+                       f"No aparece «{cfg['nombre_fbm']}»: es de otro equipo del club y no se añade a este calendario.")
+            continue
 
         info = est["grupos"].get(g.id)
         if info is None:
@@ -195,7 +243,7 @@ def conciliar_equipo(cfg: dict, est: dict, grupos: list[Grupo], contraste: list[
                 continue  # jornada de descanso: no hay partido
             observados.append((p, rival, _clave(temporada, g, cfg, p)))
 
-        guardados_grupo = [q for q in partidos.values() if q["grupo_id"] == g.id and q["estado"] != "cancelado"]
+        guardados_grupo = [q for q in partidos.values() if q["grupo_id"] == g.id and activo(q)]
         if not observados and guardados_grupo:
             anotar(None, "error", g.competicion,
                    "La web no muestra ningún partido del equipo en este grupo. No se ha tocado el calendario.")
@@ -209,19 +257,23 @@ def conciliar_equipo(cfg: dict, est: dict, grupos: list[Grupo], contraste: list[
             estado_nuevo = estado_desde_texto(p.texto_estado)
             arganda_local = p.local == nombre
             q = partidos.get(clave)
+            previo = instantanea(q) if q else None
 
             if q is None:
-                # ¿Es un partido ya guardado cuyo rival (o nuestro equipo) ha cambiado de nombre?
+                # ¿Es un partido ya guardado cuyo rival (o nuestro equipo) ha cambiado de nombre, o en el que
+                # se han intercambiado local y visitante? En una jornada el equipo juega un solo partido.
                 candidatos = [x for x in partidos.values()
                               if x["grupo_id"] == g.id and x["jornada"] == p.jornada
-                              and x["arganda_local"] == arganda_local and x["clave"] not in claves_fuente]
+                              and x["clave"] not in claves_fuente and x["clave"] not in vistos]
                 if len(candidatos) == 1:
                     q = candidatos[0]
+                    previo = instantanea(q)
                     antes = f"{q['local']} - {q['visitante']}"
                     partidos.pop(q["clave"])
-                    q.update(clave=clave, local=p.local, visitante=p.visitante, rival=rival, equipo_fbm=nombre)
+                    q.update(clave=clave, local=p.local, visitante=p.visitante, rival=rival, equipo_fbm=nombre,
+                             arganda_local=arganda_local)
                     partidos[clave] = q
-                    anotar(q, "rival_renombrado", titulo_base(q, corto), f"{antes} → {p.local} - {p.visitante}")
+                    anotar(q, "rival_renombrado", titulo_base(q, corto), f"{antes} → {p.local} - {p.visitante}", previo)
                     q["secuencia"] += 1
                     q["modificado"] = ahora_iso
 
@@ -249,25 +301,28 @@ def conciliar_equipo(cfg: dict, est: dict, grupos: list[Grupo], contraste: list[
             material = False
 
             if q.get("desaparecido_desde"):
-                anotar(q, "reaparecido", titulo, f"No aparecía desde {q['desaparecido_desde'][:16].replace('T', ' ')}")
+                if q["estado"] != "eliminado":  # si estaba eliminado, el aviso es «reactivado» (más abajo)
+                    anotar(q, "reaparecido", titulo,
+                           f"No aparecía desde {q['desaparecido_desde'][:16].replace('T', ' ')}", antes=previo)
                 q["desaparecido_desde"] = None
+                q["ausente_en"] = []
                 material = True
 
             aplazado_con_fecha = False
             if valores["fecha"] and valores["fecha"] != q["fecha"]:
                 tipo = "aplazado" if estado_nuevo == "aplazado" else "cambio_fecha"
                 aplazado_con_fecha = tipo == "aplazado"
-                anotar(q, tipo, titulo, f"{fecha_es(q['fecha'])} → {fecha_es(valores['fecha'])}")
+                anotar(q, tipo, titulo, f"{fecha_es(q['fecha'])} → {fecha_es(valores['fecha'])}", antes=previo)
                 q["fecha"] = valores["fecha"]
                 material = True
 
             if valores["hora"] != q["hora"]:
                 if q["hora"] is None:
-                    anotar(q, "hora_confirmada", titulo, valores["hora"])
+                    anotar(q, "hora_confirmada", titulo, valores["hora"], antes=previo)
                 elif valores["hora"] is None:
-                    anotar(q, "hora_retirada", titulo, f"{q['hora']} → pendiente (se muestra a las 00:00)")
+                    anotar(q, "hora_retirada", titulo, f"{q['hora']} → pendiente (se muestra a las 00:00)", antes=previo)
                 else:
-                    anotar(q, "cambio_hora", titulo, f"{q['hora']} → {valores['hora']}")
+                    anotar(q, "cambio_hora", titulo, f"{q['hora']} → {valores['hora']}", antes=previo)
                 q["hora"] = valores["hora"]
                 material = True
 
@@ -275,37 +330,41 @@ def conciliar_equipo(cfg: dict, est: dict, grupos: list[Grupo], contraste: list[
                     normalizar(q["pabellon"]), normalizar(q["direccion"])):
                 antes = f"{q['pabellon'] or 'por determinar'} ({q['direccion'] or '-'})"
                 despues = f"{valores['pabellon'] or 'por determinar'} ({valores['direccion'] or '-'})"
-                anotar(q, "pabellon_confirmado" if not q["pabellon"] else "cambio_pabellon", titulo, f"{antes} → {despues}")
+                anotar(q, "pabellon_confirmado" if not q["pabellon"] else "cambio_pabellon", titulo, f"{antes} → {despues}", antes=previo)
                 q["pabellon"], q["direccion"] = valores["pabellon"], valores["direccion"]
                 material = True
 
             if estado_nuevo != q["estado"]:
                 if estado_nuevo == "cancelado":
-                    anotar(q, "cancelado", titulo, f"Texto FBM: {p.texto_estado}")
+                    anotar(q, "cancelado", titulo, f"Texto FBM: {p.texto_estado}", antes=previo)
                 elif estado_nuevo == "aplazado" and not aplazado_con_fecha:
                     anotar(q, "aplazado", titulo, f"Texto FBM: {p.texto_estado}. Sin nueva fecha todavía: "
-                                                  "se mantiene en su fecha marcado como APLAZADO.")
-                elif q["estado"] == "cancelado":
-                    anotar(q, "reactivado", titulo, "Vuelve a figurar como partido programado.")
+                                                  "se mantiene en su fecha marcado como APLAZADO.", antes=previo)
+                elif q["estado"] in INACTIVOS:
+                    anotar(q, "reactivado", titulo, "Vuelve a figurar como partido programado.", antes=previo)
+                    q["ausente_en"] = []
                 elif q["estado"] == "aplazado" and estado_nuevo == "programado":
-                    anotar(q, "aplazamiento_retirado", titulo, f"{fecha_es(q['fecha'])} {q['hora'] or 'hora pendiente'}")
+                    anotar(q, "aplazamiento_retirado", titulo, f"{fecha_es(q['fecha'])} {q['hora'] or 'hora pendiente'}", antes=previo)
                 q["estado"] = estado_nuevo
                 material = True
             elif p.texto_estado and p.texto_estado != q.get("texto_estado") and estado_nuevo == "programado":
-                anotar(q, "aviso_fbm", titulo, p.texto_estado)
+                anotar(q, "aviso_fbm", titulo, p.texto_estado, antes=previo)
             q["texto_estado"] = p.texto_estado
 
             if p.marcador and p.marcador != q.get("marcador"):
-                anotar(q, "resultado", titulo, p.marcador)
+                anotar(q, "resultado", titulo, p.marcador, antes=previo)
                 q["marcador"] = p.marcador
                 material = True
 
             if disc and disc != q.get("discrepancias"):
-                anotar(q, "discrepancia", titulo, " | ".join(disc))
+                anotar(q, "discrepancia", titulo, " | ".join(disc), antes=previo)
             if disc != q.get("discrepancias"):
                 q["discrepancias"] = disc
                 material = True
 
+            if q["competicion"] != g.competicion:
+                anotar(q, "competicion", titulo, f"{q['competicion']} → {g.competicion}", antes=previo)
+                material = True
             q["competicion"] = g.competicion
             q["ultima_comprobacion"] = ahora_iso
             if material:
@@ -313,15 +372,38 @@ def conciliar_equipo(cfg: dict, est: dict, grupos: list[Grupo], contraste: list[
                 q["modificado"] = ahora_iso
                 q["verificacion"] = {"tipo": "provisional", "en": None}
 
-    # Partidos futuros que ya no aparecen: NO se borran; se marcan y se avisa.
+    # Partidos futuros que ya no aparecen: NO se borran a la primera; se marcan con ⚠️ y se avisa.
+    # Solo si siguen sin aparecer en `eliminar_tras_comprobaciones` comprobaciones (días distintos) durante al
+    # menos `dias_minimos` días -mientras el resto de su grupo sí aparece- se eliminan del calendario.
+    # Con "eliminar_tras_comprobaciones": 0 nunca se eliminan.
     for q in partidos.values():
-        if (q["grupo_id"] in grupos_procesados and q["clave"] not in vistos and q["estado"] != "cancelado"
-                and not q.get("desaparecido_desde") and (q["fecha"] or "9999") >= hoy):
+        if q["grupo_id"] not in grupos_procesados or q["clave"] in vistos or not activo(q):
+            continue
+        futuro = (q["fecha"] or "9999") >= hoy
+        if not q.get("desaparecido_desde"):
+            if not futuro:
+                continue  # partido ya jugado: no se toca
+            previo = instantanea(q)
             q["desaparecido_desde"] = ahora_iso
+            q["ausente_en"] = [hoy]
             q["secuencia"] += 1
             q["modificado"] = ahora_iso
             anotar(q, "desaparecido", titulo_base(q, corto),
-                   f"{fecha_es(q['fecha'])} {q['hora'] or ''}. Se mantiene en el calendario con aviso ⚠️.")
+                   f"{fecha_es(q['fecha'])} {q['hora'] or ''}. Se mantiene en el calendario con aviso ⚠️.", previo)
+            continue
+        ausente = q.setdefault("ausente_en", [q["desaparecido_desde"][:10]])
+        if hoy not in ausente:
+            ausente.append(hoy)
+        n, dias = politica["eliminar_tras_comprobaciones"], politica["dias_minimos"]
+        transcurridos = (ahora.date() - datetime.fromisoformat(ausente[0]).date()).days
+        if n and futuro and len(ausente) >= n and transcurridos >= dias:
+            previo = instantanea(q)
+            q["estado"] = "eliminado"
+            q["secuencia"] += 1
+            q["modificado"] = ahora_iso
+            anotar(q, "eliminado", titulo_base(q, corto),
+                   f"No aparece en la web oficial en {len(ausente)} comprobaciones desde el "
+                   f"{fecha_es(ausente[0])}. Eliminado del calendario.", previo)
 
     # Verificación de la semana: lunes = primera comprobación, viernes = confirmación final.
     if modo in ("lunes", "viernes"):

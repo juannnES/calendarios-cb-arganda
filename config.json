@@ -10,30 +10,75 @@
     "hora_pendiente": "00:00",
     "duracion_pendiente_min": 120
   },
+  "desaparecidos": {
+    "_ayuda": "Un partido que deja de aparecer se marca con ⚠️ y se mantiene. Solo se elimina del calendario si sigue sin aparecer en N comprobaciones de días distintos durante al menos D días (mientras el resto de su grupo sí aparece). 0 = no eliminar nunca.",
+    "eliminar_tras_comprobaciones": 3,
+    "dias_minimos": 7
+  },
   "equipos": [
     {
       "id": "cadete-masc-1-ano",
-      "categoria_fbm": ["Cadete Masc. 1ºaño"],
+      "categoria_fbm": [
+        "Cadete Masc. 1ºaño"
+      ],
       "categoria_mostrada": "Cadete Masculino Primer Año",
-      "palabras_categoria": ["cadete", "masc"],
-      "patrones_nombre": ["arganda"],
+      "palabras_categoria": [
+        "cadete",
+        "masc"
+      ],
+      "patrones_nombre": [
+        "arganda"
+      ],
       "nombre_fbm": null,
       "nombre_corto": "CB Arganda",
       "archivo_ics": "cadete-masculino-1-ano.ics",
       "nombre_calendario": "CB Arganda · Cadete Masc. 1º año",
-      "color": "#1F6FEB"
+      "color": "#1F6FEB",
+      "nombre_telegram": "CB Arganda Cadete 1º Año",
+      "calendario_corto": "Cadete 1º Año"
     },
     {
       "id": "infantil-masc-1-ano",
-      "categoria_fbm": ["Infantil Masc. 1ºaño"],
+      "categoria_fbm": [
+        "Infantil Masc. 1ºaño"
+      ],
       "categoria_mostrada": "Infantil Masculino Primer Año",
-      "palabras_categoria": ["infantil", "masc"],
-      "patrones_nombre": ["arganda"],
+      "palabras_categoria": [
+        "infantil",
+        "masc"
+      ],
+      "patrones_nombre": [
+        "arganda"
+      ],
       "nombre_fbm": null,
       "nombre_corto": "CB Arganda",
       "archivo_ics": "infantil-masculino-1-ano.ics",
       "nombre_calendario": "CB Arganda · Infantil Masc. 1º año",
-      "color": "#E5534B"
+      "color": "#E5534B",
+      "nombre_telegram": "CB Arganda Infantil 1º Año",
+      "calendario_corto": "Infantil 1º Año"
+    },
+    {
+      "id": "infantil-masc-pref",
+      "categoria_fbm": [
+        "Infantil Masc. Pref."
+      ],
+      "categoria_mostrada": "Infantil Masculino Preferente",
+      "palabras_categoria": [
+        "infantil",
+        "masc",
+        "pref"
+      ],
+      "patrones_nombre": [
+        "arganda"
+      ],
+      "nombre_fbm": "CB ARGANDA",
+      "nombre_corto": "CB Arganda",
+      "nombre_telegram": "CB Arganda Infantil Preferente Masc.",
+      "calendario_corto": "Infantil Preferente Masc.",
+      "archivo_ics": "infantil-masculino-preferente.ics",
+      "nombre_calendario": "CB Arganda · Infantil Masc. Preferente",
+      "color": "#2DA44E"
     }
   ]
 }

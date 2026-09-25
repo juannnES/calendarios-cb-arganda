@@ -8,7 +8,7 @@
 import os
 from datetime import datetime
 
-from .conciliar import TIPOS, Cambio
+from .conciliar import TIPOS, Cambio, activo
 from .util import DIAS, fecha_es
 
 ETIQUETAS_MODO = {"lunes": "comprobación de las 17:00 del lunes",
@@ -64,7 +64,7 @@ def resumen_ejecucion(cambios: dict[str, list[Cambio]], avisos: list[str], confi
               "| Calendario | Partidos | Próximo partido | Cambios |", "|---|---|---|---|"]
     for cfg in config["equipos"]:
         est = estado["equipos"].get(cfg["id"], {})
-        activos = [q for q in est.get("partidos", {}).values() if q["estado"] != "cancelado"]
+        activos = [q for q in est.get("partidos", {}).values() if activo(q)]
         futuros = sorted((q for q in activos if q["fecha"] and q["fecha"] >= hoy), key=lambda q: (q["fecha"], q["hora"] or ""))
         prox = (f"{fecha_es(futuros[0]['fecha'])} {futuros[0]['hora'] or '(hora pendiente)'} · "
                 f"{futuros[0]['local']} - {futuros[0]['visitante']}") if futuros else "sin partidos publicados"
@@ -77,6 +77,28 @@ def resumen_ejecucion(cambios: dict[str, list[Cambio]], avisos: list[str], confi
     return "\n".join(lineas) + "\n"
 
 
+def resumen_por_equipo(conteos: dict[str, dict], config: dict, en_cola: int | None) -> str:
+    """Resumen interno de la ejecución (GitHub Actions → Summary), según el resultado de la conciliación."""
+    lineas = ["```", "🏀 CALENDARIOS CB ARGANDA", ""]
+    for cfg in config["equipos"]:
+        n = conteos.get(cfg["id"], {})
+        lineas += [cfg.get("calendario_corto", cfg["nombre_calendario"]),
+                   f"- Nuevos: {n.get('NUEVO', 0)}",
+                   f"- Modificados: {n.get('MODIFICADO', 0)}",
+                   f"- Confirmados: {n.get('CONFIRMADO', 0)}",
+                   f"- Aplazados: {n.get('APLAZADO', 0)}",
+                   f"- Cancelados: {n.get('CANCELADO', 0)}"]
+        if n.get("ELIMINADO"):
+            lineas.append(f"- Eliminados: {n['ELIMINADO']}")
+        if n.get("ERROR"):
+            lineas.append(f"- Errores: {n['ERROR']}")
+        lineas.append("")
+    lineas.append("Estado: ✅ Correcto")
+    lineas.append(f"Avisos de Telegram en cola: {en_cola}" if en_cola is not None
+                  else "Avisos de Telegram: ⚠️ no se pudieron preparar (ver log)")
+    return "\n".join(lineas + ["```", ""])
+
+
 def estado_publico(cambios: dict[str, list[Cambio]], avisos: list[str], config: dict, estado: dict,
                    modo: str, ahora: datetime) -> dict:
     """Contenido de docs/estado.json (solo datos públicos de partidos)."""
@@ -84,7 +106,7 @@ def estado_publico(cambios: dict[str, list[Cambio]], avisos: list[str], config: 
     equipos = {}
     for cfg in config["equipos"]:
         est = estado["equipos"].get(cfg["id"], {})
-        activos = [q for q in est.get("partidos", {}).values() if q["estado"] != "cancelado"]
+        activos = [q for q in est.get("partidos", {}).values() if activo(q)]
         futuros = sorted((q for q in activos if q["fecha"] and q["fecha"] >= hoy), key=lambda q: (q["fecha"], q["hora"] or ""))
         equipos[cfg["id"]] = {
             "calendario": cfg["nombre_calendario"],

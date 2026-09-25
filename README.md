@@ -1,14 +1,16 @@
 # 🏀 Calendarios automáticos CB Arganda (FBM)
 
-Dos calendarios **independientes** y siempre al día, para suscribirse desde Apple Calendar
-(iPhone, iPad y Mac), Google Calendar u Outlook:
+Tres calendarios **independientes** y siempre al día, para suscribirse desde Apple Calendar
+(iPhone, iPad y Mac), Google Calendar u Outlook, y **avisos por Telegram** de todo lo que cambia:
 
-| Calendario | Categoría FBM | Archivo |
-|---|---|---|
-| CB Arganda · Cadete Masc. 1º año | `Cadete Masc. 1ºaño` | `cadete-masculino-1-ano.ics` |
-| CB Arganda · Infantil Masc. 1º año | `Infantil Masc. 1ºaño` | `infantil-masculino-1-ano.ics` |
+| Calendario | Categoría FBM (exacta) | Equipo FBM | Archivo |
+|---|---|---|---|
+| 🟠 CB Arganda · Cadete Masc. 1º año | `Cadete Masc. 1ºaño` | `CB ARGANDA` | `cadete-masculino-1-ano.ics` |
+| 🔵 CB Arganda · Infantil Masc. 1º año | `Infantil Masc. 1ºaño` | (aún no publicado) | `infantil-masculino-1-ano.ics` |
+| 🟢 CB Arganda · Infantil Masc. Preferente | `Infantil Masc. Pref.` | `CB ARGANDA` | `infantil-masculino-preferente.ics` |
 
-Coste: **0 €/mes**. **No necesita ninguna credencial personal**: ni Gmail, ni Google, ni tokens, ni secretos.
+Coste: **0 €/mes**. Los calendarios **no necesitan ninguna credencial**. Telegram (opcional) solo necesita dos
+*Secrets* de GitHub: el token del bot y tu chat. Nada de Gmail, contraseñas de aplicación ni Google.
 
 ---
 
@@ -23,18 +25,21 @@ Python (fbmcal) ── pruebas automáticas → lectura FBM → contraste de fue
  ↓
 Conciliación / verificación ── claves únicas, UID estables, sin duplicados
  ↓
- ┌──────────────────────┐
- ↓                      ↓
-Cadete 1º año       Infantil 1º año
- ↓                      ↓
-cadete-masculino-1-ano.ics   infantil-masculino-1-ano.ics
- └──────────┬───────────┘
-            ↓
+ ┌─────────────────────┼─────────────────────┐
+ ↓                     ↓                     ↓
+Cadete 1º año     Infantil 1º año     Infantil Preferente
+ ↓                     ↓                     ↓
+cadete-...ics     infantil-...1-ano.ics   infantil-...preferente.ics
+ └─────────────────────┬─────────────────────┘
+                       ↓
       GitHub Pages  (+ index.html de suscripción + estado.json)
-            ↓
-       Suscripción webcal://
-            ↓
-      Apple Calendar (se refresca solo)
+                       ↓
+       Suscripción webcal:// → Apple Calendar (se refresca solo)
+
+                       +
+
+      Cola de avisos (data/telegram.json) → Telegram Bot → tu chat
+      (último paso, DESPUÉS de publicar; si falla, los calendarios no se ven afectados)
 ```
 
 * **Lunes**: consulta la FBM, detecta cambios y marca como «🔎 Verificado el lunes» los partidos de esa semana (de lunes a domingo).
@@ -80,6 +85,7 @@ Por eso un cambio de hora, fecha, pabellón o nombre de equipo **modifica el mis
 | Aplazado sin fecha | Lo deja en su fecha con «⏸️ APLAZADO» | Sí |
 | Cancelado / anulado | Lo elimina del calendario | Sí |
 | Desaparece de la web | **No lo borra**: lo marca con ⚠️ | Sí |
+| Sigue sin aparecer en 3 comprobaciones (≥ 7 días) mientras el resto de su grupo sí aparece | Lo elimina del calendario (configurable en `config.json` → `desaparecidos`; `0` = nunca) | Sí |
 | Vuelve a aparecer | Quita el aviso | Sí |
 | Cambio de nombre de un equipo | Mismo evento, nombre actualizado | Sí |
 | Discrepancia entre fuentes oficiales | Aplica la regla de abajo, la anota en el evento | Sí |
@@ -110,17 +116,91 @@ pública y estable que ya trae todos los grupos del club.
 
 **Identificación de los equipos**:
 
-* Solo se aceptan grupos cuya categoría sea *exactamente* `Cadete Masc. 1ºaño` o `Infantil Masc. 1ºaño`,
-  así que nunca se mezclan con «Cadete Masc. Pref.» ni con «Infantil Masc. Pref.».
+* Solo se aceptan grupos cuya categoría sea *exactamente* `Cadete Masc. 1ºaño`, `Infantil Masc. 1ºaño`
+  o `Infantil Masc. Pref.`. Así el infantil de 1º año y el preferente nunca se mezclan entre sí,
+  ni con «Cadete Masc. Pref.» u otras categorías.
+* **Infantil Preferente** (comprobado en la FBM el 25/09/2026): categoría `Infantil Masc. Pref.`,
+  grupo `PRIMERA 1ª DIVISION - GRUPO 2`, equipo `CB ARGANDA`, 22 partidos.
+  El nombre `CB ARGANDA` está fijado en `config.json` (`nombre_fbm`). Si apareciera otro equipo infantil
+  preferente del club (p. ej. «CB ARGANDA B»), su grupo se ignora y se avisa una vez.
 * Dentro del grupo, el equipo del club es el único cuyo nombre contiene «ARGANDA».
 * Si hubiera dos, **no se adivina**: se avisa y se configura `nombre_fbm` en `config.json`.
 
 > La categoría `Infantil Masc. 1ºaño` **aún no está publicada** en la temporada 2026-27. La temporada pasada
 > empezó el 19/10/2025. En cuanto la FBM la publique, sus partidos se añadirán solos y recibirás un aviso.
 
-## 3. Avisos y detección de errores (sin email ni credenciales)
+## 3. Avisos por Telegram
 
-El sistema funciona perfectamente **sin avisos**. Aun así, hay cuatro formas de enterarse de lo que pasa, todas gratis:
+Telegram es una **capa secundaria**: los calendarios funcionan igual con o sin ella. Orden de cada ejecución:
+**1.** datos FBM → **2.** verificar → **3.** conciliar → **4.** generar calendarios → **5.** publicar en Pages → **6.** Telegram.
+
+* El paso de calendarios (4) solo deja los avisos en la cola `data/telegram.json`: no usa red ni token.
+* Un trabajo aparte (`telegram`) los envía **después** de publicar, con `continue-on-error`.
+  Si Telegram no responde o faltan los secrets, se registra un aviso (⚠️ en *Actions*).
+  Los mensajes se quedan en la cola y se reintentan en la siguiente ejecución.
+  Los calendarios ya están publicados.
+* Los mensajes salen del **resultado de la conciliación** (el mismo que actualiza los `.ics`).
+  Telegram no interpreta los datos por su cuenta.
+
+| Resultado | Mensaje | ¿Cuántas veces? |
+|---|---|---|
+| Partido que entra en el calendario (también los que ya existían la primera vez) | 🏀 NUEVO PARTIDO | 1 por partido |
+| Lunes: partido de esa semana comprobado | 🔎 PARTIDO DETECTADO | 1 por partido y fecha |
+| Viernes: partido de ese fin de semana confirmado | ✅ PARTIDO CONFIRMADO | 1 por partido y fecha |
+| Cambio de hora (incluida 00:00 → hora oficial) | 🔄 CAMBIO DE HORA | 1 por cambio |
+| Cambio de fecha | 📅 CAMBIO DE FECHA | 1 por cambio |
+| Cambio de pabellón o dirección | 📍 CAMBIO DE PABELLÓN | 1 por cambio |
+| Aplazado (con o sin nueva fecha) | ⚠️ PARTIDO APLAZADO | 1 por cambio |
+| Nueva fecha tras un aplazamiento | 📅 NUEVO HORARIO TRAS EL APLAZAMIENTO | 1 |
+| Cancelado | ❌ PARTIDO CANCELADO | 1 |
+| Deja de aparecer en la FBM | ⚠️ POSIBLE DESAPARICIÓN (no se elimina) | 1 |
+| Eliminado tras varias comprobaciones | 🗑️ PARTIDO ELIMINADO | 1 |
+| Rival, local/visitante, competición, estado, resultado, discrepancias | 🔄 INFORMACIÓN ACTUALIZADA | 1 por cambio |
+| Nueva competición/fase del equipo | 🆕 NUEVA COMPETICIÓN DETECTADA | 1 |
+| Error | 🚨 ERROR EN LA AUTOMATIZACIÓN | 1 por ejecución fallida (el mismo error de un grupo, como mucho cada 3 días) |
+| Sin cambios | — | 0 |
+
+**Anti-duplicados**: cada aviso tiene un identificador basado en el UID del partido. Las altas y las
+verificaciones se marcan en el estado del partido. Diez ejecuciones sin cambios envían **0 mensajes**.
+
+**Primera ejecución con Telegram**: recibirás un 🏀 NUEVO PARTIDO por cada partido futuro de los calendarios
+(unos 42: 20 del cadete y 22 del infantil preferente), a razón de ~1 por segundo.
+
+### 3.1 Configurar Telegram (una vez, ~5 min)
+
+1. **Crear el bot**: en Telegram, abre una conversación con **@BotFather** (tiene la marca azul de verificado).
+   Envía `/newbot` y responde:
+   * un **nombre** (p. ej. `Calendarios CB Arganda`);
+   * un **usuario** que termine en `bot` (p. ej. `calendarios_cbarganda_bot`).
+2. **Token**: BotFather te responde con una línea tipo `123456789:AA…`. Ese es el token.
+   **No lo pegues en ningún chat, archivo ni commit**: solo irá a GitHub Secrets (paso 4).
+3. **Tu chat_id**:
+   1. Abre tu bot en Telegram (el enlace `t.me/…` que te da BotFather), pulsa **Iniciar** y escríbele `hola`.
+   2. En tu ordenador, abre PowerShell y ejecuta (te pedirá el token sin mostrarlo en pantalla):
+      ```powershell
+      $s = Read-Host "Token del bot" -AsSecureString; $t = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($s)); (Invoke-RestMethod "https://api.telegram.org/bot$t/getUpdates").result.message.chat | Select-Object id, first_name -Unique
+      ```
+      El número de la columna `id` es tu **chat_id**. Si sale vacío, vuelve a escribir al bot y repite.
+      El token se escribe oculto (`****`) y no queda guardado en el historial de PowerShell.
+4. **Guardar en GitHub**: repositorio → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
+   Crea estos dos:
+   | Name | Secret |
+   |---|---|
+   | `TELEGRAM_BOT_TOKEN` | el token del paso 2 |
+   | `TELEGRAM_CHAT_ID` | el número del paso 3 |
+
+   El chat_id no es tan sensible como el token, pero el repositorio es público y los logs también.
+   Por eso se guarda también como *Secret*: GitHub lo oculta con `***` en cualquier log.
+5. **Probar**: **Actions** → **Actualizar calendarios** → **Run workflow** → marca *Solo enviar un mensaje de
+   prueba por Telegram* → **Run workflow**. En menos de un minuto recibirás
+   «🏀 Prueba de avisos de los calendarios CB Arganda». Si no llega, abre la ejecución → trabajo **telegram**:
+   el aviso ⚠️ explica la causa (secret que falta, token incorrecto o chat que no ha pulsado *Iniciar*).
+6. **Primera ejecución real**: **Run workflow** con modo `manual` y sin marcar nada. Llegarán los avisos de alta de
+   todos los partidos futuros.
+
+## 4. Otros avisos y detección de errores
+
+Además de Telegram, hay cuatro formas de enterarse de lo que pasa, todas gratis:
 
 1. **Workflow en rojo**: si algo falla, la ejecución termina con error y GitHub lo marca en rojo en la pestaña *Actions*.
    GitHub avisa automáticamente de los workflows fallidos a la persona que subió el workflow.
@@ -133,7 +213,7 @@ El sistema funciona perfectamente **sin avisos**. Aun así, hay cuatro formas de
 4. **Página de estado**: la página publicada muestra la **última comprobación correcta** y la próxima.
    Si tiene más de 4 días, algo ha fallado. `estado.json` tiene el detalle técnico.
 
-## 4. Coste: 0 €/mes
+## 5. Coste: 0 €/mes
 
 | Pieza | Plan | Límite | Uso real |
 |---|---|---|---|
@@ -141,6 +221,7 @@ El sistema funciona perfectamente **sin avisos**. Aun así, hay cuatro formas de
 | GitHub Actions | Free: minutos **ilimitados** en repos públicos | — | ~2 min × 2-4 ejecuciones/semana |
 | GitHub Pages | Free (repos públicos) | 100 GB/mes de tráfico, 1 GB de sitio | < 1 MB de sitio |
 | GitHub Issues (avisos) | Incluido | — | Unos pocos al mes |
+| Telegram Bot API | Gratuita, sin planes de pago para bots | ~30 mensajes/s | Unos pocos por semana (~45 la primera vez) |
 | Apple Calendar | Incluido en iOS/macOS | — | 4 suscripciones |
 
 Nada caduca ni se convierte en pago. El repositorio es público porque GitHub Pages gratis lo exige.
@@ -148,7 +229,7 @@ Solo contiene **información pública de los partidos** (equipos, fechas, horas 
 ni nombres de jugadores, ni emails, ni contraseñas, ni tokens.
 Los commits usan identidades *noreply*, y la copia de la web de la FBM que usan las pruebas está anonimizada.
 
-## 5. Archivos
+## 6. Archivos
 
 ```
 config.json                      Equipos, categorías FBM, colores, 45 min / 2 h
@@ -158,17 +239,20 @@ fbmcal/fuente.py                 Descarga y lectura de la web y del Excel de la 
 fbmcal/conciliar.py              Claves únicas, detección de cambios, contraste de fuentes
 fbmcal/ics.py                    Generación de los .ics (Europe/Madrid, verano/invierno)
 fbmcal/informe.py                Resumen de ejecución, avisos (Issues) y estado.json
+fbmcal/avisos_telegram.py        Resultado de la conciliación → mensajes de Telegram (sin red ni token)
+fbmcal/telegram.py               Cola y envío por la Telegram Bot API (solo biblioteca estándar)
 fbmcal/web.py                    Página de suscripción y estado
 fbmcal/main.py                   Orquestación (python -m fbmcal), escritura atómica
-tests/                           43 pruebas con la página real de la FBM guardada (reducida y anonimizada)
+tests/                           74 pruebas (43 de calendarios + 31 de Telegram y del tercer equipo), sin red ni tokens reales
 .github/workflows/actualizar-calendarios.yml   Automatización
 data/estado.json                 (se genera) memoria de partidos y cambios
+data/telegram.json               (se genera) cola de avisos pendientes y registro de enviados (sin secretos)
 docs/                            (se genera) lo que publica GitHub Pages
 ```
 
-## 6. Configuración paso a paso (una sola vez, ~10 min)
+## 7. Configuración paso a paso (una sola vez, ~10 min)
 
-### 6.1 Crear el repositorio y subir el código
+### 7.1 Crear el repositorio y subir el código
 
 1. Entra en <https://github.com/new>.
    * *Repository name*: `calendarios-cb-arganda`.
@@ -183,11 +267,11 @@ docs/                            (se genera) lo que publica GitHub Pages
    ```
    La primera vez, Windows abrirá una ventana para iniciar sesión **en GitHub**. Es tu sesión de GitHub, no se guarda en el proyecto.
 
-### 6.2 Activar GitHub Pages
+### 7.2 Activar GitHub Pages
 
 Repositorio → **Settings** → **Pages** → *Build and deployment* → *Source*: **GitHub Actions**.
 
-### 6.3 Primera ejecución
+### 7.3 Primera ejecución
 
 1. Repositorio → **Actions**. Si pregunta, pulsa *I understand my workflows, go ahead and enable them*.
 2. **Actualizar calendarios** → **Run workflow** → modo `manual` → **Run workflow**.
@@ -195,7 +279,7 @@ Repositorio → **Settings** → **Pages** → *Build and deployment* → *Sourc
    <https://juannnes.github.io/calendarios-cb-arganda/>.
    En la pestaña **Issues** aparecerá el aviso «🆕 Nueva competición/fase detectada» del cadete.
 
-### 6.4 (Opcional) Comprobar que te llegan los avisos
+### 7.4 (Opcional) Comprobar que te llegan los avisos
 
 * **Run workflow** → marca *Solo crear un aviso de prueba (Issue)* → **Run workflow**.
 * Para recibirlo en el móvil, instala la app **GitHub Mobile** e inicia sesión.
@@ -203,7 +287,7 @@ Repositorio → **Settings** → **Pages** → *Build and deployment* → *Sourc
   Ese email lo envía GitHub a la dirección de tu cuenta de GitHub. No necesita Gmail ni ninguna contraseña.
 * Si no te llega, en el repositorio pulsa **Watch → All Activity**.
 
-## 7. Automatización
+## 8. Automatización
 
 * Se ejecuta sola **cada lunes y viernes: comprobación de las 17:00, hora de Madrid** (lanzada a las 17:05, con respaldo a las 18:45).
 * **Antes de tocar nada** pasa las pruebas automáticas. Si fallan, no se modifica ningún calendario.
@@ -215,12 +299,13 @@ Repositorio → **Settings** → **Pages** → *Build and deployment* → *Sourc
 * Para que no se desactive por inactividad (la regla de GitHub de 60 días en repositorios públicos),
   cada ejecución correcta guarda un commit, así que el repositorio siempre tiene actividad.
 
-## 8. Acceder a los calendarios (móvil y ordenador)
+## 9. Acceder a los calendarios (móvil y ordenador)
 
 Abre <https://juannnes.github.io/calendarios-cb-arganda/> en cada dispositivo. Cada calendario tiene su propia URL:
 
 * Cadete: `https://juannnes.github.io/calendarios-cb-arganda/cadete-masculino-1-ano.ics`
-* Infantil: `https://juannnes.github.io/calendarios-cb-arganda/infantil-masculino-1-ano.ics`
+* Infantil 1º año: `https://juannnes.github.io/calendarios-cb-arganda/infantil-masculino-1-ano.ics`
+* Infantil Preferente: `https://juannnes.github.io/calendarios-cb-arganda/infantil-masculino-preferente.ics`
 
 Cómo suscribirse:
 
@@ -230,7 +315,7 @@ Cómo suscribirse:
 * **Familia**: envía el enlace de la página a las otras 3 personas. Cada una se suscribe desde su dispositivo.
 * **Google Calendar / Android / Outlook**: añade el enlace `.ics` con «Desde URL». Google refresca los calendarios suscritos cada varias horas.
 
-## 9. Mantenimiento: qué puede romperse y cómo arreglarlo
+## 10. Mantenimiento: qué puede romperse y cómo arreglarlo
 
 | Posible problema | Síntoma | Solución |
 |---|---|---|
@@ -241,6 +326,8 @@ Cómo suscribirse:
 | Dos equipos del club en el mismo grupo | Aviso «Hay varios equipos del club» | Poner el nombre del correcto en `nombre_fbm` |
 | GitHub desactiva el cron por inactividad | La página muestra una última comprobación antigua | Actions → Actualizar calendarios → *Enable workflow* |
 | Dirección de un pabellón incompleta | Mapa impreciso | Añadir la corrección a `pabellones.json` |
+| Telegram no avisa | ⚠️ en el trabajo **telegram** de la ejecución | Revisar los secrets; los avisos esperan en `data/telegram.json` y salen en la siguiente ejecución |
+| Token del bot expuesto por error | — | En @BotFather: `/revoke` → elegir el bot → nuevo token → actualizar el secret `TELEGRAM_BOT_TOKEN` |
 | Nueva temporada (agosto) | Nada: la clave incluye la temporada y los grupos nuevos se detectan solos | Opcional: si la FBM cambia los nombres de categoría, actualizar `config.json` |
 
 Para probar en local (Windows):

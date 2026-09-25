@@ -11,10 +11,13 @@ import traceback
 from datetime import datetime
 from pathlib import Path
 
-from .conciliar import conciliar_equipo
+from .conciliar import activo, conciliar_equipo
 from .fuente import FuenteError, descargar, leer_calendarios, leer_proximos_html, leer_proximos_xlsx
+from .avisos_telegram import aplicar_marcas, contar, preparar_mensajes
 from .ics import generar_ics
-from .informe import componer_aviso, escribir_aviso, escribir_resumen, estado_publico, resumen_ejecucion
+from .informe import (componer_aviso, escribir_aviso, escribir_resumen, estado_publico, resumen_ejecucion,
+                      resumen_por_equipo)
+from .telegram import cargar_cola, encolar
 from .util import DIAS, TZ, ahora_madrid, temporada_de
 from .web import generar_indice
 
@@ -62,6 +65,8 @@ def ejecutar(args) -> int:
     modo = resolver_modo(args.modo, ahora)
     ruta_estado = Path(args.estado)
     estado = cargar_json(ruta_estado, {"version": 1, "equipos": {}, "ejecuciones": {}})
+    ruta_cola = Path(args.cola) if args.cola else ruta_estado.parent / "telegram.json"
+    ultima_ok = (estado.get("ultima_ejecucion") or {}).get("en")  # última comprobación correcta ANTERIOR
     print(f"▶ {DIAS[ahora.weekday()]} {ahora:%d/%m/%Y %H:%M} (Europe/Madrid) · modo: {modo}")
 
     if args.programado:
@@ -98,8 +103,9 @@ def ejecutar(args) -> int:
     cambios = {}
     for cfg in config["equipos"]:
         est = estado["equipos"].setdefault(cfg["id"], {})
-        cambios[cfg["id"]] = conciliar_equipo(cfg, est, grupos, contraste, ahora, modo, temporada)
-        n = len([q for q in est["partidos"].values() if q["estado"] != "cancelado"])
+        cambios[cfg["id"]] = conciliar_equipo(cfg, est, grupos, contraste, ahora, modo, temporada,
+                                              config.get("desaparecidos"))
+        n = len([q for q in est["partidos"].values() if activo(q)])
         print(f"  · {cfg['nombre_calendario']}: {n} partidos · {len(cambios[cfg['id']])} cambios")
         for c in cambios[cfg["id"]]:
             if c.tipo != "nuevo":
@@ -121,11 +127,28 @@ def ejecutar(args) -> int:
     archivos[salida / "estado.json"] = a_json(publico)
     archivos[salida / "index.html"] = generar_indice(config, estado, ahora).encode("utf-8")
     archivos[salida / ".nojekyll"] = b""
+
+    # Telegram (capa SECUNDARIA): el resultado de la conciliación se convierte en avisos y se deja en la
+    # cola data/telegram.json. Aquí no hay red ni token; el envío se hace en otro paso DESPUÉS de publicar.
+    # Cualquier fallo en esta parte se registra y NUNCA impide actualizar los calendarios.
+    en_cola = None
+    try:
+        mensajes, marcas = preparar_mensajes(cambios, estado, config, modo, ahora, ultima_ok)
+        cola, añadidos = encolar(cargar_cola(ruta_cola), mensajes, ahora)
+        archivos[ruta_cola] = a_json(cola)
+        aplicar_marcas(marcas)  # solo si todo lo anterior ha ido bien
+        en_cola = len(cola["pendientes"])
+        print(f"  📱 Telegram: {añadidos} avisos nuevos en cola ({en_cola} pendientes de envío)")
+    except Exception as e:  # noqa: BLE001
+        traceback.print_exc()
+        print(f"::warning::No se pudieron preparar los avisos de Telegram ({e}). Los calendarios no se ven afectados.")
+
     archivos[ruta_estado] = a_json(estado)
 
     # 2) Escribir de golpe.
     escribir_todo(archivos)
 
+    escribir_resumen(resumen_por_equipo(contar(cambios, estado, config, modo, ahora), config, en_cola))
     escribir_resumen(resumen_ejecucion(cambios, avisos, config, estado, modo, ahora))
     aviso = componer_aviso(cambios, avisos, config, modo, ahora, os.environ.get("PAGES_URL"))
     if aviso:
@@ -144,6 +167,7 @@ def main(argv=None) -> int:
     ap.add_argument("--html", help="usar un HTML guardado en vez de descargar (pruebas)")
     ap.add_argument("--xlsx", help="usar un XLSX guardado en vez de descargar (pruebas)")
     ap.add_argument("--ahora", help="simular fecha/hora ISO, p. ej. 2026-09-28T17:00+02:00 (pruebas)")
+    ap.add_argument("--cola", help="cola de avisos de Telegram (por defecto, telegram.json junto al estado)")
     ap.add_argument("--probar-aviso", action="store_true", help="solo prepara un aviso de prueba (Issue)")
     args = ap.parse_args(argv)
     if args.probar_aviso:
@@ -157,6 +181,9 @@ def main(argv=None) -> int:
         print(f"\n❌ ERROR: {e}\nNo se ha modificado ningún calendario. Se reintentará en la próxima ejecución.")
         escribir_resumen(f"## ❌ Error en la actualización\n\n`{e}`\n\n"
                          "No se ha modificado ningún calendario; siguen publicados los de la última ejecución correcta.\n")
+        ruta_error = os.environ.get("ERROR_ARCHIVO")
+        if ruta_error:  # el workflow lo usa como «Causa» del aviso de error por Telegram
+            Path(ruta_error).write_text(f"{type(e).__name__}: {e}", encoding="utf-8")
         return 1
 
 
