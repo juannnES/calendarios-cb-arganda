@@ -69,6 +69,19 @@ En GitHub se lanza a las **17:05**: GitHub avisa de que las tareas programadas e
 o se descartan cuando hay mucha carga. Además hay una **ejecución de respaldo a las 18:45**.
 Si la de las 17:05 ya terminó bien, la de respaldo no hace nada. Si GitHub se la saltó o falló, la de respaldo hace el trabajo.
 
+**Cómo se programa (horas en UTC).** GitHub solo entiende de forma fiable horas UTC: con la opción `timezone:`
+el viernes 25/09/2026 no se disparó ninguna ejecución. Por eso el workflow programa las dos horas UTC posibles
+y el programa, que trabaja en hora de Madrid, solo actúa **desde las 17:00 y una sola vez al día**:
+
+| Cron (UTC) | Verano (UTC+2) | Invierno (UTC+1) |
+|---|---|---|
+| `5 15 * * 1,5` | **17:05** → comprobación | 16:05 → no hace nada (antes de las 17:00) |
+| `5 16 * * 1,5` | 18:05 → ya hecha, no repite (o la hace si la de 17:05 no llegó) | **17:05** → comprobación |
+| `45 16 * * 1,5` | **18:45** → respaldo | 17:45 → ya hecha, no repite |
+| `45 17 * * 1,5` | 19:45 → ya hecha, no repite | **18:45** → respaldo |
+
+Hay una prueba automática que lo comprueba para días de verano, de invierno y de las dos semanas de cambio de hora.
+
 ### Identificador único (sin duplicados)
 
 Cada partido tiene una clave `temporada | grupo FBM | equipo | jornada | local-vs-visitante`
@@ -144,7 +157,8 @@ Telegram es una **capa secundaria**: los calendarios funcionan igual con o sin e
 
 | Resultado | Mensaje | ¿Cuántas veces? |
 |---|---|---|
-| Partido que entra en el calendario (también los que ya existían la primera vez) | 🏀 NUEVO PARTIDO | 1 por partido |
+| Primera vez que Telegram procesa un equipo (sus partidos actuales) | 📋 AVISOS DE TELEGRAM ACTIVADOS (un único resumen) | 1 en total |
+| Partido que aparece después | 🏀 NUEVO PARTIDO | 1 por partido |
 | Lunes: partido de esa semana comprobado | 🔎 PARTIDO DETECTADO | 1 por partido y fecha |
 | Viernes: partido de ese fin de semana confirmado | ✅ PARTIDO CONFIRMADO | 1 por partido y fecha |
 | Cambio de hora (incluida 00:00 → hora oficial) | 🔄 CAMBIO DE HORA | 1 por cambio |
@@ -163,8 +177,12 @@ Telegram es una **capa secundaria**: los calendarios funcionan igual con o sin e
 **Anti-duplicados**: cada aviso tiene un identificador basado en el UID del partido. Las altas y las
 verificaciones se marcan en el estado del partido. Diez ejecuciones sin cambios envían **0 mensajes**.
 
-**Primera ejecución con Telegram**: recibirás un 🏀 NUEVO PARTIDO por cada partido futuro de los calendarios
-(unos 42: 20 del cadete y 22 del infantil preferente), a razón de ~1 por segundo.
+**Primera ejecución con Telegram (línea base)**: los partidos que ya existen en la FBM se registran como estado
+inicial **sin** un aviso por partido. Recibirás un único mensaje «📋 AVISOS DE TELEGRAM ACTIVADOS» con el número de
+partidos de cada calendario (hoy: 20 del cadete, 0 del infantil 1º y 22 del infantil preferente). En esa misma
+ejecución sí se avisan los cambios reales y la verificación del lunes o la confirmación del viernes, si toca.
+Desde ahí, cada partido que aparezca después genera su 🏀 NUEVO PARTIDO. Esto incluye los del Infantil 1º año
+cuando la FBM publique la categoría.
 
 ### 3.1 Configurar Telegram (una vez, ~5 min)
 
@@ -221,7 +239,7 @@ Además de Telegram, hay cuatro formas de enterarse de lo que pasa, todas gratis
 | GitHub Actions | Free: minutos **ilimitados** en repos públicos | — | ~2 min × 2-4 ejecuciones/semana |
 | GitHub Pages | Free (repos públicos) | 100 GB/mes de tráfico, 1 GB de sitio | < 1 MB de sitio |
 | GitHub Issues (avisos) | Incluido | — | Unos pocos al mes |
-| Telegram Bot API | Gratuita, sin planes de pago para bots | ~30 mensajes/s | Unos pocos por semana (~45 la primera vez) |
+| Telegram Bot API | Gratuita, sin planes de pago para bots | ~30 mensajes/s | Unos pocos por semana |
 | Apple Calendar | Incluido en iOS/macOS | — | 4 suscripciones |
 
 Nada caduca ni se convierte en pago. El repositorio es público porque GitHub Pages gratis lo exige.
@@ -243,7 +261,7 @@ fbmcal/avisos_telegram.py        Resultado de la conciliación → mensajes de T
 fbmcal/telegram.py               Cola y envío por la Telegram Bot API (solo biblioteca estándar)
 fbmcal/web.py                    Página de suscripción y estado
 fbmcal/main.py                   Orquestación (python -m fbmcal), escritura atómica
-tests/                           74 pruebas (43 de calendarios + 31 de Telegram y del tercer equipo), sin red ni tokens reales
+tests/                           89 pruebas (calendarios, Telegram, tercer equipo, primera ejecución y horarios), sin red ni tokens reales
 .github/workflows/actualizar-calendarios.yml   Automatización
 data/estado.json                 (se genera) memoria de partidos y cambios
 data/telegram.json               (se genera) cola de avisos pendientes y registro de enviados (sin secretos)

@@ -7,14 +7,18 @@ name: Actualizar calendarios
 
 on:
   schedule:
-    # COMPROBACIÓN DE LAS 17:00 DEL LUNES Y DEL VIERNES (hora de Madrid, verano/invierno automático).
+    # COMPROBACIÓN DE LAS 17:00 DEL LUNES Y DEL VIERNES (hora de Madrid).
     # Se lanza a las 17:05 y no a las 17:00 en punto porque GitHub avisa de que las tareas en el
     # minuto 0 son las que más se retrasan o se descartan. A efectos del sistema es la de las 17:00.
-    - cron: "5 17 * * 1,5"
-      timezone: "Europe/Madrid"
-    # Respaldo: si GitHub retrasa o se salta la anterior, esta la cubre. Si ya se hizo, no repite nada.
-    - cron: "45 18 * * 1,5"
-      timezone: "Europe/Madrid"
+    #
+    # Horas en UTC (el formato clásico que GitHub siempre dispara; con «timezone:» no se disparó
+    # ninguna el viernes 25/09/2026). Se programan las dos horas UTC posibles y el programa, que
+    # trabaja en hora de Madrid, solo actúa desde las 17:00 y una sola vez al día:
+    #   verano (UTC+2): 15:05 UTC = 17:05 Madrid ✔ · 16:05 UTC = 18:05 (ya hecha: no repite)
+    #   invierno (UTC+1): 15:05 UTC = 16:05 (antes de las 17:00: no hace nada) · 16:05 UTC = 17:05 ✔
+    - cron: "5 15,16 * * 1,5"
+    # Respaldo 18:45 Madrid: verano 16:45 UTC · invierno 17:45 UTC. Si ya se hizo, no repite nada.
+    - cron: "45 16,17 * * 1,5"
   workflow_dispatch:
     inputs:
       modo:

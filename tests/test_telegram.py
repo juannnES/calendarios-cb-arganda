@@ -12,7 +12,7 @@ import tempfile
 import unittest
 import unittest.mock
 from contextlib import redirect_stdout
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 from fbmcal import telegram
@@ -84,22 +84,29 @@ class AvisosDePartidos(unittest.TestCase):
         self.est = {}
         self.iniciales = correr(self.est, grupos(), JUEVES)
 
-    # ---------------------------------------------------------------- creación
+    # ---------------------------------------------------------------- primera ejecución y creación
+    def test_primera_ejecucion_registra_sin_avisar_partido_a_partido(self):
+        self.assertEqual([m["clase"] for m in self.iniciales], ["INICIO"])  # un único resumen
+        self.assertIn("📋 AVISOS DE TELEGRAM ACTIVADOS", self.iniciales[0]["texto"])
+        self.assertIn("🏀 Cadete 1º Año: 20 partidos", self.iniciales[0]["texto"])
+        self.assertEqual(de_clase(self.iniciales, "NUEVO"), [])
+        self.assertTrue(all(q["avisos_telegram"]["nuevo"] == "linea-base" for q in self.est["partidos"].values()))
+        self.assertIn("avisos_telegram_desde", self.est)
+        self.assertEqual(correr(self.est, grupos(), MARTES), [])  # la línea base no se repite
+
     def test_creacion_de_partido(self):
-        nuevos = de_clase(self.iniciales, "NUEVO")
-        self.assertEqual(len(nuevos), 20)
-        j1 = nuevos[0]["texto"]
+        est = {}
+        gs = grupos()
+        g = grupo(gs)
+        g.partidos.remove(partido(g, 1))
+        correr(est, gs, JUEVES)                    # línea base sin la jornada 1
+        m = correr(est, grupos(), MARTES)          # la FBM publica después la jornada 1
+        self.assertEqual([x["clase"] for x in m], ["NUEVO"])
         for linea in ("🏀 NUEVO PARTIDO", "Equipo: CB Arganda Cadete 1º Año", "🆚 Rival: C.B. COSLADA",
                       "📅 Fecha: Sábado 03/10/2026", "🕐 Hora: 11:15", "📍 Pabellón: EL PLANTIO, PABELLON",
                       "🏠 Local/Visitante: Visitante", "🏆 Jornada: 1", "📅 Calendario: Cadete 1º Año"):
-            self.assertIn(linea, j1)
-        self.assertEqual(len(de_clase(self.iniciales, "AVISO")), 1)  # nueva competición detectada
-
-    def test_partidos_que_ya_existian_se_anuncian_una_vez(self):
-        for q in self.est["partidos"].values():  # estado creado antes de existir Telegram
-            q.pop("avisos_telegram", None)
-        self.assertEqual(len(de_clase(correr(self.est, grupos(), MARTES), "NUEVO")), 20)
-        self.assertEqual(correr(self.est, grupos(), MARTES), [])
+            self.assertIn(linea, m[0]["texto"])
+        self.assertEqual(correr(est, grupos(), MARTES), [])  # una sola vez
 
     def test_sin_cambios_no_hay_mensajes(self):
         for _ in range(10):
@@ -262,13 +269,13 @@ class AvisosDePartidos(unittest.TestCase):
         gs = grupos()
         for p in grupo(gs).partidos:
             p.local = "CB ARGANDA B" if p.local == "LICEO FRANCES" else p.local
-        m = correr({}, gs, MARTES)
-        self.assertEqual([x["clase"] for x in m], ["ERROR"])
+        m = de_clase(correr({}, gs, MARTES), "ERROR")
+        self.assertEqual(len(m), 1)
         for linea in ("🚨 ERROR EN LA AUTOMATIZACIÓN", "Causa:", "Última comprobación correcta:",
                       "24/09/2026 21:00", "Los calendarios anteriores se han conservado."):
             self.assertIn(linea, m[0]["texto"])
         cola, n1 = telegram.encolar(telegram.cola_vacia(), m, MARTES)
-        cola, n2 = telegram.encolar(cola, correr({}, gs, VIERNES), VIERNES)  # mismo error 3 días después
+        cola, n2 = telegram.encolar(cola, de_clase(correr({}, gs, VIERNES), "ERROR"), VIERNES)  # 3 días después
         self.assertEqual((n1, n2), (1, 0))
 
 
@@ -281,11 +288,12 @@ class TresEquipos(unittest.TestCase):
         self.assertEqual({q["grupo_id"] for q in est_p["partidos"].values()}, {"17686"})
         self.assertEqual(len(est_p["partidos"]), 22)
         self.assertEqual(est_i.get("partidos"), {})    # Infantil 1º año: aún no publicado
-        self.assertEqual(mi, [])
+        self.assertEqual([m["clase"] for m in mi], ["INICIO"])
+        self.assertIn("Infantil 1º Año: 0 partidos", mi[0]["texto"])
         self.assertFalse({q["uid"] for q in est_c["partidos"].values()} & {q["uid"] for q in est_p["partidos"].values()})
         self.assertTrue(all("Infantil Preferente Masc." in m["texto"] for m in mp))
         self.assertFalse(any("Preferente" in m["texto"] for m in mc))
-        self.assertTrue(all(m["equipo"] == "infantil-masc-pref" for m in mp))
+        self.assertTrue(all(m["equipo"] in ("infantil-masc-pref", "todos") for m in mp))
         # Un cambio en un equipo no genera avisos en los otros.
         gs = grupos()
         partido(grupo(gs, "17686"), 1).hora = "12:00"
@@ -342,11 +350,18 @@ class InfantilPreferenteDeExtremoAExtremo(unittest.TestCase):
         self.assertTrue(all("CB ARGANDA" in (q["local"], q["visitante"]) for q in self.est["partidos"].values()))
 
     def test_nuevo_partido(self):
-        nuevos = de_clase(self.iniciales, "NUEVO")
-        self.assertEqual(len(nuevos), 22)
+        self.assertEqual([m["clase"] for m in self.iniciales], ["INICIO"])
+        self.assertIn("🏀 Infantil Preferente Masc.: 22 partidos", self.iniciales[0]["texto"])
+        est = {}
+        gs = grupos()
+        g = grupo(gs, "17686")
+        g.partidos.remove(partido(g, 1))
+        correr(est, gs, JUEVES, cfg=PREF)                  # línea base sin la jornada 1
+        m = correr(est, grupos(), MARTES, cfg=PREF)        # aparece después
+        self.assertEqual([x["clase"] for x in m], ["NUEVO"])
         for linea in ("🏀 NUEVO PARTIDO", "Equipo: CB Arganda Infantil Preferente Masc.", "🆚 Rival: C.B. MORATALAZ \"A\"",
                       "📅 Fecha: Sábado 03/10/2026", "🕐 Hora: 11:30", "📍 Pabellón: VIRGEN DEL CARMEN, Pista 3"):
-            self.assertIn(linea, nuevos[0]["texto"])
+            self.assertIn(linea, m[0]["texto"])
 
     def test_cambio_de_hora(self):
         t = self.un_aviso(self.cambiar(hora="12:15"))
@@ -404,6 +419,127 @@ class InfantilPreferenteDeExtremoAExtremo(unittest.TestCase):
         cadete = {}
         correr(cadete, grupos(), JUEVES, cfg=CADETE)
         self.assertFalse({q["uid"] for q in cadete["partidos"].values()} & {q["uid"] for q in self.est["partidos"].values()})
+
+
+class PrimeraEjecucionReal(unittest.TestCase):
+    """Primera ejecución tras añadir Telegram, partiendo del estado REAL publicado el 24/09/2026:
+    cadete con 20 partidos (sin marcas de Telegram), infantil 1º vacío y sin infantil preferente."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.dir = Path(self.tmp.name)
+        (self.dir / "club.html").write_text(HTML, encoding="utf-8")
+        (self.dir / "prox.xlsx").write_bytes(XLSX)
+        estado = {"version": 1, "ejecuciones": {}, "equipos": {}}
+        est_c, est_i = {}, {}
+        conciliar_equipo(CADETE, est_c, grupos(), [], JUEVES, "manual", "2026-27")
+        conciliar_equipo(INFANTIL, est_i, grupos(), [], JUEVES, "manual", "2026-27")
+        estado["equipos"] = {CADETE["id"]: est_c, INFANTIL["id"]: est_i}
+        estado["ultima_ejecucion"] = {"en": JUEVES.isoformat(timespec="minutes"), "modo": "manual"}
+        (self.dir / "estado.json").write_text(json.dumps(estado, ensure_ascii=False), encoding="utf-8")
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def correr(self, ahora, *extra, html="club.html"):
+        with redirect_stdout(io.StringIO()):
+            return main(["--html", str(self.dir / html), "--xlsx", str(self.dir / "prox.xlsx"),
+                         "--estado", str(self.dir / "estado.json"), "--salida", str(self.dir / "docs"),
+                         "--ahora", ahora, *extra])
+
+    def pendientes(self):
+        return telegram.cargar_cola(self.dir / "telegram.json")["pendientes"]
+
+    def test_publica_los_tres_y_no_envia_las_altas_iniciales(self):
+        self.assertEqual(self.correr("2026-09-26T12:00:00+02:00", "--modo", "manual"), 0)
+        eventos = [(self.dir / "docs" / c["archivo_ics"]).read_bytes().count(b"BEGIN:VEVENT") for c in (CADETE, INFANTIL, PREF)]
+        self.assertEqual(eventos, [20, 0, 22])
+        m = self.pendientes()
+        self.assertEqual([x["clase"] for x in m], ["INICIO"])
+        self.assertEqual([x for x in m if x["clase"] == "NUEVO"], [])
+        estado = json.loads((self.dir / "estado.json").read_text(encoding="utf-8"))
+        for cfg in (CADETE, INFANTIL, PREF):
+            est = estado["equipos"][cfg["id"]]
+            self.assertIn("avisos_telegram_desde", est)
+            self.assertTrue(all(q["avisos_telegram"]["nuevo"] == "linea-base" for q in est["partidos"].values()))
+
+    def test_despues_de_la_primera_ejecucion_todo_se_avisa_con_normalidad(self):
+        self.correr("2026-09-26T12:00:00+02:00", "--modo", "manual")
+        base = len(self.pendientes())
+        # Sin cambios: nada.
+        self.correr("2026-09-27T12:00:00+02:00", "--modo", "manual")
+        self.assertEqual(len(self.pendientes()), base)
+        # Cambio real de hora en el preferente y partido nuevo en el cadete: sus avisos.
+        html = HTML.replace("03/10/2026<br />11:30", "03/10/2026<br />12:15").replace("03/10/2026 11:30", "03/10/2026 12:15")
+        (self.dir / "mod.html").write_text(html, encoding="utf-8")
+        estado = json.loads((self.dir / "estado.json").read_text(encoding="utf-8"))
+        j5 = next(k for k, q in estado["equipos"][CADETE["id"]]["partidos"].items() if q["jornada"] == 5)
+        del estado["equipos"][CADETE["id"]]["partidos"][j5]           # como si la FBM lo publicara ahora
+        (self.dir / "estado.json").write_text(json.dumps(estado, ensure_ascii=False), encoding="utf-8")
+        self.correr("2026-09-29T17:05:00+02:00", "--modo", "manual", html="mod.html")
+        nuevos = self.pendientes()[base:]
+        self.assertEqual(sorted((x["equipo"], x["clase"]) for x in nuevos),
+                         [("cadete-masc-1-ano", "NUEVO"), ("infantil-masc-pref", "MODIFICADO")])
+        self.assertIn("🔄 CAMBIO DE HORA", next(x["texto"] for x in nuevos if x["clase"] == "MODIFICADO"))
+        # La misma actualización otra vez: ningún aviso más.
+        self.correr("2026-09-29T18:00:00+02:00", "--modo", "manual", html="mod.html")
+        self.assertEqual(len(self.pendientes()), base + 2)
+
+    def test_cambio_real_en_la_propia_primera_ejecucion_si_se_avisa(self):
+        html = HTML.replace("03/10/2026<br />11:15", "03/10/2026<br />12:30").replace("03/10/2026 11:15", "03/10/2026 12:30")
+        (self.dir / "mod.html").write_text(html, encoding="utf-8")
+        self.correr("2026-09-26T12:00:00+02:00", "--modo", "manual", html="mod.html")
+        self.assertEqual([x["clase"] for x in self.pendientes()], ["INICIO", "MODIFICADO"])
+
+    def test_confirmacion_del_viernes_se_mantiene_en_la_primera_ejecucion(self):
+        self.correr("2026-10-02T17:05:00+02:00", "--programado")   # la primera ejecución es la del viernes
+        clases = [(x["equipo"], x["clase"]) for x in self.pendientes()]
+        self.assertEqual(clases, [("todos", "INICIO"), ("cadete-masc-1-ano", "CONFIRMADO"),
+                                  ("infantil-masc-pref", "CONFIRMADO")])
+        self.correr("2026-10-02T18:45:00+02:00", "--programado")   # respaldo: nada nuevo
+        self.assertEqual(len(self.pendientes()), 3)
+
+
+class ProgramacionDelWorkflow(unittest.TestCase):
+    """Las horas UTC del workflow producen UNA comprobación a las 17:05 de Madrid (y respaldo a las 18:45)
+    tanto en horario de verano como de invierno, incluidas las semanas del cambio de hora."""
+
+    def disparos(self, dia):
+        wf = (Path(__file__).resolve().parent.parent / ".github/workflows/actualizar-calendarios.yml").read_text(encoding="utf-8")
+        self.assertIsNone(re.search(r"^\s+timezone:", wf, re.M))  # sin «timezone:» en la configuración
+        res = []
+        for minuto, horas, dias in re.findall(r'cron: "(\d+) ([\d,]+) \* \* ([\d,]+)"', wf):
+            if str((dia.isoweekday()) % 7) in dias.split(","):
+                res += [datetime(dia.year, dia.month, dia.day, int(h), int(minuto), tzinfo=timezone.utc)
+                        for h in horas.split(",")]
+        return sorted(res)
+
+    def test_verano_e_invierno(self):
+        from datetime import date
+        casos = {date(2026, 9, 28): "+02:00", date(2026, 10, 2): "+02:00",    # verano
+                 date(2026, 10, 26): "+01:00", date(2026, 11, 6): "+01:00",   # invierno (tras el 25/10)
+                 date(2027, 3, 29): "+02:00"}                                   # verano otra vez (tras el 28/03)
+        for dia, desfase in casos.items():
+            with self.subTest(dia=dia):
+                disparos = self.disparos(dia)
+                self.assertEqual(len(disparos), 4)
+                madrid = [d.astimezone(TZ) for d in disparos]
+                self.assertIn("17:05", [f"{m:%H:%M}" for m in madrid])
+                self.assertIn("18:45", [f"{m:%H:%M}" for m in madrid])
+                self.assertEqual(f"{madrid[0]:%z}"[:3] + ":" + f"{madrid[0]:%z}"[3:], desfase)
+                with tempfile.TemporaryDirectory() as tmp:
+                    d = Path(tmp)
+                    (d / "c.html").write_text(HTML, encoding="utf-8")
+                    (d / "x.xlsx").write_bytes(XLSX)
+                    hechas = []
+                    for disparo in disparos:
+                        with redirect_stdout(io.StringIO()):
+                            main(["--html", str(d / "c.html"), "--xlsx", str(d / "x.xlsx"), "--estado", str(d / "e.json"),
+                                  "--salida", str(d / "docs"), "--ahora", disparo.isoformat(), "--programado"])
+                        estado = json.loads((d / "e.json").read_text(encoding="utf-8")) if (d / "e.json").exists() else {}
+                        hechas = list(estado.get("ejecuciones", {}).values())
+                    self.assertEqual(len(hechas), 1)                          # una sola comprobación al día
+                    self.assertEqual(hechas[0][11:16], "17:05")               # la de las 17:05 de Madrid
 
 
 class ColaYEnvio(unittest.TestCase):
@@ -518,12 +654,11 @@ class Integracion(unittest.TestCase):
         self.assertEqual(self.correr("2026-09-28T17:05:00+02:00"), 0)
         self.assertEqual([self.eventos(c) for c in (CADETE, INFANTIL, PREF)], [20, 0, 22])
         cola = telegram.cargar_cola(self.dir / "telegram.json")
-        por_equipo = {}
-        for m in cola["pendientes"]:
-            por_equipo.setdefault(m["equipo"], []).append(m["clase"])
-        self.assertEqual(por_equipo["cadete-masc-1-ano"].count("NUEVO"), 20)
-        self.assertEqual(por_equipo["infantil-masc-pref"].count("NUEVO"), 22)
-        self.assertNotIn("infantil-masc-1-ano", por_equipo)
+        # Primera ejecución (lunes 17:05): un único resumen + la verificación del lunes de los 2 partidos de
+        # esa semana; ninguna de las 42 altas individuales.
+        self.assertEqual([m["clase"] for m in cola["pendientes"]], ["INICIO", "VERIFICADO", "VERIFICADO"])
+        for linea in ("Cadete 1º Año: 20 partidos", "Infantil 1º Año: 0 partidos", "Infantil Preferente Masc.: 22 partidos"):
+            self.assertIn(linea, cola["pendientes"][0]["texto"])
         index = (self.dir / "docs" / "index.html").read_text(encoding="utf-8")
         enlaces = re.findall(r'<h2>([^<]*)</h2>\s*<a class="btn" data-ics="([^"]+)" href="([^"]+)"', index)
         self.assertEqual([(t, d) for t, d, _ in enlaces],

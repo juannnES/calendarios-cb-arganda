@@ -4,6 +4,8 @@ No reinterpreta los datos de la FBM: cada mensaje sale de un `Cambio` de concili
 datos «antes») o del campo `verificacion` que fija la conciliación el lunes y el viernes.
 
 Anti-duplicados:
+  * Línea base          -> la primera vez que se procesa un equipo, sus partidos existentes se registran
+                           sin aviso individual (un único resumen «📋 AVISOS DE TELEGRAM ACTIVADOS»).
   * Alta de partido     -> una vez por partido (marca `avisos_telegram.nuevo` en el estado).
   * Verificado (lunes)  -> una vez por partido y fecha (marca `avisos_telegram.lunes`).
   * Confirmado (viernes)-> una vez por partido y fecha (marca `avisos_telegram.viernes`).
@@ -214,31 +216,56 @@ def _mensaje(cfg: dict, clase: str, id_: str, texto: str, uid: str | None = None
     return {"id": id_, "equipo": cfg["id"], "clase": clase, "uid": uid, "texto": texto}
 
 
+def texto_inicio(equipos: list[tuple[dict, int]]) -> str:
+    lineas = ["📋 AVISOS DE TELEGRAM ACTIVADOS", "",
+              "Se ha registrado el estado inicial de los calendarios (sin avisar partido a partido):", ""]
+    for cfg, n in equipos:
+        lineas.append(f"🏀 {cfg['calendario_corto']}: {n} partido{'s' if n != 1 else ''}"
+                      + ("" if n else " (la FBM aún no los ha publicado)"))
+    return "\n".join(lineas + ["", "A partir de ahora recibirás un aviso por cada partido nuevo, cada cambio, "
+                                   "la verificación del lunes y la confirmación del viernes."])
+
+
 def preparar_mensajes(cambios: dict[str, list[Cambio]], estado: dict, config: dict, modo: str,
                       ahora: datetime, ultima_ok: str | None) -> tuple[list[dict], list[tuple[dict, str, str]]]:
-    """Devuelve (mensajes, marcas). Las marcas anti-duplicado se aplican solo si todo ha ido bien."""
+    """Devuelve (mensajes, marcas). Las marcas anti-duplicado se aplican solo si todo ha ido bien.
+
+    LÍNEA BASE: la primera vez que Telegram procesa un equipo (su estado aún no tiene
+    `avisos_telegram_desde`), los partidos que ya existen se registran como estado inicial SIN un aviso
+    «NUEVO PARTIDO» por cada uno; en su lugar se envía un único resumen. Desde esa ejecución, todo partido
+    que aparezca después sí genera «NUEVO PARTIDO», y los cambios, la verificación del lunes y la
+    confirmación del viernes se avisan con normalidad (también en la propia ejecución de línea base).
+    """
     ahora_iso = ahora.isoformat(timespec="minutes")
     hoy = ahora.date().isoformat()
-    mensajes, marcas = [], []
+    mensajes, marcas, en_linea_base = [], [], []
     for cfg in config["equipos"]:
-        partidos = estado["equipos"].get(cfg["id"], {}).get("partidos", {})
+        est = estado["equipos"].setdefault(cfg["id"], {})
+        partidos = est.get("partidos", {})
         por_uid = {q["uid"]: q for q in partidos.values()}
         lista = cambios.get(cfg["id"], [])
         tipos = defaultdict(set)
         for c in lista:
             if c.uid:
                 tipos[c.uid].add(c.tipo)
+        linea_base = "avisos_telegram_desde" not in est
+        if linea_base:
+            en_linea_base.append((cfg, sum(1 for q in partidos.values() if activo(q))))
+            marcas.append((est, "avisos_telegram_desde", ahora_iso))
 
-        # 1) Alta: cada partido futuro del calendario se anuncia UNA vez, también los que ya existían.
+        # 1) Alta: cada partido futuro se anuncia UNA vez (salvo los registrados en la línea base).
         for q in sorted(partidos.values(), key=_orden):
-            if activo(q) and q["fecha"] and q["fecha"] >= hoy and not (q.get("avisos_telegram") or {}).get("nuevo"):
-                mensajes.append(_mensaje(cfg, "NUEVO", f"{q['uid']}|nuevo", texto_nuevo(cfg, q), q["uid"]))
-                marcas.append((q, "nuevo", ahora_iso))
+            if activo(q) and not (q.get("avisos_telegram") or {}).get("nuevo"):
+                if linea_base:
+                    marcas.append((q.setdefault("avisos_telegram", {}), "nuevo", "linea-base"))
+                elif q["fecha"] and q["fecha"] >= hoy:
+                    mensajes.append(_mensaje(cfg, "NUEVO", f"{q['uid']}|nuevo", texto_nuevo(cfg, q), q["uid"]))
+                    marcas.append((q.setdefault("avisos_telegram", {}), "nuevo", ahora_iso))
 
         # 2) Cambios, en el orden en que los detectó la conciliación.
         for c in lista:
-            if c.tipo == "nuevo":
-                continue  # ya cubierto por el alta
+            if c.tipo == "nuevo" or (linea_base and c.tipo == "grupo_nuevo"):
+                continue  # altas: cubiertas por el punto 1 (o por el resumen de la línea base)
             if c.uid is None:
                 clave = hashlib.sha1(f"{c.tipo}|{c.titulo}|{c.detalle}".encode()).hexdigest()[:16]
                 mensajes.append(_mensaje(cfg, CLASES.get(c.tipo, "AVISO"), f"sistema|{cfg['id']}|{clave}",
@@ -261,13 +288,17 @@ def preparar_mensajes(cambios: dict[str, list[Cambio]], estado: dict, config: di
                     clase, texto = (("VERIFICADO", texto_verificado(cfg, q)) if modo == "lunes"
                                     else ("CONFIRMADO", texto_confirmado(cfg, q)))
                     mensajes.append(_mensaje(cfg, clase, f"{q['uid']}|{modo}|{q['fecha']}", texto, q["uid"]))
-                    marcas.append((q, modo, q["fecha"]))
+                    marcas.append((q.setdefault("avisos_telegram", {}), modo, q["fecha"]))
+
+    if en_linea_base:
+        mensajes.insert(0, {"id": f"linea-base|{ahora_iso}|{','.join(c['id'] for c, _ in en_linea_base)}",
+                            "equipo": "todos", "clase": "INICIO", "uid": None, "texto": texto_inicio(en_linea_base)})
     return mensajes, marcas
 
 
 def aplicar_marcas(marcas: list[tuple[dict, str, str]]) -> None:
-    for q, clave, valor in marcas:
-        q.setdefault("avisos_telegram", {})[clave] = valor
+    for destino, clave, valor in marcas:
+        destino[clave] = valor
 
 
 def contar(cambios: dict[str, list[Cambio]], estado: dict, config: dict, modo: str, ahora: datetime) -> dict:
