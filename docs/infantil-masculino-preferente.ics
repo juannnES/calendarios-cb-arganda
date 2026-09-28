@@ -30,7 +30,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:ef1228f6574737b502b06a93@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -44,10 +44,9 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  IRGEN DEL CARMEN\, Pista 3\n🗺️ Dirección: MALLORCA\, S/N\, Arganda d
  el Rey\, Madrid\, España\n📅 Fecha: sábado 03/10/2026\n🕐 Hora: 11:3
  0\n⏰ En el calendario: 10:45–13:30 (45 min antes + 2 h de partido)\n\n
- Estado: 📅 Según el calendario oficial. Se verificará el lunes y se co
- nfirmará el viernes de la semana del partido\n✅ Última comprobación: 
- 25/09/2026 21:33\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-69
- 17/baloncesto-arganda
+ Estado: 🔎 Verificado el lunes 28/09/2026 23:09 (falta la confirmación 
+ final del viernes)\n✅ Última comprobación: 28/09/2026 23:09\n\nFuente 
+ oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
 TRANSP:OPAQUE
@@ -55,7 +54,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:c4636bb1c32428318580de8a@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -70,7 +69,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  ña\n📅 Fecha: sábado 17/10/2026\n🕐 Hora: 12:00\n⏰ En el calendari
  o: 11:15–14:00 (45 min antes + 2 h de partido)\n\nEstado: 📅 Según el
   calendario oficial. Se verificará el lunes y se confirmará el viernes d
- e la semana del partido\n✅ Última comprobación: 25/09/2026 21:33\n\nFu
+ e la semana del partido\n✅ Última comprobación: 28/09/2026 23:09\n\nFu
  ente oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -79,7 +78,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -95,7 +94,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  \n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 h
  asta que la FBM publique la hora oficial\n\nEstado: 📅 Según el calenda
  rio oficial. Se verificará el lunes y se confirmará el viernes de la sem
- ana del partido\n✅ Última comprobación: 25/09/2026 21:33\n\nFuente ofi
+ ana del partido\n✅ Última comprobación: 28/09/2026 23:09\n\nFuente ofi
  cial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -104,7 +103,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:5f7d170cc9b20396a653cb33@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -122,7 +121,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  \n⏰ Se muestra a las 00:00 hasta que la FBM publique la hora oficial\n\n
  Estado: 📅 Según el calendario oficial. Se verificará el lunes y se co
  nfirmará el viernes de la semana del partido\n✅ Última comprobación: 
- 25/09/2026 21:33\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-69
+ 28/09/2026 23:09\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-69
  17/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -131,7 +130,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -147,7 +146,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 has
  ta que la FBM publique la hora oficial\n\nEstado: 📅 Según el calendari
  o oficial. Se verificará el lunes y se confirmará el viernes de la seman
- a del partido\n✅ Última comprobación: 25/09/2026 21:33\n\nFuente ofici
+ a del partido\n✅ Última comprobación: 28/09/2026 23:09\n\nFuente ofici
  al:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -156,7 +155,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:77b62fd89cf4a1526aa80649@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -172,7 +171,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  a: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que l
  a FBM publique la hora oficial\n\nEstado: 📅 Según el calendario oficia
  l. Se verificará el lunes y se confirmará el viernes de la semana del pa
- rtido\n✅ Última comprobación: 25/09/2026 21:33\n\nFuente oficial:\nhtt
+ rtido\n✅ Última comprobación: 28/09/2026 23:09\n\nFuente oficial:\nhtt
  ps://www.fbm.es/resultados-club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -181,7 +180,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:aa44e7f4d69924c4bdf2cbf5@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -197,7 +196,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  6\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 
  hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según el calend
  ario oficial. Se verificará el lunes y se confirmará el viernes de la se
- mana del partido\n✅ Última comprobación: 25/09/2026 21:33\n\nFuente of
+ mana del partido\n✅ Última comprobación: 28/09/2026 23:09\n\nFuente of
  icial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -206,7 +205,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:7ecaeab301ddbdefd1d0e7a4@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -222,8 +221,8 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  ábado 12/12/2026\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se mues
  tra a las 00:00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 
  Según el calendario oficial. Se verificará el lunes y se confirmará el 
- viernes de la semana del partido\n✅ Última comprobación: 25/09/2026 21
- :33\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto
+ viernes de la semana del partido\n✅ Última comprobación: 28/09/2026 23
+ :09\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto
  -arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -232,7 +231,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:c8d7cf73feecb19ac39105ce@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -248,7 +247,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  o 19/12/2026\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a
   las 00:00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Segú
  n el calendario oficial. Se verificará el lunes y se confirmará el viern
- es de la semana del partido\n✅ Última comprobación: 25/09/2026 21:33\n
+ es de la semana del partido\n✅ Última comprobación: 28/09/2026 23:09\n
  \nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arga
  nda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
@@ -258,7 +257,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:9f8be9d52fb38ae0e094ca19@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -274,7 +273,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  2027\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:
  00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según el cal
  endario oficial. Se verificará el lunes y se confirmará el viernes de la
-  semana del partido\n✅ Última comprobación: 25/09/2026 21:33\n\nFuente
+  semana del partido\n✅ Última comprobación: 28/09/2026 23:09\n\nFuente
   oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -283,7 +282,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:cbe25a3e8f61b80b7d51947b@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -299,8 +298,8 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  bado 23/01/2027\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestr
  a a las 00:00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Se
  gún el calendario oficial. Se verificará el lunes y se confirmará el vi
- ernes de la semana del partido\n✅ Última comprobación: 25/09/2026 21:3
- 3\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-a
+ ernes de la semana del partido\n✅ Última comprobación: 28/09/2026 23:0
+ 9\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-a
  rganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -309,7 +308,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:463c0caef13b709a94a4051e@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -325,7 +324,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  a: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que l
  a FBM publique la hora oficial\n\nEstado: 📅 Según el calendario oficia
  l. Se verificará el lunes y se confirmará el viernes de la semana del pa
- rtido\n✅ Última comprobación: 25/09/2026 21:33\n\nFuente oficial:\nhtt
+ rtido\n✅ Última comprobación: 28/09/2026 23:09\n\nFuente oficial:\nhtt
  ps://www.fbm.es/resultados-club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -334,7 +333,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:f2340b06d8459a60ff26e089@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -350,7 +349,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  \n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 h
  asta que la FBM publique la hora oficial\n\nEstado: 📅 Según el calenda
  rio oficial. Se verificará el lunes y se confirmará el viernes de la sem
- ana del partido\n✅ Última comprobación: 25/09/2026 21:33\n\nFuente ofi
+ ana del partido\n✅ Última comprobación: 28/09/2026 23:09\n\nFuente ofi
  cial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -359,7 +358,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:14b8893b7b7a7d79b3d408a7@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -375,7 +374,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
   de confirmación\n⏰ Se muestra a las 00:00 hasta que la FBM publique la
   hora oficial\n\nEstado: 📅 Según el calendario oficial. Se verificará
   el lunes y se confirmará el viernes de la semana del partido\n✅ Últim
- a comprobación: 25/09/2026 21:33\n\nFuente oficial:\nhttps://www.fbm.es/r
+ a comprobación: 28/09/2026 23:09\n\nFuente oficial:\nhttps://www.fbm.es/r
  esultados-club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -384,7 +383,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:09f07edf958bbfc2764ac68d@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -400,7 +399,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  0/02/2027\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a la
  s 00:00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según e
  l calendario oficial. Se verificará el lunes y se confirmará el viernes 
- de la semana del partido\n✅ Última comprobación: 25/09/2026 21:33\n\nF
+ de la semana del partido\n✅ Última comprobación: 28/09/2026 23:09\n\nF
  uente oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -409,7 +408,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:fe0349c78be031e604fe23db@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -425,7 +424,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  rmación\n⏰ Se muestra a las 00:00 hasta que la FBM publique la hora ofi
  cial\n\nEstado: 📅 Según el calendario oficial. Se verificará el lunes
   y se confirmará el viernes de la semana del partido\n✅ Última comprob
- ación: 25/09/2026 21:33\n\nFuente oficial:\nhttps://www.fbm.es/resultados
+ ación: 28/09/2026 23:09\n\nFuente oficial:\nhttps://www.fbm.es/resultados
  -club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -434,7 +433,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:40cfaae7629d0bbd036b9e7e@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -450,7 +449,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  27\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00
   hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según el calen
  dario oficial. Se verificará el lunes y se confirmará el viernes de la s
- emana del partido\n✅ Última comprobación: 25/09/2026 21:33\n\nFuente o
+ emana del partido\n✅ Última comprobación: 28/09/2026 23:09\n\nFuente o
  ficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -459,7 +458,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:28233e46303352c0ab4d3f0f@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -475,7 +474,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  03/2027\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 
  00:00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según el 
  calendario oficial. Se verificará el lunes y se confirmará el viernes de
-  la semana del partido\n✅ Última comprobación: 25/09/2026 21:33\n\nFue
+  la semana del partido\n✅ Última comprobación: 28/09/2026 23:09\n\nFue
  nte oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -484,7 +483,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:5aaf25f6978296cad69c3519@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -500,7 +499,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  2027\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:
  00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según el cal
  endario oficial. Se verificará el lunes y se confirmará el viernes de la
-  semana del partido\n✅ Última comprobación: 25/09/2026 21:33\n\nFuente
+  semana del partido\n✅ Última comprobación: 28/09/2026 23:09\n\nFuente
   oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -509,7 +508,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:7009f81b87f7600b8420097d@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -525,7 +524,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  4/2027\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 0
  0:00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según el c
  alendario oficial. Se verificará el lunes y se confirmará el viernes de 
- la semana del partido\n✅ Última comprobación: 25/09/2026 21:33\n\nFuen
+ la semana del partido\n✅ Última comprobación: 28/09/2026 23:09\n\nFuen
  te oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -534,7 +533,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:cad60f4102a3d542bd852f33@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -550,7 +549,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
  a: 13:15\n⏰ En el calendario: 12:30–15:15 (45 min antes + 2 h de parti
  do)\n\nEstado: 📅 Según el calendario oficial. Se verificará el lunes 
  y se confirmará el viernes de la semana del partido\n✅ Última comproba
- ción: 25/09/2026 21:33\n\nFuente oficial:\nhttps://www.fbm.es/resultados-
+ ción: 28/09/2026 23:09\n\nFuente oficial:\nhttps://www.fbm.es/resultados-
  club-6917/baloncesto-arganda
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
 STATUS:CONFIRMED
@@ -559,7 +558,7 @@ CATEGORIES:Baloncesto
 END:VEVENT
 BEGIN:VEVENT
 UID:2340963cf18f1aa7e086d055@calendarios-cb-arganda
-DTSTAMP:20260925T193359Z
+DTSTAMP:20260928T210921Z
 CREATED:20260925T191300Z
 LAST-MODIFIED:20260925T191300Z
 SEQUENCE:0
@@ -575,7 +574,7 @@ DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Preferente\nCom
   24/04/2027\n🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a 
  las 00:00 hasta que la FBM publique la hora oficial\n\nEstado: 📅 Según
   el calendario oficial. Se verificará el lunes y se confirmará el vierne
- s de la semana del partido\n✅ Última comprobación: 25/09/2026 21:33\n\
+ s de la semana del partido\n✅ Última comprobación: 28/09/2026 23:09\n\
  nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-argan
  da
 URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda

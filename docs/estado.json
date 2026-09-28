@@ -1,6 +1,25 @@
 {
   "avisos": [],
-  "cambios": [],
+  "cambios": [
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "EL PLANTIO, PABELLON (CALLE ALAMEDA, 7, Coslada) → EL PLANTIO, PABELLON (Pista 1) (CALLE ALAMEDA, 7, Coslada)",
+      "partido": "C.B. COSLADA vs CB Arganda",
+      "tipo": "cambio_pabellon"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "12:00",
+      "partido": "CB Arganda vs LICEO FRANCES",
+      "tipo": "hora_confirmada"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL) (MALLORCA, S/N, Arganda del Rey) → VIRGEN DEL CARMEN, Pista 1 (MALLORCA, S/N, Arganda del Rey)",
+      "partido": "CB Arganda vs LICEO FRANCES",
+      "tipo": "cambio_pabellon"
+    }
+  ],
   "equipos": {
     "cadete-masc-1-ano": {
       "archivo_ics": "cadete-masculino-1-ano.ics",
@@ -9,12 +28,12 @@
         "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3"
       ],
       "partidos_en_calendario": 20,
-      "partidos_sin_hora": 17,
+      "partidos_sin_hora": 16,
       "proximo_partido": {
         "fecha": "2026-10-03",
         "hora": "11:15",
         "local": "C.B. COSLADA",
-        "pabellon": "EL PLANTIO, PABELLON",
+        "pabellon": "EL PLANTIO, PABELLON (Pista 1)",
         "visitante": "CB ARGANDA"
       }
     },
@@ -44,6 +63,6 @@
     }
   },
   "resultado": "ok",
-  "tipo": "comprobación manual",
-  "ultima_comprobacion_correcta": "2026-09-25T21:33+02:00"
+  "tipo": "comprobación de las 17:00 del lunes",
+  "ultima_comprobacion_correcta": "2026-09-28T23:09+02:00"
 }
