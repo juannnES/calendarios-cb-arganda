@@ -46,50 +46,14 @@
     "cad60f4102a3d542bd852f33@calendarios-cb-arganda|nuevo",
     "2340963cf18f1aa7e086d055@calendarios-cb-arganda|nuevo",
     "sistema|infantil-masc-pref|48711de1feaa45df",
-    "linea-base|2026-09-25T21:33+02:00|cadete-masc-1-ano,infantil-masc-1-ano,infantil-masc-pref"
+    "linea-base|2026-09-25T21:33+02:00|cadete-masc-1-ano,infantil-masc-1-ano,infantil-masc-pref",
+    "75ec120443f0ccd7d8517a7b@calendarios-cb-arganda|cambio_pabellon|2026-09-28T23:09+02:00",
+    "1534eb24de28d17c39faf020@calendarios-cb-arganda|hora_confirmada|2026-09-28T23:09+02:00",
+    "1534eb24de28d17c39faf020@calendarios-cb-arganda|cambio_pabellon|2026-09-28T23:09+02:00",
+    "75ec120443f0ccd7d8517a7b@calendarios-cb-arganda|lunes|2026-10-03",
+    "ef1228f6574737b502b06a93@calendarios-cb-arganda|lunes|2026-10-03"
   ],
-  "pendientes": [
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-09-28T23:09+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "75ec120443f0ccd7d8517a7b@calendarios-cb-arganda|cambio_pabellon|2026-09-28T23:09+02:00",
-      "texto": "📍 CAMBIO DE PABELLÓN\n\n🏀 CB Arganda Cadete 1º Año\n🆚 C.B. COSLADA\n\n📍 Antes:\nEL PLANTIO, PABELLON\nCALLE ALAMEDA, 7, Coslada\n\n📍 Ahora:\nEL PLANTIO, PABELLON (Pista 1)\nCALLE ALAMEDA, 7, Coslada\n\n📅 Sábado 03/10/2026\n🕐 11:15\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "75ec120443f0ccd7d8517a7b@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-09-28T23:09+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "1534eb24de28d17c39faf020@calendarios-cb-arganda|hora_confirmada|2026-09-28T23:09+02:00",
-      "texto": "🔄 CAMBIO DE HORA\n\n🏀 CB Arganda Cadete 1º Año\n🆚 LICEO FRANCES\n\n🕐 Antes: Pendiente (se mostraba a las 00:00)\n🕐 Ahora: 12:00\n\n📅 Sábado 10/10/2026\n📍 VIRGEN DEL CARMEN, Pista 1\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "1534eb24de28d17c39faf020@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-09-28T23:09+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "1534eb24de28d17c39faf020@calendarios-cb-arganda|cambio_pabellon|2026-09-28T23:09+02:00",
-      "texto": "📍 CAMBIO DE PABELLÓN\n\n🏀 CB Arganda Cadete 1º Año\n🆚 LICEO FRANCES\n\n📍 Antes:\nVIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\nMALLORCA, S/N, Arganda del Rey\n\n📍 Ahora:\nVIRGEN DEL CARMEN, Pista 1\nMALLORCA, S/N, Arganda del Rey\n\n📅 Sábado 10/10/2026\n🕐 12:00\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "1534eb24de28d17c39faf020@calendarios-cb-arganda"
-    },
-    {
-      "clase": "VERIFICADO",
-      "creado": "2026-09-28T23:09+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "75ec120443f0ccd7d8517a7b@calendarios-cb-arganda|lunes|2026-10-03",
-      "texto": "🔎 PARTIDO DETECTADO\n\n🏀 CB Arganda Cadete 1º Año\n🆚 C.B. COSLADA\n\n📅 Sábado 03/10/2026\n🕐 11:15\n📍 EL PLANTIO, PABELLON (Pista 1)\n\nEstado: VERIFICADO\n\nPróxima comprobación:\nViernes 17:05\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "75ec120443f0ccd7d8517a7b@calendarios-cb-arganda"
-    },
-    {
-      "clase": "VERIFICADO",
-      "creado": "2026-09-28T23:09+02:00",
-      "equipo": "infantil-masc-pref",
-      "id": "ef1228f6574737b502b06a93@calendarios-cb-arganda|lunes|2026-10-03",
-      "texto": "🔎 PARTIDO DETECTADO\n\n🏀 CB Arganda Infantil Preferente Masc.\n🆚 C.B. MORATALAZ \"A\"\n\n📅 Sábado 03/10/2026\n🕐 11:30\n📍 VIRGEN DEL CARMEN, Pista 3\n\nEstado: VERIFICADO\n\nPróxima comprobación:\nViernes 17:05\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "ef1228f6574737b502b06a93@calendarios-cb-arganda"
-    }
-  ],
-  "ultimo_envio": "2026-09-25T21:34+02:00",
+  "pendientes": [],
+  "ultimo_envio": "2026-09-28T23:10+02:00",
   "ultimo_error": null
 }
