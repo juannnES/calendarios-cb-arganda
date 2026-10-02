@@ -53,7 +53,24 @@
     "75ec120443f0ccd7d8517a7b@calendarios-cb-arganda|lunes|2026-10-03",
     "ef1228f6574737b502b06a93@calendarios-cb-arganda|lunes|2026-10-03"
   ],
-  "pendientes": [],
+  "pendientes": [
+    {
+      "clase": "CONFIRMADO",
+      "creado": "2026-10-02T21:50+02:00",
+      "equipo": "cadete-masc-1-ano",
+      "id": "75ec120443f0ccd7d8517a7b@calendarios-cb-arganda|viernes|2026-10-03",
+      "texto": "✅ PARTIDO CONFIRMADO\n\n🏀 CB Arganda Cadete 1º Año\n🆚 C.B. COSLADA\n\n📅 Sábado 03/10/2026\n🕐 11:15\n📍 EL PLANTIO, PABELLON (Pista 1)\n\nLa información ha sido comprobada nuevamente en la fuente oficial.\n\n📅 Calendario: Cadete 1º Año",
+      "uid": "75ec120443f0ccd7d8517a7b@calendarios-cb-arganda"
+    },
+    {
+      "clase": "CONFIRMADO",
+      "creado": "2026-10-02T21:50+02:00",
+      "equipo": "infantil-masc-pref",
+      "id": "ef1228f6574737b502b06a93@calendarios-cb-arganda|viernes|2026-10-03",
+      "texto": "✅ PARTIDO CONFIRMADO\n\n🏀 CB Arganda Infantil Preferente Masc.\n🆚 C.B. MORATALAZ \"A\"\n\n📅 Sábado 03/10/2026\n🕐 11:30\n📍 VIRGEN DEL CARMEN, Pista 3\n\nLa información ha sido comprobada nuevamente en la fuente oficial.\n\n📅 Calendario: Infantil Preferente Masc.",
+      "uid": "ef1228f6574737b502b06a93@calendarios-cb-arganda"
+    }
+  ],
   "ultimo_envio": "2026-09-28T23:10+02:00",
   "ultimo_error": null
 }
