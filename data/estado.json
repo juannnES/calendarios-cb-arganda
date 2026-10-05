@@ -2,7 +2,8 @@
   "ejecuciones": {
     "2026-09-25-viernes": "2026-09-25T21:13+02:00",
     "2026-09-28-lunes": "2026-09-28T23:09+02:00",
-    "2026-10-02-viernes": "2026-10-02T21:50+02:00"
+    "2026-10-02-viernes": "2026-10-02T21:50+02:00",
+    "2026-10-05-lunes": "2026-10-05T23:55+02:00"
   },
   "equipos": {
     "cadete-masc-1-ano": {
@@ -12,25 +13,25 @@
         "17743": {
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "detectado": "2026-09-24T21:23+02:00",
-          "equipo_fbm": "CB ARGANDA"
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA"
         }
       },
       "grupos_ignorados": [],
       "partidos": {
-        "2026-27|fbm-17743|cadete-masc-1-ano|j01|c-b-coslada-vs-cb-arganda": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j01|c-b-coslada-vs-carniceria-dmorata-arganda": {
           "arganda_local": false,
           "avisos_telegram": {
             "lunes": "2026-10-03",
             "nuevo": "2026-09-25T21:13+02:00",
             "viernes": "2026-10-03"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j01|c-b-coslada-vs-cb-arganda",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j01|c-b-coslada-vs-carniceria-dmorata-arganda",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "CALLE ALAMEDA, 7, Coslada",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2026-10-03",
           "grupo_id": "17743",
@@ -44,37 +45,48 @@
               "detalle": "EL PLANTIO, PABELLON (CALLE ALAMEDA, 7, Coslada) → EL PLANTIO, PABELLON (Pista 1) (CALLE ALAMEDA, 7, Coslada)",
               "en": "2026-09-28T23:09+02:00",
               "tipo": "cambio_pabellon"
+            },
+            {
+              "detalle": "C.B. COSLADA - CB ARGANDA → C.B. COSLADA - CARNICERIA DMORATA ARGANDA",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
+            },
+            {
+              "detalle": "103-43",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "resultado"
             }
           ],
           "hora": "11:15",
           "jornada": 1,
           "local": "C.B. COSLADA",
-          "marcador": null,
-          "modificado": "2026-09-28T23:09+02:00",
+          "marcador": "103-43",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "EL PLANTIO, PABELLON (Pista 1)",
           "rival": "C.B. COSLADA",
-          "secuencia": 1,
+          "secuencia": 3,
           "texto_estado": null,
           "uid": "75ec120443f0ccd7d8517a7b@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
-            "en": "2026-10-02T21:50+02:00",
-            "tipo": "viernes"
+            "en": null,
+            "tipo": "provisional"
           },
-          "visitante": "CB ARGANDA"
+          "visitante": "CARNICERIA DMORATA ARGANDA"
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j02|cb-arganda-vs-liceo-frances": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j02|carniceria-dmorata-arganda-vs-liceo-frances": {
           "arganda_local": true,
           "avisos_telegram": {
+            "lunes": "2026-10-10",
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j02|cb-arganda-vs-liceo-frances",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j02|carniceria-dmorata-arganda-vs-liceo-frances",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "MALLORCA, S/N, Arganda del Rey",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2026-10-10",
           "grupo_id": "17743",
@@ -93,37 +105,42 @@
               "detalle": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL) (MALLORCA, S/N, Arganda del Rey) → VIRGEN DEL CARMEN, Pista 1 (MALLORCA, S/N, Arganda del Rey)",
               "en": "2026-09-28T23:09+02:00",
               "tipo": "cambio_pabellon"
+            },
+            {
+              "detalle": "CB ARGANDA - LICEO FRANCES → CARNICERIA DMORATA ARGANDA - LICEO FRANCES",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": "12:00",
           "jornada": 2,
-          "local": "CB ARGANDA",
+          "local": "CARNICERIA DMORATA ARGANDA",
           "marcador": null,
-          "modificado": "2026-09-28T23:09+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "VIRGEN DEL CARMEN, Pista 1",
           "rival": "LICEO FRANCES",
-          "secuencia": 1,
+          "secuencia": 2,
           "texto_estado": null,
           "uid": "1534eb24de28d17c39faf020@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
-            "en": null,
-            "tipo": "provisional"
+            "en": "2026-10-05T23:55+02:00",
+            "tipo": "lunes"
           },
           "visitante": "LICEO FRANCES"
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j03|jansen-bt-b-vs-cb-arganda": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j03|jansen-bt-b-vs-carniceria-dmorata-arganda": {
           "arganda_local": false,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j03|jansen-bt-b-vs-cb-arganda",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j03|jansen-bt-b-vs-carniceria-dmorata-arganda",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "PLAZA JOSE MARIA UNCETA, 4, Torrelodones",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2026-10-17",
           "grupo_id": "17743",
@@ -132,37 +149,42 @@
               "detalle": "17/10/2026 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "JANSEN BT \"B\" - CB ARGANDA → JANSEN BT \"B\" - CARNICERIA DMORATA ARGANDA",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 3,
           "local": "JANSEN BT \"B\"",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "TORRELODONES, PABELLON pequeño",
           "rival": "JANSEN BT \"B\"",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "231ed9bb7a409a1a25e2bcc2@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
-          "visitante": "CB ARGANDA"
+          "visitante": "CARNICERIA DMORATA ARGANDA"
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j04|cb-arganda-vs-cb-pozuelo-verde": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j04|carniceria-dmorata-arganda-vs-cb-pozuelo-verde": {
           "arganda_local": true,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j04|cb-arganda-vs-cb-pozuelo-verde",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j04|carniceria-dmorata-arganda-vs-cb-pozuelo-verde",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "MALLORCA, S/N, Arganda del Rey",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2026-10-24",
           "grupo_id": "17743",
@@ -171,37 +193,42 @@
               "detalle": "24/10/2026 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "CB ARGANDA - CB POZUELO VERDE → CARNICERIA DMORATA ARGANDA - CB POZUELO VERDE",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 4,
-          "local": "CB ARGANDA",
+          "local": "CARNICERIA DMORATA ARGANDA",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)",
           "rival": "CB POZUELO VERDE",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "a4b413f20f036d7438ab5420@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
           "visitante": "CB POZUELO VERDE"
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j05|san-blas-basket-vs-cb-arganda": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j05|san-blas-basket-vs-carniceria-dmorata-arganda": {
           "arganda_local": false,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j05|san-blas-basket-vs-cb-arganda",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j05|san-blas-basket-vs-carniceria-dmorata-arganda",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "EDUARDO TERAN, 8, Madrid",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2026-11-07",
           "grupo_id": "17743",
@@ -210,37 +237,42 @@
               "detalle": "07/11/2026 14:30",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "SAN BLAS BASKET - CB ARGANDA → SAN BLAS BASKET - CARNICERIA DMORATA ARGANDA",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": "14:30",
           "jornada": 5,
           "local": "SAN BLAS BASKET",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "SANTO ANGEL DE LA GUARDA, PABELLON COLEGIO",
           "rival": "SAN BLAS BASKET",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "5e45d2d5a13f64dd26861491@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
-          "visitante": "CB ARGANDA"
+          "visitante": "CARNICERIA DMORATA ARGANDA"
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j06|cb-arganda-vs-madrid-fsm-c-d-b": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j06|carniceria-dmorata-arganda-vs-madrid-fsm-c-d-b": {
           "arganda_local": true,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j06|cb-arganda-vs-madrid-fsm-c-d-b",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j06|carniceria-dmorata-arganda-vs-madrid-fsm-c-d-b",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "MALLORCA, S/N, Arganda del Rey",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2026-11-14",
           "grupo_id": "17743",
@@ -249,37 +281,42 @@
               "detalle": "14/11/2026 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "CB ARGANDA - MADRID FSM C.D.B. → CARNICERIA DMORATA ARGANDA - MADRID FSM C.D.B.",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 6,
-          "local": "CB ARGANDA",
+          "local": "CARNICERIA DMORATA ARGANDA",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)",
           "rival": "MADRID FSM C.D.B.",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "a3d34502da0a256ea378ed35@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
           "visitante": "MADRID FSM C.D.B."
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j07|c-b-getafe-molera-vs-cb-arganda": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j07|c-b-getafe-molera-vs-carniceria-dmorata-arganda": {
           "arganda_local": false,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j07|c-b-getafe-molera-vs-cb-arganda",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j07|c-b-getafe-molera-vs-carniceria-dmorata-arganda",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "AV. ESPAÑA, 90, Getafe",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2026-11-21",
           "grupo_id": "17743",
@@ -288,37 +325,42 @@
               "detalle": "21/11/2026 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "C.B. GETAFE \"MOLERA\" - CB ARGANDA → C.B. GETAFE \"MOLERA\" - CARNICERIA DMORATA ARGANDA",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 7,
           "local": "C.B. GETAFE \"MOLERA\"",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "JUAN DE LA CIERVA, PABELLON PISTA CENTRAL",
           "rival": "C.B. GETAFE \"MOLERA\"",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "426beb68918a87ca8e0383a9@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
-          "visitante": "CB ARGANDA"
+          "visitante": "CARNICERIA DMORATA ARGANDA"
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j09|baloncesto-fuenlabrada-2012-vs-cb-arganda": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j09|baloncesto-fuenlabrada-2012-vs-carniceria-dmorata-arganda": {
           "arganda_local": false,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j09|baloncesto-fuenlabrada-2012-vs-cb-arganda",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j09|baloncesto-fuenlabrada-2012-vs-carniceria-dmorata-arganda",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "FUENTESAUCO, 1, Fuenlabrada",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2026-12-12",
           "grupo_id": "17743",
@@ -327,37 +369,42 @@
               "detalle": "12/12/2026 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "BALONCESTO FUENLABRADA 2012 - CB ARGANDA → BALONCESTO FUENLABRADA 2012 - CARNICERIA DMORATA ARGANDA",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 9,
           "local": "BALONCESTO FUENLABRADA 2012",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "EL ARROYO, PABELLON",
           "rival": "BALONCESTO FUENLABRADA 2012",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "bd376e299f5a30f985793969@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
-          "visitante": "CB ARGANDA"
+          "visitante": "CARNICERIA DMORATA ARGANDA"
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j10|cb-arganda-vs-fundal-alcobendas-c": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j10|carniceria-dmorata-arganda-vs-fundal-alcobendas-c": {
           "arganda_local": true,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j10|cb-arganda-vs-fundal-alcobendas-c",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j10|carniceria-dmorata-arganda-vs-fundal-alcobendas-c",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "MALLORCA, S/N, Arganda del Rey",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2026-12-19",
           "grupo_id": "17743",
@@ -366,37 +413,42 @@
               "detalle": "19/12/2026 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "CB ARGANDA - FUNDAL ALCOBENDAS \"C\" → CARNICERIA DMORATA ARGANDA - FUNDAL ALCOBENDAS \"C\"",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 10,
-          "local": "CB ARGANDA",
+          "local": "CARNICERIA DMORATA ARGANDA",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)",
           "rival": "FUNDAL ALCOBENDAS \"C\"",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "f8886aaee04133a2721becd4@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
           "visitante": "FUNDAL ALCOBENDAS \"C\""
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j11|olimpico-64-vs-cb-arganda": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j11|olimpico-64-vs-carniceria-dmorata-arganda": {
           "arganda_local": false,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j11|olimpico-64-vs-cb-arganda",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j11|olimpico-64-vs-carniceria-dmorata-arganda",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "ESCALONA, 59, Madrid",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2027-01-09",
           "grupo_id": "17743",
@@ -405,37 +457,42 @@
               "detalle": "09/01/2027 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "OLIMPICO 64 - CB ARGANDA → OLIMPICO 64 - CARNICERIA DMORATA ARGANDA",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 11,
           "local": "OLIMPICO 64",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "SAGE 2000, PABELLON",
           "rival": "OLIMPICO 64",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "8386830104e9356c8f5db420@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
-          "visitante": "CB ARGANDA"
+          "visitante": "CARNICERIA DMORATA ARGANDA"
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j12|cb-arganda-vs-c-b-coslada": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j12|carniceria-dmorata-arganda-vs-c-b-coslada": {
           "arganda_local": true,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j12|cb-arganda-vs-c-b-coslada",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j12|carniceria-dmorata-arganda-vs-c-b-coslada",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "MALLORCA, S/N, Arganda del Rey",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2027-01-16",
           "grupo_id": "17743",
@@ -444,37 +501,42 @@
               "detalle": "16/01/2027 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "CB ARGANDA - C.B. COSLADA → CARNICERIA DMORATA ARGANDA - C.B. COSLADA",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 12,
-          "local": "CB ARGANDA",
+          "local": "CARNICERIA DMORATA ARGANDA",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)",
           "rival": "C.B. COSLADA",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "b766969a0870198b440cb57e@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
           "visitante": "C.B. COSLADA"
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j13|liceo-frances-vs-cb-arganda": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j13|liceo-frances-vs-carniceria-dmorata-arganda": {
           "arganda_local": false,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j13|liceo-frances-vs-cb-arganda",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j13|liceo-frances-vs-carniceria-dmorata-arganda",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "AVDA. DE LOS MADROÑOS frente nº 42, Madrid",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2027-01-23",
           "grupo_id": "17743",
@@ -483,37 +545,42 @@
               "detalle": "23/01/2027 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "LICEO FRANCES - CB ARGANDA → LICEO FRANCES - CARNICERIA DMORATA ARGANDA",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 13,
           "local": "LICEO FRANCES",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "LICEO FRANCES, PABELLON COLEGIO",
           "rival": "LICEO FRANCES",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "9ec20b66d40e6b9f071cc997@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
-          "visitante": "CB ARGANDA"
+          "visitante": "CARNICERIA DMORATA ARGANDA"
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j14|cb-arganda-vs-jansen-bt-b": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j14|carniceria-dmorata-arganda-vs-jansen-bt-b": {
           "arganda_local": true,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j14|cb-arganda-vs-jansen-bt-b",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j14|carniceria-dmorata-arganda-vs-jansen-bt-b",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "MALLORCA, S/N, Arganda del Rey",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2027-01-30",
           "grupo_id": "17743",
@@ -522,37 +589,42 @@
               "detalle": "30/01/2027 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "CB ARGANDA - JANSEN BT \"B\" → CARNICERIA DMORATA ARGANDA - JANSEN BT \"B\"",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 14,
-          "local": "CB ARGANDA",
+          "local": "CARNICERIA DMORATA ARGANDA",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)",
           "rival": "JANSEN BT \"B\"",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "e257db6074f4a71e7442527a@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
           "visitante": "JANSEN BT \"B\""
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j15|cb-pozuelo-verde-vs-cb-arganda": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j15|cb-pozuelo-verde-vs-carniceria-dmorata-arganda": {
           "arganda_local": false,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j15|cb-pozuelo-verde-vs-cb-arganda",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j15|cb-pozuelo-verde-vs-carniceria-dmorata-arganda",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "IRLANDA, S/N, Pozuelo de Alarcón",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2027-02-06",
           "grupo_id": "17743",
@@ -561,37 +633,42 @@
               "detalle": "06/02/2027 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "CB POZUELO VERDE - CB ARGANDA → CB POZUELO VERDE - CARNICERIA DMORATA ARGANDA",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 15,
           "local": "CB POZUELO VERDE",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "GERARDO DIEGO, I.E.S.",
           "rival": "CB POZUELO VERDE",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "c9edfc920e10fdb6ab7811b1@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
-          "visitante": "CB ARGANDA"
+          "visitante": "CARNICERIA DMORATA ARGANDA"
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j16|cb-arganda-vs-san-blas-basket": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j16|carniceria-dmorata-arganda-vs-san-blas-basket": {
           "arganda_local": true,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j16|cb-arganda-vs-san-blas-basket",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j16|carniceria-dmorata-arganda-vs-san-blas-basket",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "MALLORCA, S/N, Arganda del Rey",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2027-02-13",
           "grupo_id": "17743",
@@ -600,37 +677,42 @@
               "detalle": "13/02/2027 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "CB ARGANDA - SAN BLAS BASKET → CARNICERIA DMORATA ARGANDA - SAN BLAS BASKET",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 16,
-          "local": "CB ARGANDA",
+          "local": "CARNICERIA DMORATA ARGANDA",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)",
           "rival": "SAN BLAS BASKET",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "495b6c42dcb62540e37b3b41@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
           "visitante": "SAN BLAS BASKET"
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j17|madrid-fsm-c-d-b-vs-cb-arganda": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j17|madrid-fsm-c-d-b-vs-carniceria-dmorata-arganda": {
           "arganda_local": false,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j17|madrid-fsm-c-d-b-vs-cb-arganda",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j17|madrid-fsm-c-d-b-vs-carniceria-dmorata-arganda",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": null,
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2027-02-21",
           "grupo_id": "17743",
@@ -639,37 +721,42 @@
               "detalle": "21/02/2027 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "MADRID FSM C.D.B. - CB ARGANDA → MADRID FSM C.D.B. - CARNICERIA DMORATA ARGANDA",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 17,
           "local": "MADRID FSM C.D.B.",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": null,
           "rival": "MADRID FSM C.D.B.",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "22be1bb406dadd2cd0c07881@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
-          "visitante": "CB ARGANDA"
+          "visitante": "CARNICERIA DMORATA ARGANDA"
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j18|cb-arganda-vs-c-b-getafe-molera": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j18|carniceria-dmorata-arganda-vs-c-b-getafe-molera": {
           "arganda_local": true,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j18|cb-arganda-vs-c-b-getafe-molera",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j18|carniceria-dmorata-arganda-vs-c-b-getafe-molera",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "MALLORCA, S/N, Arganda del Rey",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2027-02-27",
           "grupo_id": "17743",
@@ -678,37 +765,42 @@
               "detalle": "27/02/2027 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "CB ARGANDA - C.B. GETAFE \"MOLERA\" → CARNICERIA DMORATA ARGANDA - C.B. GETAFE \"MOLERA\"",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 18,
-          "local": "CB ARGANDA",
+          "local": "CARNICERIA DMORATA ARGANDA",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)",
           "rival": "C.B. GETAFE \"MOLERA\"",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "94a1c2f9ce7d45e4ffb5cb04@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
           "visitante": "C.B. GETAFE \"MOLERA\""
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j20|cb-arganda-vs-baloncesto-fuenlabrada-2012": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j20|carniceria-dmorata-arganda-vs-baloncesto-fuenlabrada-2012": {
           "arganda_local": true,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j20|cb-arganda-vs-baloncesto-fuenlabrada-2012",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j20|carniceria-dmorata-arganda-vs-baloncesto-fuenlabrada-2012",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "MALLORCA, S/N, Arganda del Rey",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2027-03-13",
           "grupo_id": "17743",
@@ -717,37 +809,42 @@
               "detalle": "13/03/2027 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "CB ARGANDA - BALONCESTO FUENLABRADA 2012 → CARNICERIA DMORATA ARGANDA - BALONCESTO FUENLABRADA 2012",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 20,
-          "local": "CB ARGANDA",
+          "local": "CARNICERIA DMORATA ARGANDA",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)",
           "rival": "BALONCESTO FUENLABRADA 2012",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "85000579a5aabb30dd0813a1@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
           "visitante": "BALONCESTO FUENLABRADA 2012"
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j21|fundal-alcobendas-c-vs-cb-arganda": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j21|fundal-alcobendas-c-vs-carniceria-dmorata-arganda": {
           "arganda_local": false,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j21|fundal-alcobendas-c-vs-cb-arganda",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j21|fundal-alcobendas-c-vs-carniceria-dmorata-arganda",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "AVDA. OLIMPICA, 20, Alcobendas",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2027-04-03",
           "grupo_id": "17743",
@@ -756,37 +853,42 @@
               "detalle": "03/04/2027 16:00",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "FUNDAL ALCOBENDAS \"C\" - CB ARGANDA → FUNDAL ALCOBENDAS \"C\" - CARNICERIA DMORATA ARGANDA",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": "16:00",
           "jornada": 21,
           "local": "FUNDAL ALCOBENDAS \"C\"",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "PEDRO FERRANDIZ, PABELLON",
           "rival": "FUNDAL ALCOBENDAS \"C\"",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "fbdeea6199c8a4cb2e19b563@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
-          "visitante": "CB ARGANDA"
+          "visitante": "CARNICERIA DMORATA ARGANDA"
         },
-        "2026-27|fbm-17743|cadete-masc-1-ano|j22|cb-arganda-vs-olimpico-64": {
+        "2026-27|fbm-17743|cadete-masc-1-ano|j22|carniceria-dmorata-arganda-vs-olimpico-64": {
           "arganda_local": true,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j22|cb-arganda-vs-olimpico-64",
+          "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j22|carniceria-dmorata-arganda-vs-olimpico-64",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
           "creado": "2026-09-24T21:23+02:00",
           "desaparecido_desde": null,
           "direccion": "MALLORCA, S/N, Arganda del Rey",
           "discrepancias": [],
-          "equipo_fbm": "CB ARGANDA",
+          "equipo_fbm": "CARNICERIA DMORATA ARGANDA",
           "estado": "programado",
           "fecha": "2027-04-10",
           "grupo_id": "17743",
@@ -795,19 +897,24 @@
               "detalle": "10/04/2027 hora pendiente",
               "en": "2026-09-24T21:23+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "CB ARGANDA - OLIMPICO 64 → CARNICERIA DMORATA ARGANDA - OLIMPICO 64",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 22,
-          "local": "CB ARGANDA",
+          "local": "CARNICERIA DMORATA ARGANDA",
           "marcador": null,
-          "modificado": "2026-09-24T21:23+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)",
           "rival": "OLIMPICO 64",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "c8f5b057be677cc9be96b2ba@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -815,7 +922,7 @@
           "visitante": "OLIMPICO 64"
         }
       },
-      "ultima_comprobacion": "2026-10-02T21:50+02:00"
+      "ultima_comprobacion": "2026-10-05T23:55+02:00"
     },
     "infantil-masc-1-ano": {
       "avisos_telegram_desde": "2026-09-25T21:33+02:00",
@@ -823,7 +930,7 @@
       "grupos": {},
       "grupos_ignorados": [],
       "partidos": {},
-      "ultima_comprobacion": "2026-10-02T21:50+02:00"
+      "ultima_comprobacion": "2026-10-05T23:55+02:00"
     },
     "infantil-masc-pref": {
       "avisos_telegram_desde": "2026-09-25T21:33+02:00",
@@ -859,22 +966,27 @@
               "detalle": "03/10/2026 11:30",
               "en": "2026-09-25T21:13+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "17-67",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "resultado"
             }
           ],
           "hora": "11:30",
           "jornada": 1,
           "local": "CB ARGANDA",
-          "marcador": null,
-          "modificado": "2026-09-25T21:13+02:00",
+          "marcador": "17-67",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "VIRGEN DEL CARMEN, Pista 3",
           "rival": "C.B. MORATALAZ \"A\"",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "ef1228f6574737b502b06a93@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
-            "en": "2026-10-02T21:50+02:00",
-            "tipo": "viernes"
+            "en": null,
+            "tipo": "provisional"
           },
           "visitante": "C.B. MORATALAZ \"A\""
         },
@@ -887,7 +999,7 @@
           "competicion": "Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2",
           "creado": "2026-09-25T21:13+02:00",
           "desaparecido_desde": null,
-          "direccion": "CALLE BALEARES, 18, Madrid",
+          "direccion": "C/ PALOS DE LA FRONTERA, 40, Madrid",
           "discrepancias": [],
           "equipo_fbm": "CB ARGANDA",
           "estado": "programado",
@@ -898,19 +1010,29 @@
               "detalle": "17/10/2026 12:00",
               "en": "2026-09-25T21:13+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "12:00 → 19:00",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "cambio_hora"
+            },
+            {
+              "detalle": "PERU, C.E.I.P. (CALLE BALEARES, 18, Madrid) → ARGANZUELA, CENTRO INTEGRADO (C/ PALOS DE LA FRONTERA, 40, Madrid)",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "cambio_pabellon"
             }
           ],
-          "hora": "12:00",
+          "hora": "19:00",
           "jornada": 2,
           "local": "ARGANZUELA CENTRO",
           "marcador": null,
-          "modificado": "2026-09-25T21:13+02:00",
-          "pabellon": "PERU, C.E.I.P.",
+          "modificado": "2026-10-05T23:55+02:00",
+          "pabellon": "ARGANZUELA, CENTRO INTEGRADO",
           "rival": "ARGANZUELA CENTRO",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "c4636bb1c32428318580de8a@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -949,7 +1071,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -988,7 +1110,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "5f7d170cc9b20396a653cb33@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1027,7 +1149,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1066,7 +1188,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "77b62fd89cf4a1526aa80649@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1105,7 +1227,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "aa44e7f4d69924c4bdf2cbf5@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1144,19 +1266,19 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "7ecaeab301ddbdefd1d0e7a4@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
           "visitante": "JYA FOTOVOLTAICA CB NAVALCARNERO"
         },
-        "2026-27|fbm-17686|infantil-masc-pref|j09|c-d-i-rozasbasket-b-vs-cb-arganda": {
+        "2026-27|fbm-17686|infantil-masc-pref|j09|c-d-i-rozasbasket-alex-vs-cb-arganda": {
           "arganda_local": false,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17686|infantil-masc-pref|j09|c-d-i-rozasbasket-b-vs-cb-arganda",
+          "clave": "2026-27|fbm-17686|infantil-masc-pref|j09|c-d-i-rozasbasket-alex-vs-cb-arganda",
           "competicion": "Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2",
           "creado": "2026-09-25T21:13+02:00",
           "desaparecido_desde": null,
@@ -1171,19 +1293,24 @@
               "detalle": "19/12/2026 hora pendiente",
               "en": "2026-09-25T21:13+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "C.D.I. ROZASBASKET \"B\" - CB ARGANDA → C.D.I. ROZASBASKET ALEX - CB ARGANDA",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 9,
-          "local": "C.D.I. ROZASBASKET \"B\"",
+          "local": "C.D.I. ROZASBASKET ALEX",
           "marcador": null,
-          "modificado": "2026-09-25T21:13+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "I.E.S. JOSE GARCIA NIETO, PABELLON",
-          "rival": "C.D.I. ROZASBASKET \"B\"",
-          "secuencia": 0,
+          "rival": "C.D.I. ROZASBASKET ALEX",
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "c8d7cf73feecb19ac39105ce@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1222,7 +1349,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "9f8be9d52fb38ae0e094ca19@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1261,7 +1388,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "cbe25a3e8f61b80b7d51947b@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1300,7 +1427,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "463c0caef13b709a94a4051e@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1339,7 +1466,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "f2340b06d8459a60ff26e089@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1378,7 +1505,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "14b8893b7b7a7d79b3d408a7@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1417,7 +1544,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "09f07edf958bbfc2764ac68d@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1456,7 +1583,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "fe0349c78be031e604fe23db@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1495,7 +1622,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "40cfaae7629d0bbd036b9e7e@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1534,7 +1661,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "28233e46303352c0ab4d3f0f@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1573,19 +1700,19 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "5aaf25f6978296cad69c3519@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
           "visitante": "CB ARGANDA"
         },
-        "2026-27|fbm-17686|infantil-masc-pref|j20|cb-arganda-vs-c-d-i-rozasbasket-b": {
+        "2026-27|fbm-17686|infantil-masc-pref|j20|cb-arganda-vs-c-d-i-rozasbasket-alex": {
           "arganda_local": true,
           "avisos_telegram": {
             "nuevo": "2026-09-25T21:13+02:00"
           },
-          "clave": "2026-27|fbm-17686|infantil-masc-pref|j20|cb-arganda-vs-c-d-i-rozasbasket-b",
+          "clave": "2026-27|fbm-17686|infantil-masc-pref|j20|cb-arganda-vs-c-d-i-rozasbasket-alex",
           "competicion": "Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2",
           "creado": "2026-09-25T21:13+02:00",
           "desaparecido_desde": null,
@@ -1600,24 +1727,29 @@
               "detalle": "10/04/2027 hora pendiente",
               "en": "2026-09-25T21:13+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "CB ARGANDA - C.D.I. ROZASBASKET \"B\" → CB ARGANDA - C.D.I. ROZASBASKET ALEX",
+              "en": "2026-10-05T23:55+02:00",
+              "tipo": "rival_renombrado"
             }
           ],
           "hora": null,
           "jornada": 20,
           "local": "CB ARGANDA",
           "marcador": null,
-          "modificado": "2026-09-25T21:13+02:00",
+          "modificado": "2026-10-05T23:55+02:00",
           "pabellon": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)",
-          "rival": "C.D.I. ROZASBASKET \"B\"",
-          "secuencia": 0,
+          "rival": "C.D.I. ROZASBASKET ALEX",
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "7009f81b87f7600b8420097d@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
           },
-          "visitante": "C.D.I. ROZASBASKET \"B\""
+          "visitante": "C.D.I. ROZASBASKET ALEX"
         },
         "2026-27|fbm-17686|infantil-masc-pref|j21|fundal-alcobendas-c-vs-cb-arganda": {
           "arganda_local": false,
@@ -1651,7 +1783,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "cad60f4102a3d542bd852f33@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1690,7 +1822,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "2340963cf18f1aa7e086d055@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-02T21:50+02:00",
+          "ultima_comprobacion": "2026-10-05T23:55+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1698,12 +1830,12 @@
           "visitante": "SALTIUM ALCORCÓN BASKET \"B\""
         }
       },
-      "ultima_comprobacion": "2026-10-02T21:50+02:00"
+      "ultima_comprobacion": "2026-10-05T23:55+02:00"
     }
   },
   "ultima_ejecucion": {
-    "en": "2026-10-02T21:50+02:00",
-    "modo": "viernes",
+    "en": "2026-10-05T23:55+02:00",
+    "modo": "lunes",
     "temporada": "2026-27"
   },
   "version": 1

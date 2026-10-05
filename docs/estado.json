@@ -1,6 +1,169 @@
 {
   "avisos": [],
-  "cambios": [],
+  "cambios": [
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "C.B. COSLADA - CB ARGANDA → C.B. COSLADA - CARNICERIA DMORATA ARGANDA",
+      "partido": "C.B. COSLADA vs CB Arganda",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "103-43",
+      "partido": "C.B. COSLADA vs CB Arganda",
+      "tipo": "resultado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "CB ARGANDA - LICEO FRANCES → CARNICERIA DMORATA ARGANDA - LICEO FRANCES",
+      "partido": "CB Arganda vs LICEO FRANCES",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "JANSEN BT \"B\" - CB ARGANDA → JANSEN BT \"B\" - CARNICERIA DMORATA ARGANDA",
+      "partido": "JANSEN BT \"B\" vs CB Arganda",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "CB ARGANDA - CB POZUELO VERDE → CARNICERIA DMORATA ARGANDA - CB POZUELO VERDE",
+      "partido": "CB Arganda vs CB POZUELO VERDE",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "SAN BLAS BASKET - CB ARGANDA → SAN BLAS BASKET - CARNICERIA DMORATA ARGANDA",
+      "partido": "SAN BLAS BASKET vs CB Arganda",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "CB ARGANDA - MADRID FSM C.D.B. → CARNICERIA DMORATA ARGANDA - MADRID FSM C.D.B.",
+      "partido": "CB Arganda vs MADRID FSM C.D.B.",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "C.B. GETAFE \"MOLERA\" - CB ARGANDA → C.B. GETAFE \"MOLERA\" - CARNICERIA DMORATA ARGANDA",
+      "partido": "C.B. GETAFE \"MOLERA\" vs CB Arganda",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "BALONCESTO FUENLABRADA 2012 - CB ARGANDA → BALONCESTO FUENLABRADA 2012 - CARNICERIA DMORATA ARGANDA",
+      "partido": "BALONCESTO FUENLABRADA 2012 vs CB Arganda",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "CB ARGANDA - FUNDAL ALCOBENDAS \"C\" → CARNICERIA DMORATA ARGANDA - FUNDAL ALCOBENDAS \"C\"",
+      "partido": "CB Arganda vs FUNDAL ALCOBENDAS \"C\"",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "OLIMPICO 64 - CB ARGANDA → OLIMPICO 64 - CARNICERIA DMORATA ARGANDA",
+      "partido": "OLIMPICO 64 vs CB Arganda",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "CB ARGANDA - C.B. COSLADA → CARNICERIA DMORATA ARGANDA - C.B. COSLADA",
+      "partido": "CB Arganda vs C.B. COSLADA",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "LICEO FRANCES - CB ARGANDA → LICEO FRANCES - CARNICERIA DMORATA ARGANDA",
+      "partido": "LICEO FRANCES vs CB Arganda",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "CB ARGANDA - JANSEN BT \"B\" → CARNICERIA DMORATA ARGANDA - JANSEN BT \"B\"",
+      "partido": "CB Arganda vs JANSEN BT \"B\"",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "CB POZUELO VERDE - CB ARGANDA → CB POZUELO VERDE - CARNICERIA DMORATA ARGANDA",
+      "partido": "CB POZUELO VERDE vs CB Arganda",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "CB ARGANDA - SAN BLAS BASKET → CARNICERIA DMORATA ARGANDA - SAN BLAS BASKET",
+      "partido": "CB Arganda vs SAN BLAS BASKET",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "MADRID FSM C.D.B. - CB ARGANDA → MADRID FSM C.D.B. - CARNICERIA DMORATA ARGANDA",
+      "partido": "MADRID FSM C.D.B. vs CB Arganda",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "CB ARGANDA - C.B. GETAFE \"MOLERA\" → CARNICERIA DMORATA ARGANDA - C.B. GETAFE \"MOLERA\"",
+      "partido": "CB Arganda vs C.B. GETAFE \"MOLERA\"",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "CB ARGANDA - BALONCESTO FUENLABRADA 2012 → CARNICERIA DMORATA ARGANDA - BALONCESTO FUENLABRADA 2012",
+      "partido": "CB Arganda vs BALONCESTO FUENLABRADA 2012",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "FUNDAL ALCOBENDAS \"C\" - CB ARGANDA → FUNDAL ALCOBENDAS \"C\" - CARNICERIA DMORATA ARGANDA",
+      "partido": "FUNDAL ALCOBENDAS \"C\" vs CB Arganda",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "CB ARGANDA - OLIMPICO 64 → CARNICERIA DMORATA ARGANDA - OLIMPICO 64",
+      "partido": "CB Arganda vs OLIMPICO 64",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "infantil-masc-1-ano",
+      "detalle": "No se encuentra ningún equipo del club en Infantil Masc. 1ºaño - PRIMERA FASE - GRUPO 7",
+      "partido": "Infantil Masc. 1ºaño - PRIMERA FASE - GRUPO 7",
+      "tipo": "error"
+    },
+    {
+      "calendario": "infantil-masc-pref",
+      "detalle": "17-67",
+      "partido": "CB Arganda vs C.B. MORATALAZ \"A\"",
+      "tipo": "resultado"
+    },
+    {
+      "calendario": "infantil-masc-pref",
+      "detalle": "12:00 → 19:00",
+      "partido": "ARGANZUELA CENTRO vs CB Arganda",
+      "tipo": "cambio_hora"
+    },
+    {
+      "calendario": "infantil-masc-pref",
+      "detalle": "PERU, C.E.I.P. (CALLE BALEARES, 18, Madrid) → ARGANZUELA, CENTRO INTEGRADO (C/ PALOS DE LA FRONTERA, 40, Madrid)",
+      "partido": "ARGANZUELA CENTRO vs CB Arganda",
+      "tipo": "cambio_pabellon"
+    },
+    {
+      "calendario": "infantil-masc-pref",
+      "detalle": "C.D.I. ROZASBASKET \"B\" - CB ARGANDA → C.D.I. ROZASBASKET ALEX - CB ARGANDA",
+      "partido": "C.D.I. ROZASBASKET ALEX vs CB Arganda",
+      "tipo": "rival_renombrado"
+    },
+    {
+      "calendario": "infantil-masc-pref",
+      "detalle": "CB ARGANDA - C.D.I. ROZASBASKET \"B\" → CB ARGANDA - C.D.I. ROZASBASKET ALEX",
+      "partido": "CB Arganda vs C.D.I. ROZASBASKET ALEX",
+      "tipo": "rival_renombrado"
+    }
+  ],
   "equipos": {
     "cadete-masc-1-ano": {
       "archivo_ics": "cadete-masculino-1-ano.ics",
@@ -11,11 +174,11 @@
       "partidos_en_calendario": 20,
       "partidos_sin_hora": 16,
       "proximo_partido": {
-        "fecha": "2026-10-03",
-        "hora": "11:15",
-        "local": "C.B. COSLADA",
-        "pabellon": "EL PLANTIO, PABELLON (Pista 1)",
-        "visitante": "CB ARGANDA"
+        "fecha": "2026-10-10",
+        "hora": "12:00",
+        "local": "CARNICERIA DMORATA ARGANDA",
+        "pabellon": "VIRGEN DEL CARMEN, Pista 1",
+        "visitante": "LICEO FRANCES"
       }
     },
     "infantil-masc-1-ano": {
@@ -35,15 +198,15 @@
       "partidos_en_calendario": 22,
       "partidos_sin_hora": 19,
       "proximo_partido": {
-        "fecha": "2026-10-03",
-        "hora": "11:30",
-        "local": "CB ARGANDA",
-        "pabellon": "VIRGEN DEL CARMEN, Pista 3",
-        "visitante": "C.B. MORATALAZ \"A\""
+        "fecha": "2026-10-17",
+        "hora": "19:00",
+        "local": "ARGANZUELA CENTRO",
+        "pabellon": "ARGANZUELA, CENTRO INTEGRADO",
+        "visitante": "CB ARGANDA"
       }
     }
   },
   "resultado": "ok",
-  "tipo": "confirmación final de las 17:00 del viernes",
-  "ultima_comprobacion_correcta": "2026-10-02T21:50+02:00"
+  "tipo": "comprobación de las 17:00 del lunes",
+  "ultima_comprobacion_correcta": "2026-10-05T23:55+02:00"
 }
