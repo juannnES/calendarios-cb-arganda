@@ -83,106 +83,21 @@
     "c4636bb1c32428318580de8a@calendarios-cb-arganda|cambio_hora|2026-10-05T23:55+02:00",
     "c4636bb1c32428318580de8a@calendarios-cb-arganda|cambio_pabellon|2026-10-05T23:55+02:00",
     "c8d7cf73feecb19ac39105ce@calendarios-cb-arganda|rival_renombrado|2026-10-05T23:55+02:00",
-    "7009f81b87f7600b8420097d@calendarios-cb-arganda|rival_renombrado|2026-10-05T23:55+02:00"
+    "7009f81b87f7600b8420097d@calendarios-cb-arganda|rival_renombrado|2026-10-05T23:55+02:00",
+    "231ed9bb7a409a1a25e2bcc2@calendarios-cb-arganda|hora_confirmada|2026-10-09T22:03+02:00",
+    "231ed9bb7a409a1a25e2bcc2@calendarios-cb-arganda|cambio_pabellon|2026-10-09T22:03+02:00",
+    "1534eb24de28d17c39faf020@calendarios-cb-arganda|viernes|2026-10-10",
+    "2d35bc056dd6ff97db9f88dd@calendarios-cb-arganda|nuevo",
+    "1da4b2c993e8aab4a80eae56@calendarios-cb-arganda|nuevo",
+    "dd7a2d9a4473053d9fd55450@calendarios-cb-arganda|nuevo",
+    "d66eee286ed7717c01d6f207@calendarios-cb-arganda|nuevo",
+    "47b8db586ecca9fa3320055b@calendarios-cb-arganda|nuevo",
+    "f326fa4c546186a7dfd8ba06@calendarios-cb-arganda|nuevo",
+    "3e9874ccdc81f5681112e452@calendarios-cb-arganda|nuevo",
+    "9d10299043c566b0735d733e@calendarios-cb-arganda|nuevo",
+    "sistema|infantil-masc-1-ano|d39266339bd6f777"
   ],
-  "pendientes": [
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-10-09T22:03+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "231ed9bb7a409a1a25e2bcc2@calendarios-cb-arganda|hora_confirmada|2026-10-09T22:03+02:00",
-      "texto": "🔄 CAMBIO DE HORA\n\n🏀 CB Arganda Cadete 1º Año\n🆚 JANSEN BT \"B\"\n\n🕐 Antes: Pendiente (se mostraba a las 00:00)\n🕐 Ahora: 11:30\n\n📅 Sábado 17/10/2026\n📍 DIEGO VELAZQUEZ, I.E.S.\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "231ed9bb7a409a1a25e2bcc2@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-10-09T22:03+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "231ed9bb7a409a1a25e2bcc2@calendarios-cb-arganda|cambio_pabellon|2026-10-09T22:03+02:00",
-      "texto": "📍 CAMBIO DE PABELLÓN\n\n🏀 CB Arganda Cadete 1º Año\n🆚 JANSEN BT \"B\"\n\n📍 Antes:\nTORRELODONES, PABELLON pequeño\nPLAZA JOSE MARIA UNCETA, 4, Torrelodones\n\n📍 Ahora:\nDIEGO VELAZQUEZ, I.E.S.\nCALLE DEL INSTITUTO, 1, Torrelodones\n\n📅 Sábado 17/10/2026\n🕐 11:30\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "231ed9bb7a409a1a25e2bcc2@calendarios-cb-arganda"
-    },
-    {
-      "clase": "CONFIRMADO",
-      "creado": "2026-10-09T22:03+02:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "1534eb24de28d17c39faf020@calendarios-cb-arganda|viernes|2026-10-10",
-      "texto": "✅ PARTIDO CONFIRMADO\n\n🏀 CB Arganda Cadete 1º Año\n🆚 LICEO FRANCES\n\n📅 Sábado 10/10/2026\n🕐 12:00\n📍 VIRGEN DEL CARMEN, Pista 1\n\nLa información ha sido comprobada nuevamente en la fuente oficial.\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "1534eb24de28d17c39faf020@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-10-09T22:03+02:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "2d35bc056dd6ff97db9f88dd@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil 1º Año\n🆚 Rival: COLEGIO LOS SAUCES\n\n📅 Fecha: Sábado 24/10/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: LOS SAUCES MORALEJA, COLEGIO\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 2\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "2d35bc056dd6ff97db9f88dd@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-10-09T22:03+02:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "1da4b2c993e8aab4a80eae56@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil 1º Año\n🆚 Rival: SAN VIATOR \"B\"\n\n📅 Fecha: Domingo 25/10/2026\n🕐 Hora: 09:30\n📍 Pabellón: VIRGEN DEL CARMEN, Pista 1\n🏠 Local/Visitante: Local\n🏆 Jornada: 1\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "1da4b2c993e8aab4a80eae56@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-10-09T22:03+02:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "dd7a2d9a4473053d9fd55450@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil 1º Año\n🆚 Rival: DISTRITO OLIMPICO CANILLEJAS\n\n📅 Fecha: Sábado 07/11/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, Pista 1\n🏠 Local/Visitante: Local\n🏆 Jornada: 3\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "dd7a2d9a4473053d9fd55450@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-10-09T22:03+02:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "d66eee286ed7717c01d6f207@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil 1º Año\n🆚 Rival: VILLALBA \"B\" FOTOQUO\n\n📅 Fecha: Sábado 14/11/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: LOS NEGRALES, POLIDEPORTIVO\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 4\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "d66eee286ed7717c01d6f207@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-10-09T22:03+02:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "47b8db586ecca9fa3320055b@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil 1º Año\n🆚 Rival: SAN VIATOR \"B\"\n\n📅 Fecha: Sábado 28/11/2026\n🕐 Hora: 11:15\n📍 Pabellón: PEPE DOMAICA, PABELLON (PISTA CENTRAL)\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 6\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "47b8db586ecca9fa3320055b@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-10-09T22:03+02:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "f326fa4c546186a7dfd8ba06@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil 1º Año\n🆚 Rival: COLEGIO LOS SAUCES\n\n📅 Fecha: Sábado 12/12/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, Pista 1\n🏠 Local/Visitante: Local\n🏆 Jornada: 7\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "f326fa4c546186a7dfd8ba06@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-10-09T22:03+02:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "3e9874ccdc81f5681112e452@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil 1º Año\n🆚 Rival: DISTRITO OLIMPICO CANILLEJAS\n\n📅 Fecha: Sábado 19/12/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: FERNANDO CARRO/LAS ROSAS, C.D.M.\n🏠 Local/Visitante: Visitante\n🏆 Jornada: 8\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "3e9874ccdc81f5681112e452@calendarios-cb-arganda"
-    },
-    {
-      "clase": "NUEVO",
-      "creado": "2026-10-09T22:03+02:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "9d10299043c566b0735d733e@calendarios-cb-arganda|nuevo",
-      "texto": "🏀 NUEVO PARTIDO\n\nEquipo: CB Arganda Infantil 1º Año\n🆚 Rival: VILLALBA \"B\" FOTOQUO\n\n📅 Fecha: Sábado 16/01/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, Pista 1\n🏠 Local/Visitante: Local\n🏆 Jornada: 9\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "9d10299043c566b0735d733e@calendarios-cb-arganda"
-    },
-    {
-      "clase": "AVISO",
-      "creado": "2026-10-09T22:03+02:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "sistema|infantil-masc-1-ano|d39266339bd6f777",
-      "texto": "🆕 NUEVA COMPETICIÓN DETECTADA\n\n🏀 CB Arganda Infantil 1º Año\n🏆 Infantil Masc. 1ºaño - PRIMERA FASE - GRUPO 7\n\nEquipo en la FBM: «CB ARGANDA». Sus partidos se han añadido.\n\n📅 Calendario: Infantil 1º Año",
-      "uid": null
-    }
-  ],
-  "ultimo_envio": "2026-10-05T23:56+02:00",
+  "pendientes": [],
+  "ultimo_envio": "2026-10-09T22:03+02:00",
   "ultimo_error": null
 }
