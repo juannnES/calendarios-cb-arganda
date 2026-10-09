@@ -28,4 +28,204 @@ DTSTART:19701025T030000
 RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
+BEGIN:VEVENT
+UID:2d35bc056dd6ff97db9f88dd@calendarios-cb-arganda
+DTSTAMP:20261009T200309Z
+CREATED:20261009T200300Z
+LAST-MODIFIED:20261009T200300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261024T000000
+DTEND;TZID=Europe/Madrid:20261024T020000
+SUMMARY:⏳ COLEGIO LOS SAUCES vs CB Arganda
+LOCATION:CAMINO ANCHO\, 83\, Alcobendas\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Primer Año\nCo
+ mpetición: Infantil Masc. 1ºaño - PRIMERA FASE - GRUPO 7\nJornada: 2\nR
+ ival: COLEGIO LOS SAUCES\nLocal/Visitante: Visitante\n\n📍 Pabellón: LO
+ S SAUCES MORALEJA\, COLEGIO\n🗺️ Dirección: CAMINO ANCHO\, 83\, Alcob
+ endas\, Madrid\, España\n📅 Fecha: sábado 24/10/2026\n🕐 Hora: Hora 
+ pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que la FBM pu
+ blique la hora oficial\n\nEstado: 📅 Según el calendario oficial. Se ve
+ rificará el lunes y se confirmará el viernes de la semana del partido\n
+ ✅ Última comprobación: 09/10/2026 22:03\n\nFuente oficial:\nhttps://ww
+ w.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:1da4b2c993e8aab4a80eae56@calendarios-cb-arganda
+DTSTAMP:20261009T200309Z
+CREATED:20261009T200300Z
+LAST-MODIFIED:20261009T200300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261025T084500
+DTEND;TZID=Europe/Madrid:20261025T113000
+SUMMARY:CB Arganda vs SAN VIATOR "B"
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Primer Año\nCo
+ mpetición: Infantil Masc. 1ºaño - PRIMERA FASE - GRUPO 7\nJornada: 1\nR
+ ival: SAN VIATOR "B"\nLocal/Visitante: Local\n\n📍 Pabellón: VIRGEN DEL
+  CARMEN\, Pista 1\n🗺️ Dirección: MALLORCA\, S/N\, Arganda del Rey\, 
+ Madrid\, España\n📅 Fecha: domingo 25/10/2026\n🕐 Hora: 09:30\n⏰ En
+  el calendario: 08:45–11:30 (45 min antes + 2 h de partido)\n\nEstado: 
+ 📅 Según el calendario oficial. Se verificará el lunes y se confirmar
+ á el viernes de la semana del partido\n✅ Última comprobación: 09/10/2
+ 026 22:03\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917/balo
+ ncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:dd7a2d9a4473053d9fd55450@calendarios-cb-arganda
+DTSTAMP:20261009T200309Z
+CREATED:20261009T200300Z
+LAST-MODIFIED:20261009T200300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261107T000000
+DTEND;TZID=Europe/Madrid:20261107T020000
+SUMMARY:⏳ CB Arganda vs DISTRITO OLIMPICO CANILLEJAS
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Primer Año\nCo
+ mpetición: Infantil Masc. 1ºaño - PRIMERA FASE - GRUPO 7\nJornada: 3\nR
+ ival: DISTRITO OLIMPICO CANILLEJAS\nLocal/Visitante: Local\n\n📍 Pabell
+ ón: VIRGEN DEL CARMEN\, Pista 1\n🗺️ Dirección: MALLORCA\, S/N\, Arg
+ anda del Rey\, Madrid\, España\n📅 Fecha: sábado 07/11/2026\n🕐 Hora
+ : Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que la
+  FBM publique la hora oficial\n\nEstado: 📅 Según el calendario oficial
+ . Se verificará el lunes y se confirmará el viernes de la semana del par
+ tido\n✅ Última comprobación: 09/10/2026 22:03\n\nFuente oficial:\nhttp
+ s://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:d66eee286ed7717c01d6f207@calendarios-cb-arganda
+DTSTAMP:20261009T200309Z
+CREATED:20261009T200300Z
+LAST-MODIFIED:20261009T200300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261114T000000
+DTEND;TZID=Europe/Madrid:20261114T020000
+SUMMARY:⏳ VILLALBA "B" FOTOQUO vs CB Arganda
+LOCATION:SANTA EMILIA\, 70 (LOS NEGRALES)\, Alpedrete\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Primer Año\nCo
+ mpetición: Infantil Masc. 1ºaño - PRIMERA FASE - GRUPO 7\nJornada: 4\nR
+ ival: VILLALBA "B" FOTOQUO\nLocal/Visitante: Visitante\n\n📍 Pabellón: 
+ LOS NEGRALES\, POLIDEPORTIVO\n🗺️ Dirección: SANTA EMILIA\, 70 (LOS N
+ EGRALES)\, Alpedrete\, Madrid\, España\n📅 Fecha: sábado 14/11/2026\n
+ 🕐 Hora: Hora pendiente de confirmación\n⏰ Se muestra a las 00:00 has
+ ta que la FBM publique la hora oficial\n\nEstado: 📅 Según el calendari
+ o oficial. Se verificará el lunes y se confirmará el viernes de la seman
+ a del partido\n✅ Última comprobación: 09/10/2026 22:03\n\nFuente ofici
+ al:\nhttps://www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:47b8db586ecca9fa3320055b@calendarios-cb-arganda
+DTSTAMP:20261009T200309Z
+CREATED:20261009T200300Z
+LAST-MODIFIED:20261009T200300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261128T103000
+DTEND;TZID=Europe/Madrid:20261128T131500
+SUMMARY:SAN VIATOR "B" vs CB Arganda
+LOCATION:PLAZA ELIPTICA\, 2\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Primer Año\nCo
+ mpetición: Infantil Masc. 1ºaño - PRIMERA FASE - GRUPO 7\nJornada: 6\nR
+ ival: SAN VIATOR "B"\nLocal/Visitante: Visitante\n\n📍 Pabellón: PEPE D
+ OMAICA\, PABELLON (PISTA CENTRAL)\n🗺️ Dirección: PLAZA ELIPTICA\, 2\
+ , Madrid\, España\n📅 Fecha: sábado 28/11/2026\n🕐 Hora: 11:15\n⏰ 
+ En el calendario: 10:30–13:15 (45 min antes + 2 h de partido)\n\nEstado:
+  📅 Según el calendario oficial. Se verificará el lunes y se confirmar
+ á el viernes de la semana del partido\n✅ Última comprobación: 09/10/2
+ 026 22:03\n\nFuente oficial:\nhttps://www.fbm.es/resultados-club-6917/balo
+ ncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:f326fa4c546186a7dfd8ba06@calendarios-cb-arganda
+DTSTAMP:20261009T200309Z
+CREATED:20261009T200300Z
+LAST-MODIFIED:20261009T200300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261212T000000
+DTEND;TZID=Europe/Madrid:20261212T020000
+SUMMARY:⏳ CB Arganda vs COLEGIO LOS SAUCES
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Primer Año\nCo
+ mpetición: Infantil Masc. 1ºaño - PRIMERA FASE - GRUPO 7\nJornada: 7\nR
+ ival: COLEGIO LOS SAUCES\nLocal/Visitante: Local\n\n📍 Pabellón: VIRGEN
+  DEL CARMEN\, Pista 1\n🗺️ Dirección: MALLORCA\, S/N\, Arganda del Re
+ y\, Madrid\, España\n📅 Fecha: sábado 12/12/2026\n🕐 Hora: Hora pend
+ iente de confirmación\n⏰ Se muestra a las 00:00 hasta que la FBM publiq
+ ue la hora oficial\n\nEstado: 📅 Según el calendario oficial. Se verifi
+ cará el lunes y se confirmará el viernes de la semana del partido\n✅ 
+ Última comprobación: 09/10/2026 22:03\n\nFuente oficial:\nhttps://www.fb
+ m.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:3e9874ccdc81f5681112e452@calendarios-cb-arganda
+DTSTAMP:20261009T200309Z
+CREATED:20261009T200300Z
+LAST-MODIFIED:20261009T200300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20261219T000000
+DTEND;TZID=Europe/Madrid:20261219T020000
+SUMMARY:⏳ DISTRITO OLIMPICO CANILLEJAS vs CB Arganda
+LOCATION:CALLE LIVERPOOL\, 9\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Primer Año\nCo
+ mpetición: Infantil Masc. 1ºaño - PRIMERA FASE - GRUPO 7\nJornada: 8\nR
+ ival: DISTRITO OLIMPICO CANILLEJAS\nLocal/Visitante: Visitante\n\n📍 Pab
+ ellón: FERNANDO CARRO/LAS ROSAS\, C.D.M.\n🗺️ Dirección: CALLE LIVER
+ POOL\, 9\, Madrid\, España\n📅 Fecha: sábado 19/12/2026\n🕐 Hora: Ho
+ ra pendiente de confirmación\n⏰ Se muestra a las 00:00 hasta que la FBM
+  publique la hora oficial\n\nEstado: 📅 Según el calendario oficial. Se
+  verificará el lunes y se confirmará el viernes de la semana del partido
+ \n✅ Última comprobación: 09/10/2026 22:03\n\nFuente oficial:\nhttps://
+ www.fbm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
+BEGIN:VEVENT
+UID:9d10299043c566b0735d733e@calendarios-cb-arganda
+DTSTAMP:20261009T200309Z
+CREATED:20261009T200300Z
+LAST-MODIFIED:20261009T200300Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Madrid:20270116T000000
+DTEND;TZID=Europe/Madrid:20270116T020000
+SUMMARY:⏳ CB Arganda vs VILLALBA "B" FOTOQUO
+LOCATION:MALLORCA\, S/N\, Arganda del Rey\, Madrid\, España
+DESCRIPTION:🏀 CB Arganda\nCategoría: Infantil Masculino Primer Año\nCo
+ mpetición: Infantil Masc. 1ºaño - PRIMERA FASE - GRUPO 7\nJornada: 9\nR
+ ival: VILLALBA "B" FOTOQUO\nLocal/Visitante: Local\n\n📍 Pabellón: VIRG
+ EN DEL CARMEN\, Pista 1\n🗺️ Dirección: MALLORCA\, S/N\, Arganda del 
+ Rey\, Madrid\, España\n📅 Fecha: sábado 16/01/2027\n🕐 Hora: Hora pe
+ ndiente de confirmación\n⏰ Se muestra a las 00:00 hasta que la FBM publ
+ ique la hora oficial\n\nEstado: 📅 Según el calendario oficial. Se veri
+ ficará el lunes y se confirmará el viernes de la semana del partido\n✅
+  Última comprobación: 09/10/2026 22:03\n\nFuente oficial:\nhttps://www.f
+ bm.es/resultados-club-6917/baloncesto-arganda
+URL:https://www.fbm.es/resultados-club-6917/baloncesto-arganda
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+CATEGORIES:Baloncesto
+END:VEVENT
 END:VCALENDAR
