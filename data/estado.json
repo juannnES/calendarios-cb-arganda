@@ -4,7 +4,8 @@
     "2026-09-28-lunes": "2026-09-28T23:09+02:00",
     "2026-10-02-viernes": "2026-10-02T21:50+02:00",
     "2026-10-05-lunes": "2026-10-05T23:55+02:00",
-    "2026-10-09-viernes": "2026-10-09T22:03+02:00"
+    "2026-10-09-viernes": "2026-10-09T22:03+02:00",
+    "2026-10-16-viernes": "2026-10-16T20:42+02:00"
   },
   "equipos": {
     "cadete-masc-1-ano": {
@@ -68,7 +69,7 @@
           "secuencia": 3,
           "texto_estado": null,
           "uid": "75ec120443f0ccd7d8517a7b@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -112,29 +113,35 @@
               "detalle": "CB ARGANDA - LICEO FRANCES → CARNICERIA DMORATA ARGANDA - LICEO FRANCES",
               "en": "2026-10-05T23:55+02:00",
               "tipo": "rival_renombrado"
+            },
+            {
+              "detalle": "40-80",
+              "en": "2026-10-16T20:42+02:00",
+              "tipo": "resultado"
             }
           ],
           "hora": "12:00",
           "jornada": 2,
           "local": "CARNICERIA DMORATA ARGANDA",
-          "marcador": null,
-          "modificado": "2026-10-05T23:55+02:00",
+          "marcador": "40-80",
+          "modificado": "2026-10-16T20:42+02:00",
           "pabellon": "VIRGEN DEL CARMEN, Pista 1",
           "rival": "LICEO FRANCES",
-          "secuencia": 2,
+          "secuencia": 3,
           "texto_estado": null,
           "uid": "1534eb24de28d17c39faf020@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
-            "en": "2026-10-09T22:03+02:00",
-            "tipo": "viernes"
+            "en": null,
+            "tipo": "provisional"
           },
           "visitante": "LICEO FRANCES"
         },
         "2026-27|fbm-17743|cadete-masc-1-ano|j03|jansen-bt-b-vs-carniceria-dmorata-arganda": {
           "arganda_local": false,
           "avisos_telegram": {
-            "nuevo": "2026-09-25T21:13+02:00"
+            "nuevo": "2026-09-25T21:13+02:00",
+            "viernes": "2026-10-17"
           },
           "clave": "2026-27|fbm-17743|cadete-masc-1-ano|j03|jansen-bt-b-vs-carniceria-dmorata-arganda",
           "competicion": "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3",
@@ -178,10 +185,10 @@
           "secuencia": 2,
           "texto_estado": null,
           "uid": "231ed9bb7a409a1a25e2bcc2@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
-            "en": null,
-            "tipo": "provisional"
+            "en": "2026-10-16T20:42+02:00",
+            "tipo": "viernes"
           },
           "visitante": "CARNICERIA DMORATA ARGANDA"
         },
@@ -210,19 +217,29 @@
               "detalle": "CB ARGANDA - CB POZUELO VERDE → CARNICERIA DMORATA ARGANDA - CB POZUELO VERDE",
               "en": "2026-10-05T23:55+02:00",
               "tipo": "rival_renombrado"
+            },
+            {
+              "detalle": "13:15",
+              "en": "2026-10-16T20:42+02:00",
+              "tipo": "hora_confirmada"
+            },
+            {
+              "detalle": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL) (MALLORCA, S/N, Arganda del Rey) → VIRGEN DEL CARMEN, Pista 3 (MALLORCA, S/N, Arganda del Rey)",
+              "en": "2026-10-16T20:42+02:00",
+              "tipo": "cambio_pabellon"
             }
           ],
-          "hora": null,
+          "hora": "13:15",
           "jornada": 4,
           "local": "CARNICERIA DMORATA ARGANDA",
           "marcador": null,
-          "modificado": "2026-10-05T23:55+02:00",
-          "pabellon": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)",
+          "modificado": "2026-10-16T20:42+02:00",
+          "pabellon": "VIRGEN DEL CARMEN, Pista 3",
           "rival": "CB POZUELO VERDE",
-          "secuencia": 1,
+          "secuencia": 2,
           "texto_estado": null,
           "uid": "a4b413f20f036d7438ab5420@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -266,7 +283,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "5e45d2d5a13f64dd26861491@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -310,7 +327,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "a3d34502da0a256ea378ed35@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -354,7 +371,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "426beb68918a87ca8e0383a9@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -398,7 +415,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "bd376e299f5a30f985793969@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -442,7 +459,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "f8886aaee04133a2721becd4@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -486,7 +503,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "8386830104e9356c8f5db420@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -530,7 +547,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "b766969a0870198b440cb57e@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -574,7 +591,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "9ec20b66d40e6b9f071cc997@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -618,7 +635,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "e257db6074f4a71e7442527a@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -662,7 +679,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "c9edfc920e10fdb6ab7811b1@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -706,7 +723,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "495b6c42dcb62540e37b3b41@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -750,7 +767,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "22be1bb406dadd2cd0c07881@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -794,7 +811,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "94a1c2f9ce7d45e4ffb5cb04@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -838,7 +855,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "85000579a5aabb30dd0813a1@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -882,7 +899,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "fbdeea6199c8a4cb2e19b563@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -926,7 +943,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "c8f5b057be677cc9be96b2ba@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -934,7 +951,7 @@
           "visitante": "OLIMPICO 64"
         }
       },
-      "ultima_comprobacion": "2026-10-09T22:03+02:00"
+      "ultima_comprobacion": "2026-10-16T20:42+02:00"
     },
     "infantil-masc-1-ano": {
       "avisos_telegram_desde": "2026-09-25T21:33+02:00",
@@ -980,7 +997,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "1da4b2c993e8aab4a80eae56@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1007,19 +1024,24 @@
               "detalle": "24/10/2026 hora pendiente",
               "en": "2026-10-09T22:03+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "13:00",
+              "en": "2026-10-16T20:42+02:00",
+              "tipo": "hora_confirmada"
             }
           ],
-          "hora": null,
+          "hora": "13:00",
           "jornada": 2,
           "local": "COLEGIO LOS SAUCES",
           "marcador": null,
-          "modificado": "2026-10-09T22:03+02:00",
+          "modificado": "2026-10-16T20:42+02:00",
           "pabellon": "LOS SAUCES MORALEJA, COLEGIO",
           "rival": "COLEGIO LOS SAUCES",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "2d35bc056dd6ff97db9f88dd@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1058,7 +1080,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "dd7a2d9a4473053d9fd55450@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1097,7 +1119,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "d66eee286ed7717c01d6f207@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1124,19 +1146,29 @@
               "detalle": "28/11/2026 11:15",
               "en": "2026-10-09T22:03+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "11:15 → 13:00",
+              "en": "2026-10-16T20:42+02:00",
+              "tipo": "cambio_hora"
+            },
+            {
+              "detalle": "PEPE DOMAICA, PABELLON (PISTA CENTRAL) (PLAZA ELIPTICA, 2, Madrid) → PEPE DOMAICA, PABELLON Pista 2 (PLAZA ELIPTICA, 2, Madrid)",
+              "en": "2026-10-16T20:42+02:00",
+              "tipo": "cambio_pabellon"
             }
           ],
-          "hora": "11:15",
+          "hora": "13:00",
           "jornada": 6,
           "local": "SAN VIATOR \"B\"",
           "marcador": null,
-          "modificado": "2026-10-09T22:03+02:00",
-          "pabellon": "PEPE DOMAICA, PABELLON (PISTA CENTRAL)",
+          "modificado": "2026-10-16T20:42+02:00",
+          "pabellon": "PEPE DOMAICA, PABELLON Pista 2",
           "rival": "SAN VIATOR \"B\"",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "47b8db586ecca9fa3320055b@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1175,7 +1207,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "f326fa4c546186a7dfd8ba06@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1214,7 +1246,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "3e9874ccdc81f5681112e452@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1253,7 +1285,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "9d10299043c566b0735d733e@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1261,7 +1293,7 @@
           "visitante": "VILLALBA \"B\" FOTOQUO"
         }
       },
-      "ultima_comprobacion": "2026-10-09T22:03+02:00"
+      "ultima_comprobacion": "2026-10-16T20:42+02:00"
     },
     "infantil-masc-pref": {
       "avisos_telegram_desde": "2026-09-25T21:33+02:00",
@@ -1314,7 +1346,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "ef1228f6574737b502b06a93@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1324,7 +1356,8 @@
         "2026-27|fbm-17686|infantil-masc-pref|j02|arganzuela-centro-vs-cb-arganda": {
           "arganda_local": false,
           "avisos_telegram": {
-            "nuevo": "2026-09-25T21:13+02:00"
+            "nuevo": "2026-09-25T21:13+02:00",
+            "viernes": "2026-10-17"
           },
           "clave": "2026-27|fbm-17686|infantil-masc-pref|j02|arganzuela-centro-vs-cb-arganda",
           "competicion": "Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2",
@@ -1363,10 +1396,10 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "c4636bb1c32428318580de8a@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
-            "en": null,
-            "tipo": "provisional"
+            "en": "2026-10-16T20:42+02:00",
+            "tipo": "viernes"
           },
           "visitante": "CB ARGANDA"
         },
@@ -1390,19 +1423,29 @@
               "detalle": "24/10/2026 hora pendiente",
               "en": "2026-09-25T21:13+02:00",
               "tipo": "nuevo"
+            },
+            {
+              "detalle": "16:45",
+              "en": "2026-10-16T20:42+02:00",
+              "tipo": "hora_confirmada"
+            },
+            {
+              "detalle": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL) (MALLORCA, S/N, Arganda del Rey) → VIRGEN DEL CARMEN, Pista 2 (MALLORCA, S/N, Arganda del Rey)",
+              "en": "2026-10-16T20:42+02:00",
+              "tipo": "cambio_pabellon"
             }
           ],
-          "hora": null,
+          "hora": "16:45",
           "jornada": 3,
           "local": "CB ARGANDA",
           "marcador": null,
-          "modificado": "2026-09-25T21:13+02:00",
-          "pabellon": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)",
+          "modificado": "2026-10-16T20:42+02:00",
+          "pabellon": "VIRGEN DEL CARMEN, Pista 2",
           "rival": "MAJADAHONDA BLANCO",
-          "secuencia": 0,
+          "secuencia": 1,
           "texto_estado": null,
           "uid": "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1441,7 +1484,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "5f7d170cc9b20396a653cb33@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1480,7 +1523,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1519,7 +1562,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "77b62fd89cf4a1526aa80649@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1558,7 +1601,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "aa44e7f4d69924c4bdf2cbf5@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1597,7 +1640,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "7ecaeab301ddbdefd1d0e7a4@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1641,7 +1684,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "c8d7cf73feecb19ac39105ce@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1680,7 +1723,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "9f8be9d52fb38ae0e094ca19@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1719,7 +1762,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "cbe25a3e8f61b80b7d51947b@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1758,7 +1801,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "463c0caef13b709a94a4051e@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1797,7 +1840,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "f2340b06d8459a60ff26e089@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1836,7 +1879,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "14b8893b7b7a7d79b3d408a7@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1875,7 +1918,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "09f07edf958bbfc2764ac68d@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1914,7 +1957,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "fe0349c78be031e604fe23db@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1953,7 +1996,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "40cfaae7629d0bbd036b9e7e@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -1992,7 +2035,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "28233e46303352c0ab4d3f0f@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -2031,7 +2074,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "5aaf25f6978296cad69c3519@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -2075,7 +2118,7 @@
           "secuencia": 1,
           "texto_estado": null,
           "uid": "7009f81b87f7600b8420097d@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -2114,7 +2157,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "cad60f4102a3d542bd852f33@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -2153,7 +2196,7 @@
           "secuencia": 0,
           "texto_estado": null,
           "uid": "2340963cf18f1aa7e086d055@calendarios-cb-arganda",
-          "ultima_comprobacion": "2026-10-09T22:03+02:00",
+          "ultima_comprobacion": "2026-10-16T20:42+02:00",
           "verificacion": {
             "en": null,
             "tipo": "provisional"
@@ -2161,11 +2204,11 @@
           "visitante": "SALTIUM ALCORCÓN BASKET \"B\""
         }
       },
-      "ultima_comprobacion": "2026-10-09T22:03+02:00"
+      "ultima_comprobacion": "2026-10-16T20:42+02:00"
     }
   },
   "ultima_ejecucion": {
-    "en": "2026-10-09T22:03+02:00",
+    "en": "2026-10-16T20:42+02:00",
     "modo": "viernes",
     "temporada": "2026-27"
   },

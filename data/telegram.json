@@ -97,7 +97,88 @@
     "9d10299043c566b0735d733e@calendarios-cb-arganda|nuevo",
     "sistema|infantil-masc-1-ano|d39266339bd6f777"
   ],
-  "pendientes": [],
+  "pendientes": [
+    {
+      "clase": "MODIFICADO",
+      "creado": "2026-10-16T20:42+02:00",
+      "equipo": "cadete-masc-1-ano",
+      "id": "1534eb24de28d17c39faf020@calendarios-cb-arganda|resultado|2026-10-16T20:42+02:00",
+      "texto": "🔄 INFORMACIÓN ACTUALIZADA\n\n🏀 CB Arganda Cadete 1º Año\n🆚 LICEO FRANCES\n\n🏁 Resultado: CARNICERIA DMORATA ARGANDA 40-80 LICEO FRANCES\n\n📅 Fecha: Sábado 10/10/2026\n🕐 Hora: 12:00\n📍 Pabellón: VIRGEN DEL CARMEN, Pista 1\n\n📅 Calendario: Cadete 1º Año",
+      "uid": "1534eb24de28d17c39faf020@calendarios-cb-arganda"
+    },
+    {
+      "clase": "MODIFICADO",
+      "creado": "2026-10-16T20:42+02:00",
+      "equipo": "cadete-masc-1-ano",
+      "id": "a4b413f20f036d7438ab5420@calendarios-cb-arganda|hora_confirmada|2026-10-16T20:42+02:00",
+      "texto": "🔄 CAMBIO DE HORA\n\n🏀 CB Arganda Cadete 1º Año\n🆚 CB POZUELO VERDE\n\n🕐 Antes: Pendiente (se mostraba a las 00:00)\n🕐 Ahora: 13:15\n\n📅 Sábado 24/10/2026\n📍 VIRGEN DEL CARMEN, Pista 3\n\n📅 Calendario: Cadete 1º Año",
+      "uid": "a4b413f20f036d7438ab5420@calendarios-cb-arganda"
+    },
+    {
+      "clase": "MODIFICADO",
+      "creado": "2026-10-16T20:42+02:00",
+      "equipo": "cadete-masc-1-ano",
+      "id": "a4b413f20f036d7438ab5420@calendarios-cb-arganda|cambio_pabellon|2026-10-16T20:42+02:00",
+      "texto": "📍 CAMBIO DE PABELLÓN\n\n🏀 CB Arganda Cadete 1º Año\n🆚 CB POZUELO VERDE\n\n📍 Antes:\nVIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\nMALLORCA, S/N, Arganda del Rey\n\n📍 Ahora:\nVIRGEN DEL CARMEN, Pista 3\nMALLORCA, S/N, Arganda del Rey\n\n📅 Sábado 24/10/2026\n🕐 13:15\n\n📅 Calendario: Cadete 1º Año",
+      "uid": "a4b413f20f036d7438ab5420@calendarios-cb-arganda"
+    },
+    {
+      "clase": "CONFIRMADO",
+      "creado": "2026-10-16T20:42+02:00",
+      "equipo": "cadete-masc-1-ano",
+      "id": "231ed9bb7a409a1a25e2bcc2@calendarios-cb-arganda|viernes|2026-10-17",
+      "texto": "✅ PARTIDO CONFIRMADO\n\n🏀 CB Arganda Cadete 1º Año\n🆚 JANSEN BT \"B\"\n\n📅 Sábado 17/10/2026\n🕐 11:30\n📍 DIEGO VELAZQUEZ, I.E.S.\n\nLa información ha sido comprobada nuevamente en la fuente oficial.\n\n📅 Calendario: Cadete 1º Año",
+      "uid": "231ed9bb7a409a1a25e2bcc2@calendarios-cb-arganda"
+    },
+    {
+      "clase": "MODIFICADO",
+      "creado": "2026-10-16T20:42+02:00",
+      "equipo": "infantil-masc-1-ano",
+      "id": "2d35bc056dd6ff97db9f88dd@calendarios-cb-arganda|hora_confirmada|2026-10-16T20:42+02:00",
+      "texto": "🔄 CAMBIO DE HORA\n\n🏀 CB Arganda Infantil 1º Año\n🆚 COLEGIO LOS SAUCES\n\n🕐 Antes: Pendiente (se mostraba a las 00:00)\n🕐 Ahora: 13:00\n\n📅 Sábado 24/10/2026\n📍 LOS SAUCES MORALEJA, COLEGIO\n\n📅 Calendario: Infantil 1º Año",
+      "uid": "2d35bc056dd6ff97db9f88dd@calendarios-cb-arganda"
+    },
+    {
+      "clase": "MODIFICADO",
+      "creado": "2026-10-16T20:42+02:00",
+      "equipo": "infantil-masc-1-ano",
+      "id": "47b8db586ecca9fa3320055b@calendarios-cb-arganda|cambio_hora|2026-10-16T20:42+02:00",
+      "texto": "🔄 CAMBIO DE HORA\n\n🏀 CB Arganda Infantil 1º Año\n🆚 SAN VIATOR \"B\"\n\n🕐 Antes: 11:15\n🕐 Ahora: 13:00\n\n📅 Sábado 28/11/2026\n📍 PEPE DOMAICA, PABELLON Pista 2\n\n📅 Calendario: Infantil 1º Año",
+      "uid": "47b8db586ecca9fa3320055b@calendarios-cb-arganda"
+    },
+    {
+      "clase": "MODIFICADO",
+      "creado": "2026-10-16T20:42+02:00",
+      "equipo": "infantil-masc-1-ano",
+      "id": "47b8db586ecca9fa3320055b@calendarios-cb-arganda|cambio_pabellon|2026-10-16T20:42+02:00",
+      "texto": "📍 CAMBIO DE PABELLÓN\n\n🏀 CB Arganda Infantil 1º Año\n🆚 SAN VIATOR \"B\"\n\n📍 Antes:\nPEPE DOMAICA, PABELLON (PISTA CENTRAL)\nPLAZA ELIPTICA, 2, Madrid\n\n📍 Ahora:\nPEPE DOMAICA, PABELLON Pista 2\nPLAZA ELIPTICA, 2, Madrid\n\n📅 Sábado 28/11/2026\n🕐 13:00\n\n📅 Calendario: Infantil 1º Año",
+      "uid": "47b8db586ecca9fa3320055b@calendarios-cb-arganda"
+    },
+    {
+      "clase": "MODIFICADO",
+      "creado": "2026-10-16T20:42+02:00",
+      "equipo": "infantil-masc-pref",
+      "id": "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda|hora_confirmada|2026-10-16T20:42+02:00",
+      "texto": "🔄 CAMBIO DE HORA\n\n🏀 CB Arganda Infantil Preferente Masc.\n🆚 MAJADAHONDA BLANCO\n\n🕐 Antes: Pendiente (se mostraba a las 00:00)\n🕐 Ahora: 16:45\n\n📅 Sábado 24/10/2026\n📍 VIRGEN DEL CARMEN, Pista 2\n\n📅 Calendario: Infantil Preferente Masc.",
+      "uid": "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda"
+    },
+    {
+      "clase": "MODIFICADO",
+      "creado": "2026-10-16T20:42+02:00",
+      "equipo": "infantil-masc-pref",
+      "id": "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda|cambio_pabellon|2026-10-16T20:42+02:00",
+      "texto": "📍 CAMBIO DE PABELLÓN\n\n🏀 CB Arganda Infantil Preferente Masc.\n🆚 MAJADAHONDA BLANCO\n\n📍 Antes:\nVIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\nMALLORCA, S/N, Arganda del Rey\n\n📍 Ahora:\nVIRGEN DEL CARMEN, Pista 2\nMALLORCA, S/N, Arganda del Rey\n\n📅 Sábado 24/10/2026\n🕐 16:45\n\n📅 Calendario: Infantil Preferente Masc.",
+      "uid": "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda"
+    },
+    {
+      "clase": "CONFIRMADO",
+      "creado": "2026-10-16T20:42+02:00",
+      "equipo": "infantil-masc-pref",
+      "id": "c4636bb1c32428318580de8a@calendarios-cb-arganda|viernes|2026-10-17",
+      "texto": "✅ PARTIDO CONFIRMADO\n\n🏀 CB Arganda Infantil Preferente Masc.\n🆚 ARGANZUELA CENTRO\n\n📅 Sábado 17/10/2026\n🕐 19:00\n📍 ARGANZUELA, CENTRO INTEGRADO\n\nLa información ha sido comprobada nuevamente en la fuente oficial.\n\n📅 Calendario: Infantil Preferente Masc.",
+      "uid": "c4636bb1c32428318580de8a@calendarios-cb-arganda"
+    }
+  ],
   "ultimo_envio": "2026-10-09T22:03+02:00",
   "ultimo_error": null
 }
