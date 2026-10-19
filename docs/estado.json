@@ -3,51 +3,21 @@
   "cambios": [
     {
       "calendario": "cadete-masc-1-ano",
-      "detalle": "40-80",
-      "partido": "CB Arganda vs LICEO FRANCES",
+      "detalle": "70-74",
+      "partido": "JANSEN BT \"B\" vs CB Arganda",
       "tipo": "resultado"
     },
     {
       "calendario": "cadete-masc-1-ano",
-      "detalle": "13:15",
-      "partido": "CB Arganda vs CB POZUELO VERDE",
-      "tipo": "hora_confirmada"
-    },
-    {
-      "calendario": "cadete-masc-1-ano",
-      "detalle": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL) (MALLORCA, S/N, Arganda del Rey) → VIRGEN DEL CARMEN, Pista 3 (MALLORCA, S/N, Arganda del Rey)",
-      "partido": "CB Arganda vs CB POZUELO VERDE",
-      "tipo": "cambio_pabellon"
-    },
-    {
-      "calendario": "infantil-masc-1-ano",
-      "detalle": "13:00",
-      "partido": "COLEGIO LOS SAUCES vs CB Arganda",
-      "tipo": "hora_confirmada"
-    },
-    {
-      "calendario": "infantil-masc-1-ano",
-      "detalle": "11:15 → 13:00",
-      "partido": "SAN VIATOR \"B\" vs CB Arganda",
+      "detalle": "14:30 → 16:30",
+      "partido": "SAN BLAS BASKET vs CB Arganda",
       "tipo": "cambio_hora"
     },
     {
-      "calendario": "infantil-masc-1-ano",
-      "detalle": "PEPE DOMAICA, PABELLON (PISTA CENTRAL) (PLAZA ELIPTICA, 2, Madrid) → PEPE DOMAICA, PABELLON Pista 2 (PLAZA ELIPTICA, 2, Madrid)",
-      "partido": "SAN VIATOR \"B\" vs CB Arganda",
-      "tipo": "cambio_pabellon"
-    },
-    {
       "calendario": "infantil-masc-pref",
-      "detalle": "16:45",
-      "partido": "CB Arganda vs MAJADAHONDA BLANCO",
-      "tipo": "hora_confirmada"
-    },
-    {
-      "calendario": "infantil-masc-pref",
-      "detalle": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL) (MALLORCA, S/N, Arganda del Rey) → VIRGEN DEL CARMEN, Pista 2 (MALLORCA, S/N, Arganda del Rey)",
-      "partido": "CB Arganda vs MAJADAHONDA BLANCO",
-      "tipo": "cambio_pabellon"
+      "detalle": "47-56",
+      "partido": "ARGANZUELA CENTRO vs CB Arganda",
+      "tipo": "resultado"
     }
   ],
   "equipos": {
@@ -60,11 +30,11 @@
       "partidos_en_calendario": 20,
       "partidos_sin_hora": 14,
       "proximo_partido": {
-        "fecha": "2026-10-17",
-        "hora": "11:30",
-        "local": "JANSEN BT \"B\"",
-        "pabellon": "DIEGO VELAZQUEZ, I.E.S.",
-        "visitante": "CARNICERIA DMORATA ARGANDA"
+        "fecha": "2026-10-24",
+        "hora": "13:15",
+        "local": "CARNICERIA DMORATA ARGANDA",
+        "pabellon": "VIRGEN DEL CARMEN, Pista 3",
+        "visitante": "CB POZUELO VERDE"
       }
     },
     "infantil-masc-1-ano": {
@@ -92,15 +62,15 @@
       "partidos_en_calendario": 22,
       "partidos_sin_hora": 18,
       "proximo_partido": {
-        "fecha": "2026-10-17",
-        "hora": "19:00",
-        "local": "ARGANZUELA CENTRO",
-        "pabellon": "ARGANZUELA, CENTRO INTEGRADO",
-        "visitante": "CB ARGANDA"
+        "fecha": "2026-10-24",
+        "hora": "16:45",
+        "local": "CB ARGANDA",
+        "pabellon": "VIRGEN DEL CARMEN, Pista 2",
+        "visitante": "MAJADAHONDA BLANCO"
       }
     }
   },
   "resultado": "ok",
-  "tipo": "confirmación final de las 17:00 del viernes",
-  "ultima_comprobacion_correcta": "2026-10-16T20:42+02:00"
+  "tipo": "comprobación de las 17:00 del lunes",
+  "ultima_comprobacion_correcta": "2026-10-19T22:28+02:00"
 }
