@@ -1,25 +1,6 @@
 {
   "avisos": [],
-  "cambios": [
-    {
-      "calendario": "cadete-masc-1-ano",
-      "detalle": "70-74",
-      "partido": "JANSEN BT \"B\" vs CB Arganda",
-      "tipo": "resultado"
-    },
-    {
-      "calendario": "cadete-masc-1-ano",
-      "detalle": "14:30 → 16:30",
-      "partido": "SAN BLAS BASKET vs CB Arganda",
-      "tipo": "cambio_hora"
-    },
-    {
-      "calendario": "infantil-masc-pref",
-      "detalle": "47-56",
-      "partido": "ARGANZUELA CENTRO vs CB Arganda",
-      "tipo": "resultado"
-    }
-  ],
+  "cambios": [],
   "equipos": {
     "cadete-masc-1-ano": {
       "archivo_ics": "cadete-masculino-1-ano.ics",
@@ -71,6 +52,6 @@
     }
   },
   "resultado": "ok",
-  "tipo": "comprobación de las 17:00 del lunes",
-  "ultima_comprobacion_correcta": "2026-10-19T22:28+02:00"
+  "tipo": "confirmación final de las 17:00 del viernes",
+  "ultima_comprobacion_correcta": "2026-10-23T20:58+02:00"
 }

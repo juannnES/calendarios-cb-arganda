@@ -114,7 +114,40 @@
     "c4636bb1c32428318580de8a@calendarios-cb-arganda|resultado|2026-10-19T22:28+02:00",
     "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda|lunes|2026-10-24"
   ],
-  "pendientes": [],
+  "pendientes": [
+    {
+      "clase": "CONFIRMADO",
+      "creado": "2026-10-23T20:58+02:00",
+      "equipo": "cadete-masc-1-ano",
+      "id": "a4b413f20f036d7438ab5420@calendarios-cb-arganda|viernes|2026-10-24",
+      "texto": "✅ PARTIDO CONFIRMADO\n\n🏀 CB Arganda Cadete 1º Año\n🆚 CB POZUELO VERDE\n\n📅 Sábado 24/10/2026\n🕐 13:15\n📍 VIRGEN DEL CARMEN, Pista 3\n\nLa información ha sido comprobada nuevamente en la fuente oficial.\n\n📅 Calendario: Cadete 1º Año",
+      "uid": "a4b413f20f036d7438ab5420@calendarios-cb-arganda"
+    },
+    {
+      "clase": "CONFIRMADO",
+      "creado": "2026-10-23T20:58+02:00",
+      "equipo": "infantil-masc-1-ano",
+      "id": "2d35bc056dd6ff97db9f88dd@calendarios-cb-arganda|viernes|2026-10-24",
+      "texto": "✅ PARTIDO CONFIRMADO\n\n🏀 CB Arganda Infantil 1º Año\n🆚 COLEGIO LOS SAUCES\n\n📅 Sábado 24/10/2026\n🕐 13:00\n📍 LOS SAUCES MORALEJA, COLEGIO\n\nLa información ha sido comprobada nuevamente en la fuente oficial.\n\n📅 Calendario: Infantil 1º Año",
+      "uid": "2d35bc056dd6ff97db9f88dd@calendarios-cb-arganda"
+    },
+    {
+      "clase": "CONFIRMADO",
+      "creado": "2026-10-23T20:58+02:00",
+      "equipo": "infantil-masc-1-ano",
+      "id": "1da4b2c993e8aab4a80eae56@calendarios-cb-arganda|viernes|2026-10-25",
+      "texto": "✅ PARTIDO CONFIRMADO\n\n🏀 CB Arganda Infantil 1º Año\n🆚 SAN VIATOR \"B\"\n\n📅 Domingo 25/10/2026\n🕐 09:30\n📍 VIRGEN DEL CARMEN, Pista 1\n\nLa información ha sido comprobada nuevamente en la fuente oficial.\n\n📅 Calendario: Infantil 1º Año",
+      "uid": "1da4b2c993e8aab4a80eae56@calendarios-cb-arganda"
+    },
+    {
+      "clase": "CONFIRMADO",
+      "creado": "2026-10-23T20:58+02:00",
+      "equipo": "infantil-masc-pref",
+      "id": "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda|viernes|2026-10-24",
+      "texto": "✅ PARTIDO CONFIRMADO\n\n🏀 CB Arganda Infantil Preferente Masc.\n🆚 MAJADAHONDA BLANCO\n\n📅 Sábado 24/10/2026\n🕐 16:45\n📍 VIRGEN DEL CARMEN, Pista 2\n\nLa información ha sido comprobada nuevamente en la fuente oficial.\n\n📅 Calendario: Infantil Preferente Masc.",
+      "uid": "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda"
+    }
+  ],
   "ultimo_envio": "2026-10-19T22:28+02:00",
   "ultimo_error": null
 }
