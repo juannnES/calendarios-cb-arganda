@@ -115,66 +115,16 @@
     "a4b413f20f036d7438ab5420@calendarios-cb-arganda|viernes|2026-10-24",
     "2d35bc056dd6ff97db9f88dd@calendarios-cb-arganda|viernes|2026-10-24",
     "1da4b2c993e8aab4a80eae56@calendarios-cb-arganda|viernes|2026-10-25",
-    "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda|viernes|2026-10-24"
+    "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda|viernes|2026-10-24",
+    "a4b413f20f036d7438ab5420@calendarios-cb-arganda|resultado|2026-10-26T21:22+01:00",
+    "1da4b2c993e8aab4a80eae56@calendarios-cb-arganda|resultado|2026-10-26T21:22+01:00",
+    "2d35bc056dd6ff97db9f88dd@calendarios-cb-arganda|resultado|2026-10-26T21:22+01:00",
+    "dd7a2d9a4473053d9fd55450@calendarios-cb-arganda|hora_confirmada|2026-10-26T21:22+01:00",
+    "dd7a2d9a4473053d9fd55450@calendarios-cb-arganda|cambio_pabellon|2026-10-26T21:22+01:00",
+    "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda|resultado|2026-10-26T21:22+01:00",
+    "5f7d170cc9b20396a653cb33@calendarios-cb-arganda|hora_confirmada|2026-10-26T21:22+01:00"
   ],
-  "pendientes": [
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-10-26T21:22+01:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "a4b413f20f036d7438ab5420@calendarios-cb-arganda|resultado|2026-10-26T21:22+01:00",
-      "texto": "🔄 INFORMACIÓN ACTUALIZADA\n\n🏀 CB Arganda Cadete 1º Año\n🆚 CB POZUELO VERDE\n\n🏁 Resultado: CARNICERIA DMORATA ARGANDA 44-41 CB POZUELO VERDE\n\n📅 Fecha: Sábado 24/10/2026\n🕐 Hora: 13:15\n📍 Pabellón: VIRGEN DEL CARMEN, Pista 3\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "a4b413f20f036d7438ab5420@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-10-26T21:22+01:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "1da4b2c993e8aab4a80eae56@calendarios-cb-arganda|resultado|2026-10-26T21:22+01:00",
-      "texto": "🔄 INFORMACIÓN ACTUALIZADA\n\n🏀 CB Arganda Infantil 1º Año\n🆚 SAN VIATOR \"B\"\n\n🏁 Resultado: CB ARGANDA 20-59 SAN VIATOR \"B\"\n\n📅 Fecha: Domingo 25/10/2026\n🕐 Hora: 09:30\n📍 Pabellón: VIRGEN DEL CARMEN, Pista 1\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "1da4b2c993e8aab4a80eae56@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-10-26T21:22+01:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "2d35bc056dd6ff97db9f88dd@calendarios-cb-arganda|resultado|2026-10-26T21:22+01:00",
-      "texto": "🔄 INFORMACIÓN ACTUALIZADA\n\n🏀 CB Arganda Infantil 1º Año\n🆚 COLEGIO LOS SAUCES\n\n🏁 Resultado: COLEGIO LOS SAUCES 56-45 CB ARGANDA\n\n📅 Fecha: Sábado 24/10/2026\n🕐 Hora: 13:00\n📍 Pabellón: LOS SAUCES MORALEJA, COLEGIO\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "2d35bc056dd6ff97db9f88dd@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-10-26T21:22+01:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "dd7a2d9a4473053d9fd55450@calendarios-cb-arganda|hora_confirmada|2026-10-26T21:22+01:00",
-      "texto": "🔄 CAMBIO DE HORA\n\n🏀 CB Arganda Infantil 1º Año\n🆚 DISTRITO OLIMPICO CANILLEJAS\n\n🕐 Antes: Pendiente (se mostraba a las 00:00)\n🕐 Ahora: 11:30\n\n📅 Sábado 07/11/2026\n📍 VIRGEN DEL CARMEN, Pista 3\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "dd7a2d9a4473053d9fd55450@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-10-26T21:22+01:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "dd7a2d9a4473053d9fd55450@calendarios-cb-arganda|cambio_pabellon|2026-10-26T21:22+01:00",
-      "texto": "📍 CAMBIO DE PABELLÓN\n\n🏀 CB Arganda Infantil 1º Año\n🆚 DISTRITO OLIMPICO CANILLEJAS\n\n📍 Antes:\nVIRGEN DEL CARMEN, Pista 1\nMALLORCA, S/N, Arganda del Rey\n\n📍 Ahora:\nVIRGEN DEL CARMEN, Pista 3\nMALLORCA, S/N, Arganda del Rey\n\n📅 Sábado 07/11/2026\n🕐 11:30\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "dd7a2d9a4473053d9fd55450@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-10-26T21:22+01:00",
-      "equipo": "infantil-masc-pref",
-      "id": "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda|resultado|2026-10-26T21:22+01:00",
-      "texto": "🔄 INFORMACIÓN ACTUALIZADA\n\n🏀 CB Arganda Infantil Preferente Masc.\n🆚 MAJADAHONDA BLANCO\n\n🏁 Resultado: CB ARGANDA 56-49 MAJADAHONDA BLANCO\n\n📅 Fecha: Sábado 24/10/2026\n🕐 Hora: 16:45\n📍 Pabellón: VIRGEN DEL CARMEN, Pista 2\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "9c9ba5f0076ba735eab0d8f4@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-10-26T21:22+01:00",
-      "equipo": "infantil-masc-pref",
-      "id": "5f7d170cc9b20396a653cb33@calendarios-cb-arganda|hora_confirmada|2026-10-26T21:22+01:00",
-      "texto": "🔄 CAMBIO DE HORA\n\n🏀 CB Arganda Infantil Preferente Masc.\n🆚 CLUB BALONCESTO ZONA PRESS\n\n🕐 Antes: Pendiente (se mostraba a las 00:00)\n🕐 Ahora: 13:15\n\n📅 Sábado 07/11/2026\n📍 DEHESA BOYAL, PABELLON PISTA CENTRAL\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "5f7d170cc9b20396a653cb33@calendarios-cb-arganda"
-    }
-  ],
-  "ultimo_envio": "2026-10-23T20:59+02:00",
+  "pendientes": [],
+  "ultimo_envio": "2026-10-26T21:23+01:00",
   "ultimo_error": null
 }
