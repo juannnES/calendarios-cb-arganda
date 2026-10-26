@@ -1,6 +1,49 @@
 {
   "avisos": [],
-  "cambios": [],
+  "cambios": [
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "44-41",
+      "partido": "CB Arganda vs CB POZUELO VERDE",
+      "tipo": "resultado"
+    },
+    {
+      "calendario": "infantil-masc-1-ano",
+      "detalle": "20-59",
+      "partido": "CB Arganda vs SAN VIATOR \"B\"",
+      "tipo": "resultado"
+    },
+    {
+      "calendario": "infantil-masc-1-ano",
+      "detalle": "56-45",
+      "partido": "COLEGIO LOS SAUCES vs CB Arganda",
+      "tipo": "resultado"
+    },
+    {
+      "calendario": "infantil-masc-1-ano",
+      "detalle": "11:30",
+      "partido": "CB Arganda vs DISTRITO OLIMPICO CANILLEJAS",
+      "tipo": "hora_confirmada"
+    },
+    {
+      "calendario": "infantil-masc-1-ano",
+      "detalle": "VIRGEN DEL CARMEN, Pista 1 (MALLORCA, S/N, Arganda del Rey) → VIRGEN DEL CARMEN, Pista 3 (MALLORCA, S/N, Arganda del Rey)",
+      "partido": "CB Arganda vs DISTRITO OLIMPICO CANILLEJAS",
+      "tipo": "cambio_pabellon"
+    },
+    {
+      "calendario": "infantil-masc-pref",
+      "detalle": "56-49",
+      "partido": "CB Arganda vs MAJADAHONDA BLANCO",
+      "tipo": "resultado"
+    },
+    {
+      "calendario": "infantil-masc-pref",
+      "detalle": "13:15",
+      "partido": "CLUB BALONCESTO ZONA PRESS vs CB Arganda",
+      "tipo": "hora_confirmada"
+    }
+  ],
   "equipos": {
     "cadete-masc-1-ano": {
       "archivo_ics": "cadete-masculino-1-ano.ics",
@@ -11,11 +54,11 @@
       "partidos_en_calendario": 20,
       "partidos_sin_hora": 14,
       "proximo_partido": {
-        "fecha": "2026-10-24",
-        "hora": "13:15",
-        "local": "CARNICERIA DMORATA ARGANDA",
-        "pabellon": "VIRGEN DEL CARMEN, Pista 3",
-        "visitante": "CB POZUELO VERDE"
+        "fecha": "2026-11-07",
+        "hora": "16:30",
+        "local": "SAN BLAS BASKET",
+        "pabellon": "SANTO ANGEL DE LA GUARDA, PABELLON COLEGIO",
+        "visitante": "CARNICERIA DMORATA ARGANDA"
       }
     },
     "infantil-masc-1-ano": {
@@ -25,13 +68,13 @@
         "Infantil Masc. 1ºaño - PRIMERA FASE - GRUPO 7"
       ],
       "partidos_en_calendario": 8,
-      "partidos_sin_hora": 5,
+      "partidos_sin_hora": 4,
       "proximo_partido": {
-        "fecha": "2026-10-24",
-        "hora": "13:00",
-        "local": "COLEGIO LOS SAUCES",
-        "pabellon": "LOS SAUCES MORALEJA, COLEGIO",
-        "visitante": "CB ARGANDA"
+        "fecha": "2026-11-07",
+        "hora": "11:30",
+        "local": "CB ARGANDA",
+        "pabellon": "VIRGEN DEL CARMEN, Pista 3",
+        "visitante": "DISTRITO OLIMPICO CANILLEJAS"
       }
     },
     "infantil-masc-pref": {
@@ -41,17 +84,17 @@
         "Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2"
       ],
       "partidos_en_calendario": 22,
-      "partidos_sin_hora": 18,
+      "partidos_sin_hora": 17,
       "proximo_partido": {
-        "fecha": "2026-10-24",
-        "hora": "16:45",
-        "local": "CB ARGANDA",
-        "pabellon": "VIRGEN DEL CARMEN, Pista 2",
-        "visitante": "MAJADAHONDA BLANCO"
+        "fecha": "2026-11-07",
+        "hora": "13:15",
+        "local": "CLUB BALONCESTO ZONA PRESS",
+        "pabellon": "DEHESA BOYAL, PABELLON PISTA CENTRAL",
+        "visitante": "CB ARGANDA"
       }
     }
   },
   "resultado": "ok",
-  "tipo": "confirmación final de las 17:00 del viernes",
-  "ultima_comprobacion_correcta": "2026-10-23T20:58+02:00"
+  "tipo": "comprobación de las 17:00 del lunes",
+  "ultima_comprobacion_correcta": "2026-10-26T21:22+01:00"
 }
