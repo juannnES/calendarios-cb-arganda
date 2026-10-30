@@ -1,49 +1,6 @@
 {
   "avisos": [],
-  "cambios": [
-    {
-      "calendario": "cadete-masc-1-ano",
-      "detalle": "44-41",
-      "partido": "CB Arganda vs CB POZUELO VERDE",
-      "tipo": "resultado"
-    },
-    {
-      "calendario": "infantil-masc-1-ano",
-      "detalle": "20-59",
-      "partido": "CB Arganda vs SAN VIATOR \"B\"",
-      "tipo": "resultado"
-    },
-    {
-      "calendario": "infantil-masc-1-ano",
-      "detalle": "56-45",
-      "partido": "COLEGIO LOS SAUCES vs CB Arganda",
-      "tipo": "resultado"
-    },
-    {
-      "calendario": "infantil-masc-1-ano",
-      "detalle": "11:30",
-      "partido": "CB Arganda vs DISTRITO OLIMPICO CANILLEJAS",
-      "tipo": "hora_confirmada"
-    },
-    {
-      "calendario": "infantil-masc-1-ano",
-      "detalle": "VIRGEN DEL CARMEN, Pista 1 (MALLORCA, S/N, Arganda del Rey) → VIRGEN DEL CARMEN, Pista 3 (MALLORCA, S/N, Arganda del Rey)",
-      "partido": "CB Arganda vs DISTRITO OLIMPICO CANILLEJAS",
-      "tipo": "cambio_pabellon"
-    },
-    {
-      "calendario": "infantil-masc-pref",
-      "detalle": "56-49",
-      "partido": "CB Arganda vs MAJADAHONDA BLANCO",
-      "tipo": "resultado"
-    },
-    {
-      "calendario": "infantil-masc-pref",
-      "detalle": "13:15",
-      "partido": "CLUB BALONCESTO ZONA PRESS vs CB Arganda",
-      "tipo": "hora_confirmada"
-    }
-  ],
+  "cambios": [],
   "equipos": {
     "cadete-masc-1-ano": {
       "archivo_ics": "cadete-masculino-1-ano.ics",
@@ -95,6 +52,6 @@
     }
   },
   "resultado": "ok",
-  "tipo": "comprobación de las 17:00 del lunes",
-  "ultima_comprobacion_correcta": "2026-10-26T21:22+01:00"
+  "tipo": "confirmación final de las 17:00 del viernes",
+  "ultima_comprobacion_correcta": "2026-10-30T20:53+01:00"
 }
