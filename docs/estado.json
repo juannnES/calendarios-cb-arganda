@@ -1,6 +1,67 @@
 {
   "avisos": [],
-  "cambios": [],
+  "cambios": [
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "13:15",
+      "partido": "CB Arganda vs MADRID FSM C.D.B.",
+      "tipo": "hora_confirmada"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL) (MALLORCA, S/N, Arganda del Rey) → VIRGEN DEL CARMEN, Pista 2 (MALLORCA, S/N, Arganda del Rey)",
+      "partido": "CB Arganda vs MADRID FSM C.D.B.",
+      "tipo": "cambio_pabellon"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "21/11/2026 → 27/02/2027",
+      "partido": "C.B. GETAFE \"MOLERA\" vs CB Arganda",
+      "tipo": "cambio_fecha"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "27/02/2027 → 21/11/2026",
+      "partido": "CB Arganda vs C.B. GETAFE \"MOLERA\"",
+      "tipo": "cambio_fecha"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "09:45",
+      "partido": "CB Arganda vs C.B. GETAFE \"MOLERA\"",
+      "tipo": "hora_confirmada"
+    },
+    {
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL) (MALLORCA, S/N, Arganda del Rey) → VIRGEN DEL CARMEN, Pista 1 (MALLORCA, S/N, Arganda del Rey)",
+      "partido": "CB Arganda vs C.B. GETAFE \"MOLERA\"",
+      "tipo": "cambio_pabellon"
+    },
+    {
+      "calendario": "infantil-masc-1-ano",
+      "detalle": "18:45",
+      "partido": "VILLALBA \"B\" FOTOQUO vs CB Arganda",
+      "tipo": "hora_confirmada"
+    },
+    {
+      "calendario": "infantil-masc-1-ano",
+      "detalle": "LOS NEGRALES, POLIDEPORTIVO (SANTA EMILIA, 70 (LOS NEGRALES), Alpedrete) → MIGUEL DE CERVANTES, CEIP (MESTAS esquina RUIZ DE ALARCON, Collado Villalba)",
+      "partido": "VILLALBA \"B\" FOTOQUO vs CB Arganda",
+      "tipo": "cambio_pabellon"
+    },
+    {
+      "calendario": "infantil-masc-pref",
+      "detalle": "13:15",
+      "partido": "CB Arganda vs ISAAC NEWTON \"A\"",
+      "tipo": "hora_confirmada"
+    },
+    {
+      "calendario": "infantil-masc-pref",
+      "detalle": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL) (MALLORCA, S/N, Arganda del Rey) → VIRGEN DEL CARMEN, Pista 3 (MALLORCA, S/N, Arganda del Rey)",
+      "partido": "CB Arganda vs ISAAC NEWTON \"A\"",
+      "tipo": "cambio_pabellon"
+    }
+  ],
   "equipos": {
     "cadete-masc-1-ano": {
       "archivo_ics": "cadete-masculino-1-ano.ics",
@@ -9,7 +70,7 @@
         "Cadete Masc. 1ºaño - PRIMERA FASE - GRUPO 3"
       ],
       "partidos_en_calendario": 20,
-      "partidos_sin_hora": 14,
+      "partidos_sin_hora": 12,
       "proximo_partido": {
         "fecha": "2026-11-07",
         "hora": "16:30",
@@ -25,7 +86,7 @@
         "Infantil Masc. 1ºaño - PRIMERA FASE - GRUPO 7"
       ],
       "partidos_en_calendario": 8,
-      "partidos_sin_hora": 4,
+      "partidos_sin_hora": 3,
       "proximo_partido": {
         "fecha": "2026-11-07",
         "hora": "11:30",
@@ -41,7 +102,7 @@
         "Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2"
       ],
       "partidos_en_calendario": 22,
-      "partidos_sin_hora": 17,
+      "partidos_sin_hora": 16,
       "proximo_partido": {
         "fecha": "2026-11-07",
         "hora": "13:15",
@@ -53,5 +114,5 @@
   },
   "resultado": "ok",
   "tipo": "confirmación final de las 17:00 del viernes",
-  "ultima_comprobacion_correcta": "2026-10-30T20:53+01:00"
+  "ultima_comprobacion_correcta": "2026-11-07T00:41+01:00"
 }
