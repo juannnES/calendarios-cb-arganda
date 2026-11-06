@@ -23,7 +23,7 @@ from fbmcal.main import main
 from fbmcal.util import TZ
 from tests.test_calendarios import CONFIG, GRUPOS, HTML, XLSX
 
-for _var in ("AVISO_ARCHIVO", "GITHUB_STEP_SUMMARY", "PAGES_URL", "ERROR_ARCHIVO",
+for _var in ("AVISO_ARCHIVO", "GITHUB_STEP_SUMMARY", "GITHUB_OUTPUT", "PAGES_URL", "ERROR_ARCHIVO",
              "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"):
     os.environ.pop(_var, None)
 
@@ -501,45 +501,100 @@ class PrimeraEjecucionReal(unittest.TestCase):
 
 
 class ProgramacionDelWorkflow(unittest.TestCase):
-    """Las horas UTC del workflow producen UNA comprobación a las 17:05 de Madrid (y respaldo a las 18:45)
-    tanto en horario de verano como de invierno, incluidas las semanas del cambio de hora."""
+    """Intentos cada hora (UTC) los lunes y viernes + recuperación de madrugada: UNA comprobación al día, la
+    primera que llega desde las 17:00 de Madrid, en horario de verano y de invierno; y si GitHub los retrasa
+    pasada la medianoche, la comprobación se recupera el martes/sábado de madrugada."""
+
+    @staticmethod
+    def _expandir(campo):
+        valores = []
+        for parte in campo.split(","):
+            a, _, b = parte.partition("-")
+            valores += list(range(int(a), int(b or a) + 1))
+        return valores
 
     def disparos(self, dia):
         wf = (Path(__file__).resolve().parent.parent / ".github/workflows/actualizar-calendarios.yml").read_text(encoding="utf-8")
         self.assertIsNone(re.search(r"^\s+timezone:", wf, re.M))  # sin «timezone:» en la configuración
         res = []
-        for minuto, horas, dias in re.findall(r'cron: "(\d+) ([\d,]+) \* \* ([\d,]+)"', wf):
-            if str((dia.isoweekday()) % 7) in dias.split(","):
-                res += [datetime(dia.year, dia.month, dia.day, int(h), int(minuto), tzinfo=timezone.utc)
-                        for h in horas.split(",")]
+        for minuto, horas, dias in re.findall(r'cron: "(\d+) ([\d,-]+) \* \* ([\d,-]+)"', wf):
+            if dia.isoweekday() % 7 in self._expandir(dias):
+                res += [datetime(dia.year, dia.month, dia.day, h, int(minuto), tzinfo=timezone.utc)
+                        for h in self._expandir(horas)]
         return sorted(res)
 
-    def test_verano_e_invierno(self):
+    def simular(self, disparos):
+        """Ejecuta main.py en cada disparo, en orden; devuelve (comprobaciones, salidas «actualizado»)."""
+        with tempfile.TemporaryDirectory() as tmp:
+            d = Path(tmp)
+            (d / "c.html").write_text(HTML, encoding="utf-8")
+            (d / "x.xlsx").write_bytes(XLSX)
+            salidas = []
+            for disparo in disparos:
+                (d / "out").write_text("", encoding="utf-8")
+                with unittest.mock.patch.dict(os.environ, {"GITHUB_OUTPUT": str(d / "out")}), redirect_stdout(io.StringIO()):
+                    main(["--html", str(d / "c.html"), "--xlsx", str(d / "x.xlsx"), "--estado", str(d / "e.json"),
+                          "--salida", str(d / "docs"), "--ahora", disparo.isoformat(), "--programado"])
+                salidas.append((d / "out").read_text(encoding="utf-8").strip())
+            estado = json.loads((d / "e.json").read_text(encoding="utf-8")) if (d / "e.json").exists() else {}
+            return estado.get("ejecuciones", {}), salidas
+
+    def test_una_comprobacion_a_las_17_05_en_verano_e_invierno(self):
         from datetime import date
-        casos = {date(2026, 9, 28): "+02:00", date(2026, 10, 2): "+02:00",    # verano
-                 date(2026, 10, 26): "+01:00", date(2026, 11, 6): "+01:00",   # invierno (tras el 25/10)
-                 date(2027, 3, 29): "+02:00"}                                   # verano otra vez (tras el 28/03)
-        for dia, desfase in casos.items():
+        casos = {date(2026, 9, 28): "lunes", date(2026, 10, 2): "viernes",      # verano
+                 date(2026, 10, 26): "lunes", date(2026, 11, 6): "viernes",     # invierno (tras el 25/10)
+                 date(2027, 3, 29): "lunes"}                                     # verano otra vez (tras el 28/03)
+        for dia, modo in casos.items():
             with self.subTest(dia=dia):
                 disparos = self.disparos(dia)
-                self.assertEqual(len(disparos), 4)
-                madrid = [d.astimezone(TZ) for d in disparos]
-                self.assertIn("17:05", [f"{m:%H:%M}" for m in madrid])
-                self.assertIn("18:45", [f"{m:%H:%M}" for m in madrid])
-                self.assertEqual(f"{madrid[0]:%z}"[:3] + ":" + f"{madrid[0]:%z}"[3:], desfase)
-                with tempfile.TemporaryDirectory() as tmp:
-                    d = Path(tmp)
-                    (d / "c.html").write_text(HTML, encoding="utf-8")
-                    (d / "x.xlsx").write_bytes(XLSX)
-                    hechas = []
-                    for disparo in disparos:
-                        with redirect_stdout(io.StringIO()):
-                            main(["--html", str(d / "c.html"), "--xlsx", str(d / "x.xlsx"), "--estado", str(d / "e.json"),
-                                  "--salida", str(d / "docs"), "--ahora", disparo.isoformat(), "--programado"])
-                        estado = json.loads((d / "e.json").read_text(encoding="utf-8")) if (d / "e.json").exists() else {}
-                        hechas = list(estado.get("ejecuciones", {}).values())
-                    self.assertEqual(len(hechas), 1)                          # una sola comprobación al día
-                    self.assertEqual(hechas[0][11:16], "17:05")               # la de las 17:05 de Madrid
+                self.assertEqual(len(disparos), 12)
+                self.assertIn("17:05", [f"{x.astimezone(TZ):%H:%M}" for x in disparos])
+                hechas, salidas = self.simular(disparos)
+                self.assertEqual(list(hechas), [f"{dia}-{modo}"])                 # una sola comprobación
+                self.assertEqual(list(hechas.values())[0][11:16], "17:05")       # la de las 17:05 de Madrid
+                self.assertEqual(salidas.count("actualizado=true"), 1)           # solo esa publica
+                self.assertEqual(salidas.count("actualizado=false"), 11)
+
+    def test_retraso_de_github_hasta_mas_alla_de_medianoche_se_recupera(self):
+        # Como el lunes 02/11/2026: ningún intento llegó antes de medianoche; el primero, a las 00:01 del martes.
+        lunes = datetime(2026, 11, 2, tzinfo=TZ).date()
+        martes = [x for x in self.disparos(datetime(2026, 11, 3).date())]          # 00:05-05:05 UTC
+        self.assertEqual(len(martes), 6)
+        retrasado = datetime(2026, 11, 2, 23, 1, tzinfo=timezone.utc)              # 00:01 martes en Madrid
+        hechas, salidas = self.simular([retrasado] + martes)
+        self.assertEqual(list(hechas), [f"{lunes}-lunes"])                          # cuenta como la del lunes
+        self.assertEqual(salidas, ["actualizado=true"] + ["actualizado=false"] * 6)
+
+    def test_recuperacion_del_viernes_el_sabado_confirma_los_partidos(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            d = Path(tmp)
+            (d / "c.html").write_text(HTML, encoding="utf-8")
+            (d / "x.xlsx").write_bytes(XLSX)
+            args = ["--html", str(d / "c.html"), "--xlsx", str(d / "x.xlsx"), "--estado", str(d / "e.json"),
+                    "--salida", str(d / "docs"), "--programado"]
+            with redirect_stdout(io.StringIO()):
+                main(args + ["--ahora", "2026-10-03T00:30:00+02:00"])            # sábado 00:30: viernes recuperado
+                main(args + ["--ahora", "2026-10-03T09:00:00+02:00"])            # sábado 09:00: ya no toca
+            estado = json.loads((d / "e.json").read_text(encoding="utf-8"))
+            self.assertIn("2026-10-02-viernes", estado["ejecuciones"])
+            self.assertNotIn("2026-10-03-viernes", estado["ejecuciones"])
+            j1 = next(q for q in estado["equipos"][CADETE["id"]]["partidos"].values() if q["jornada"] == 1)
+            self.assertEqual(j1["verificacion"]["tipo"], "viernes")              # sábado 03/10: confirmado
+            cola = telegram.cargar_cola(d / "telegram.json")
+            self.assertEqual([m["clase"] for m in cola["pendientes"] if m["clase"] == "CONFIRMADO"], ["CONFIRMADO"] * 2)
+
+    def test_reglas_de_la_ventana(self):
+        from fbmcal.main import comprobacion_programada
+        casos = [("2026-11-02T16:59", None), ("2026-11-02T17:00", ("lunes", "2026-11-02")),
+                 ("2026-11-03T07:59", ("lunes", "2026-11-02")), ("2026-11-03T08:00", None),
+                 ("2026-11-06T23:59", ("viernes", "2026-11-06")), ("2026-11-07T00:30", ("viernes", "2026-11-06")),
+                 ("2026-11-04T18:00", None), ("2026-11-08T01:00", None)]
+        for momento, esperado in casos:
+            with self.subTest(momento=momento):
+                r = comprobacion_programada(datetime.fromisoformat(momento).replace(tzinfo=TZ), {})
+                self.assertEqual(r and (r[0], r[1].isoformat()), esperado)
+        hecha = {"2026-11-02-lunes": "2026-11-02T17:05+01:00"}
+        self.assertIsNone(comprobacion_programada(datetime(2026, 11, 3, 0, 30, tzinfo=TZ), hecha))
 
 
 class ColaYEnvio(unittest.TestCase):

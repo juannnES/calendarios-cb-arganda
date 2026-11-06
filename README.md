@@ -65,22 +65,26 @@ cadete-...ics     infantil-...1-ano.ics   infantil-...preferente.ics
 ### Horario: «comprobación de las 17:00»
 
 La comprobación **representa la de las 17:00** del lunes y del viernes (hora de Madrid, con horario de verano o invierno automático).
-En GitHub se lanza a las **17:05**: GitHub avisa de que las tareas programadas en el minuto 0 son las que más se retrasan
-o se descartan cuando hay mucha carga. Además hay una **ejecución de respaldo a las 18:45**.
-Si la de las 17:05 ya terminó bien, la de respaldo no hace nada. Si GitHub se la saltó o falló, la de respaldo hace el trabajo.
+Los intentos se programan a los minutos :05 (GitHub avisa de que las tareas en el minuto 0 son las que más se
+retrasan o se descartan). Los intentos de cada hora hacen de respaldo unos de otros: si GitHub se salta uno o falla,
+el siguiente hace el trabajo.
 
-**Cómo se programa (horas en UTC).** GitHub solo entiende de forma fiable horas UTC: con la opción `timezone:`
-el viernes 25/09/2026 no se disparó ninguna ejecución. Por eso el workflow programa las dos horas UTC posibles
-y el programa, que trabaja en hora de Madrid, solo actúa **desde las 17:00 y una sola vez al día**:
+**Cómo se programa (horas en UTC, con intentos cada hora).** GitHub solo entiende de forma fiable horas UTC
+(con `timezone:` el viernes 25/09/2026 no se disparó nada), y además **retrasa mucho** las tareas programadas
+del plan gratuito: entre septiembre y noviembre de 2026 llegaron con 4 a 7 horas de retraso, y dos comprobaciones
+de lunes se perdieron porque llegaron pasada la medianoche. Por eso:
 
-| Cron (UTC) | Verano (UTC+2) | Invierno (UTC+1) |
-|---|---|---|
-| `5 15 * * 1,5` | **17:05** → comprobación | 16:05 → no hace nada (antes de las 17:00) |
-| `5 16 * * 1,5` | 18:05 → ya hecha, no repite (o la hace si la de 17:05 no llegó) | **17:05** → comprobación |
-| `45 16 * * 1,5` | **18:45** → respaldo | 17:45 → ya hecha, no repite |
-| `45 17 * * 1,5` | 19:45 → ya hecha, no repite | **18:45** → respaldo |
+* Hay un **intento cada hora los lunes y viernes** (`5 11-22 * * 1,5`, de 11:05 a 22:05 UTC). El programa trabaja en
+  hora de Madrid: solo actúa el **primer intento que llega a partir de las 17:00** y una sola vez al día; los demás
+  terminan enseguida sin publicar nada. Así la comprobación se hace lo antes posible después de las 17:00 en verano
+  y en invierno.
+* **Recuperación**: si la comprobación del lunes o del viernes no se llegó a hacer, el primer intento del **martes o
+  sábado de madrugada** (antes de las 08:00 de Madrid; intentos `5 0-5 * * 2,6`) la hace como la de ese día,
+  incluidas la verificación del lunes o la confirmación del viernes.
+* La hora exacta depende de GitHub: puede llegar algo más tarde de las 17:05, pero ya no se pierde ninguna comprobación.
 
-Hay una prueba automática que lo comprueba para días de verano, de invierno y de las dos semanas de cambio de hora.
+Hay pruebas automáticas para días de verano, de invierno, las dos semanas de cambio de hora y los retrasos que
+pasan de medianoche.
 
 ### Identificador único (sin duplicados)
 
@@ -261,7 +265,7 @@ fbmcal/avisos_telegram.py        Resultado de la conciliación → mensajes de T
 fbmcal/telegram.py               Cola y envío por la Telegram Bot API (solo biblioteca estándar)
 fbmcal/web.py                    Página de suscripción y estado
 fbmcal/main.py                   Orquestación (python -m fbmcal), escritura atómica
-tests/                           89 pruebas (calendarios, Telegram, tercer equipo, primera ejecución y horarios), sin red ni tokens reales
+tests/                           92 pruebas (calendarios, Telegram, tercer equipo, primera ejecución, horarios y retrasos), sin red ni tokens reales
 .github/workflows/actualizar-calendarios.yml   Automatización
 data/estado.json                 (se genera) memoria de partidos y cambios
 data/telegram.json               (se genera) cola de avisos pendientes y registro de enviados (sin secretos)
@@ -307,7 +311,7 @@ Repositorio → **Settings** → **Pages** → *Build and deployment* → *Sourc
 
 ## 8. Automatización
 
-* Se ejecuta sola **cada lunes y viernes: comprobación de las 17:00, hora de Madrid** (lanzada a las 17:05, con respaldo a las 18:45).
+* Se ejecuta sola **cada lunes y viernes: comprobación de las 17:00, hora de Madrid** (primer intento que llegue desde las 17:00; si GitHub lo retrasa pasada la medianoche, se recupera de madrugada).
 * **Antes de tocar nada** pasa las pruebas automáticas. Si fallan, no se modifica ningún calendario.
 * **Escritura atómica**: los dos `.ics`, la página, el `estado.json` y el estado interno se generan primero en memoria
   y solo se escriben si todo ha ido bien.

@@ -20,7 +20,7 @@ from fbmcal.util import TZ
 
 # Las pruebas deben ser herméticas: en GitHub Actions estas variables existen y, si no se quitan,
 # las ejecuciones simuladas escribirían un aviso falso (que acabaría como Issue) y ensuciarían el resumen.
-for _var in ("AVISO_ARCHIVO", "GITHUB_STEP_SUMMARY", "PAGES_URL"):
+for _var in ("AVISO_ARCHIVO", "GITHUB_STEP_SUMMARY", "GITHUB_OUTPUT", "PAGES_URL"):
     os.environ.pop(_var, None)
 
 RAIZ = Path(__file__).resolve().parent.parent
@@ -525,7 +525,7 @@ class EjecucionCompleta(unittest.TestCase):
         for py in (RAIZ / "fbmcal").glob("*.py"):
             leidas[py.name] = set(re.findall(r'environ\.get\("([A-Z_]+)"', py.read_text(encoding="utf-8")))
         calendarios = set().union(*(v for k, v in leidas.items() if k != "telegram.py"))
-        self.assertEqual(calendarios, {"AVISO_ARCHIVO", "GITHUB_STEP_SUMMARY", "PAGES_URL", "ERROR_ARCHIVO"})
+        self.assertEqual(calendarios, {"AVISO_ARCHIVO", "GITHUB_STEP_SUMMARY", "GITHUB_OUTPUT", "PAGES_URL", "ERROR_ARCHIVO"})
         self.assertEqual(leidas["telegram.py"] - {"GITHUB_STEP_SUMMARY", "ERROR_ARCHIVO"},
                          {"TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"})
         aviso = self.dir / "aviso.md"

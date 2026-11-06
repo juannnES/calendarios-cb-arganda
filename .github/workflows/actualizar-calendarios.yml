@@ -8,17 +8,15 @@ name: Actualizar calendarios
 on:
   schedule:
     # COMPROBACIÓN DE LAS 17:00 DEL LUNES Y DEL VIERNES (hora de Madrid).
-    # Se lanza a las 17:05 y no a las 17:00 en punto porque GitHub avisa de que las tareas en el
-    # minuto 0 son las que más se retrasan o se descartan. A efectos del sistema es la de las 17:00.
-    #
-    # Horas en UTC (el formato clásico que GitHub siempre dispara; con «timezone:» no se disparó
-    # ninguna el viernes 25/09/2026). Se programan las dos horas UTC posibles y el programa, que
-    # trabaja en hora de Madrid, solo actúa desde las 17:00 y una sola vez al día:
-    #   verano (UTC+2): 15:05 UTC = 17:05 Madrid ✔ · 16:05 UTC = 18:05 (ya hecha: no repite)
-    #   invierno (UTC+1): 15:05 UTC = 16:05 (antes de las 17:00: no hace nada) · 16:05 UTC = 17:05 ✔
-    - cron: "5 15,16 * * 1,5"
-    # Respaldo 18:45 Madrid: verano 16:45 UTC · invierno 17:45 UTC. Si ya se hizo, no repite nada.
-    - cron: "45 16,17 * * 1,5"
+    # GitHub retrasa mucho las tareas programadas (de 4 a 7 horas en sep-nov 2026) y a veces se salta
+    # alguna. Por eso hay un intento CADA HORA los lunes y viernes desde las 11:05 UTC, y el programa
+    # (que trabaja en hora de Madrid) solo actúa con el primero que llegue a partir de las 17:00 y una
+    # sola vez al día; los demás terminan enseguida sin hacer nada ni publicar.
+    # Horas en UTC: con «timezone:» GitHub no disparó ninguna ejecución el 25/09/2026.
+    - cron: "5 11-22 * * 1,5"
+    # Recuperación: si la comprobación del lunes o del viernes no llegó a hacerse antes de medianoche,
+    # estos intentos de madrugada del martes y del sábado (hasta las 08:00 de Madrid) la hacen.
+    - cron: "5 0-5 * * 2,6"
   workflow_dispatch:
     inputs:
       modo:
@@ -55,6 +53,8 @@ jobs:
   actualizar:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    outputs:
+      actualizado: ${{ steps.consultar.outputs.actualizado }}
     steps:
       - uses: actions/checkout@v5
 
@@ -77,6 +77,7 @@ jobs:
         run: python -m unittest discover -s tests -t .
 
       - name: Consultar la FBM y actualizar calendarios
+        id: consultar
         if: ${{ !inputs.probar_aviso && !inputs.probar_telegram }}
         run: |
           rm -f "$AVISO_ARCHIVO" "$ERROR_ARCHIVO"
@@ -100,7 +101,7 @@ jobs:
           git push
 
       - name: Preparar publicación
-        if: ${{ !inputs.probar_aviso && !inputs.probar_telegram && hashFiles('docs/index.html') != '' }}
+        if: ${{ !inputs.probar_aviso && !inputs.probar_telegram && steps.consultar.outputs.actualizado == 'true' && hashFiles('docs/index.html') != '' }}
         uses: actions/upload-pages-artifact@v4
         with:
           path: docs
@@ -150,7 +151,8 @@ jobs:
 
   publicar:
     needs: actualizar
-    if: ${{ !inputs.probar_aviso && !inputs.probar_telegram }}
+    # Solo se publica cuando se ha hecho una comprobación (los intentos que no tocan no redespliegan).
+    if: ${{ !inputs.probar_aviso && !inputs.probar_telegram && needs.actualizar.outputs.actualizado == 'true' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages

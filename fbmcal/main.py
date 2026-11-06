@@ -8,7 +8,7 @@ import json
 import os
 import sys
 import traceback
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 from .conciliar import activo, conciliar_equipo
@@ -22,6 +22,35 @@ from .util import DIAS, TZ, ahora_madrid, temporada_de
 from .web import generar_indice
 
 RAIZ = Path(__file__).resolve().parent.parent
+
+
+# GitHub lanza las ejecuciones programadas con horas de retraso: si una llega de madrugada (martes o sábado
+# antes de esta hora) y la comprobación del día anterior no se hizo, se hace igualmente como la de ese día.
+HORA_LIMITE_RECUPERACION = 8
+
+
+def comprobacion_programada(ahora: datetime, ejecuciones: dict) -> tuple[str, object] | None:
+    """(modo, fecha de la comprobación) que toca hacer ahora, o None si no toca ninguna.
+
+    * Lunes o viernes desde las 17:00 (hora de Madrid) → la de ese día, si no está hecha.
+    * Martes o sábado antes de las 08:00 → la del lunes o viernes anterior, si no se llegó a hacer.
+    """
+    hoy = ahora.date()
+    if ahora.weekday() in (0, 4) and ahora.hour >= 17:
+        modo, dia = ("lunes" if ahora.weekday() == 0 else "viernes"), hoy
+    elif ahora.weekday() in (1, 5) and ahora.hour < HORA_LIMITE_RECUPERACION:
+        modo, dia = ("lunes" if ahora.weekday() == 1 else "viernes"), hoy - timedelta(days=1)
+    else:
+        return None
+    return None if f"{dia}-{modo}" in ejecuciones else (modo, dia)
+
+
+def anotar_salida(nombre: str, valor: str) -> None:
+    """Salida del paso para el workflow (p. ej. si hay que publicar)."""
+    ruta = os.environ.get("GITHUB_OUTPUT")
+    if ruta:
+        with open(ruta, "a", encoding="utf-8") as f:
+            f.write(f"{nombre}={valor}\n")
 
 
 def resolver_modo(modo: str, ahora: datetime) -> str:
@@ -69,17 +98,19 @@ def ejecutar(args) -> int:
     ultima_ok = (estado.get("ultima_ejecucion") or {}).get("en")  # última comprobación correcta ANTERIOR
     print(f"▶ {DIAS[ahora.weekday()]} {ahora:%d/%m/%Y %H:%M} (Europe/Madrid) · modo: {modo}")
 
+    dia_comprobacion = ahora.date()
     if args.programado:
-        # La «comprobación de las 17:00» se lanza a las 17:05 (GitHub retrasa más las tareas en punto) y
-        # hay otra de respaldo a las 18:45. Si la principal ya terminó bien, la de respaldo no repite nada.
-        if modo not in ("lunes", "viernes") or ahora.hour < 17:
-            print("Fuera de la ventana programada (lunes/viernes desde las 17:00). No se hace nada.")
+        # El workflow lanza varios intentos los lunes y viernes (y de madrugada el martes y el sábado, por los
+        # retrasos de GitHub). Solo el primero que llega dentro de la ventana hace la comprobación del día.
+        toca = comprobacion_programada(ahora, estado["ejecuciones"])
+        if toca is None:
+            print("No toca ninguna comprobación ahora (fuera de la ventana o ya hecha). No se hace nada.")
+            escribir_resumen("ℹ️ No tocaba ninguna comprobación (fuera de la ventana o ya hecha); no se ha hecho nada.\n")
+            anotar_salida("actualizado", "false")
             return 0
-        if f"{ahora.date()}-{modo}" in estado["ejecuciones"]:
-            print("La comprobación de hoy ya se hizo correctamente. No se repite.")
-            escribir_resumen(f"ℹ️ La comprobación del {modo} ya se había completado hoy; "
-                             "esta ejecución de respaldo no hace nada.\n")
-            return 0
+        modo, dia_comprobacion = toca
+        if dia_comprobacion != ahora.date():
+            print(f"⏰ GitHub ha lanzado tarde la comprobación del {modo} {dia_comprobacion:%d/%m}: se hace ahora.")
 
     fuente_url = config["fuente"]["club_url"]
     avisos: list[str] = []
@@ -112,7 +143,7 @@ def ejecutar(args) -> int:
                 print(f"      - {c.tipo}: {c.titulo} {c.detalle}")
 
     if modo in ("lunes", "viernes"):
-        estado["ejecuciones"][f"{ahora.date()}-{modo}"] = ahora.isoformat(timespec="minutes")
+        estado["ejecuciones"][f"{dia_comprobacion}-{modo}"] = ahora.isoformat(timespec="minutes")
         estado["ejecuciones"] = dict(sorted(estado["ejecuciones"].items())[-40:])
     estado["ultima_ejecucion"] = {"en": ahora.isoformat(timespec="minutes"), "modo": modo, "temporada": temporada}
 
@@ -153,6 +184,7 @@ def ejecutar(args) -> int:
     aviso = componer_aviso(cambios, avisos, config, modo, ahora, os.environ.get("PAGES_URL"))
     if aviso:
         escribir_aviso(*aviso)
+    anotar_salida("actualizado", "true")
     print("✔ Terminado.")
     return 0
 
