@@ -132,58 +132,15 @@
     "dd7a2d9a4473053d9fd55450@calendarios-cb-arganda|viernes|2026-11-07",
     "b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda|hora_confirmada|2026-11-07T00:41+01:00",
     "b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda|cambio_pabellon|2026-11-07T00:41+01:00",
-    "5f7d170cc9b20396a653cb33@calendarios-cb-arganda|viernes|2026-11-07"
+    "5f7d170cc9b20396a653cb33@calendarios-cb-arganda|viernes|2026-11-07",
+    "5e45d2d5a13f64dd26861491@calendarios-cb-arganda|resultado|2026-11-09T22:21+01:00",
+    "a3d34502da0a256ea378ed35@calendarios-cb-arganda|lunes|2026-11-14",
+    "dd7a2d9a4473053d9fd55450@calendarios-cb-arganda|resultado|2026-11-09T22:21+01:00",
+    "d66eee286ed7717c01d6f207@calendarios-cb-arganda|lunes|2026-11-14",
+    "5f7d170cc9b20396a653cb33@calendarios-cb-arganda|resultado|2026-11-09T22:21+01:00",
+    "b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda|lunes|2026-11-14"
   ],
-  "pendientes": [
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-11-09T22:21+01:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "5e45d2d5a13f64dd26861491@calendarios-cb-arganda|resultado|2026-11-09T22:21+01:00",
-      "texto": "🔄 INFORMACIÓN ACTUALIZADA\n\n🏀 CB Arganda Cadete 1º Año\n🆚 SAN BLAS BASKET\n\n🏁 Resultado: SAN BLAS BASKET 49-58 CARNICERIA DMORATA ARGANDA\n\n📅 Fecha: Sábado 07/11/2026\n🕐 Hora: 16:30\n📍 Pabellón: SANTO ANGEL DE LA GUARDA, PABELLON COLEGIO\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "5e45d2d5a13f64dd26861491@calendarios-cb-arganda"
-    },
-    {
-      "clase": "VERIFICADO",
-      "creado": "2026-11-09T22:21+01:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "a3d34502da0a256ea378ed35@calendarios-cb-arganda|lunes|2026-11-14",
-      "texto": "🔎 PARTIDO DETECTADO\n\n🏀 CB Arganda Cadete 1º Año\n🆚 MADRID FSM C.D.B.\n\n📅 Sábado 14/11/2026\n🕐 13:15\n📍 VIRGEN DEL CARMEN, Pista 2\n\nEstado: VERIFICADO\n\nPróxima comprobación:\nViernes 17:05\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "a3d34502da0a256ea378ed35@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-11-09T22:21+01:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "dd7a2d9a4473053d9fd55450@calendarios-cb-arganda|resultado|2026-11-09T22:21+01:00",
-      "texto": "🔄 INFORMACIÓN ACTUALIZADA\n\n🏀 CB Arganda Infantil 1º Año\n🆚 DISTRITO OLIMPICO CANILLEJAS\n\n🏁 Resultado: CB ARGANDA 2-52 DISTRITO OLIMPICO CANILLEJAS\n\n📅 Fecha: Sábado 07/11/2026\n🕐 Hora: 11:30\n📍 Pabellón: VIRGEN DEL CARMEN, Pista 3\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "dd7a2d9a4473053d9fd55450@calendarios-cb-arganda"
-    },
-    {
-      "clase": "VERIFICADO",
-      "creado": "2026-11-09T22:21+01:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "d66eee286ed7717c01d6f207@calendarios-cb-arganda|lunes|2026-11-14",
-      "texto": "🔎 PARTIDO DETECTADO\n\n🏀 CB Arganda Infantil 1º Año\n🆚 VILLALBA \"B\" FOTOQUO\n\n📅 Sábado 14/11/2026\n🕐 18:45\n📍 MIGUEL DE CERVANTES, CEIP\n\nEstado: VERIFICADO\n\nPróxima comprobación:\nViernes 17:05\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "d66eee286ed7717c01d6f207@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-11-09T22:21+01:00",
-      "equipo": "infantil-masc-pref",
-      "id": "5f7d170cc9b20396a653cb33@calendarios-cb-arganda|resultado|2026-11-09T22:21+01:00",
-      "texto": "🔄 INFORMACIÓN ACTUALIZADA\n\n🏀 CB Arganda Infantil Preferente Masc.\n🆚 CLUB BALONCESTO ZONA PRESS\n\n🏁 Resultado: CLUB BALONCESTO ZONA PRESS 64-21 CB ARGANDA\n\n📅 Fecha: Sábado 07/11/2026\n🕐 Hora: 13:15\n📍 Pabellón: DEHESA BOYAL, PABELLON PISTA CENTRAL\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "5f7d170cc9b20396a653cb33@calendarios-cb-arganda"
-    },
-    {
-      "clase": "VERIFICADO",
-      "creado": "2026-11-09T22:21+01:00",
-      "equipo": "infantil-masc-pref",
-      "id": "b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda|lunes|2026-11-14",
-      "texto": "🔎 PARTIDO DETECTADO\n\n🏀 CB Arganda Infantil Preferente Masc.\n🆚 ISAAC NEWTON \"A\"\n\n📅 Sábado 14/11/2026\n🕐 13:15\n📍 VIRGEN DEL CARMEN, Pista 3\n\nEstado: VERIFICADO\n\nPróxima comprobación:\nViernes 17:05\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda"
-    }
-  ],
-  "ultimo_envio": "2026-11-07T00:42+01:00",
+  "pendientes": [],
+  "ultimo_envio": "2026-11-09T22:22+01:00",
   "ultimo_error": null
 }
