@@ -3,21 +3,39 @@
   "cambios": [
     {
       "calendario": "cadete-masc-1-ano",
-      "detalle": "49-58",
-      "partido": "SAN BLAS BASKET vs CB Arganda",
-      "tipo": "resultado"
-    },
-    {
-      "calendario": "infantil-masc-1-ano",
-      "detalle": "2-52",
-      "partido": "CB Arganda vs DISTRITO OLIMPICO CANILLEJAS",
-      "tipo": "resultado"
+      "detalle": "GERARDO DIEGO, I.E.S. (IRLANDA, S/N, Pozuelo de Alarcón) → GERARDO DIEGO, I.E.S. (CALLE INGLATERRA esquina C/ POLONIA, Pozuelo de Alarcón)",
+      "partido": "CB POZUELO VERDE vs CB Arganda",
+      "tipo": "cambio_pabellon"
     },
     {
       "calendario": "infantil-masc-pref",
-      "detalle": "64-21",
-      "partido": "CLUB BALONCESTO ZONA PRESS vs CB Arganda",
-      "tipo": "resultado"
+      "detalle": "19:45",
+      "partido": "PATROCINIO SAN JOSE vs CB Arganda",
+      "tipo": "hora_confirmada"
+    },
+    {
+      "calendario": "infantil-masc-pref",
+      "detalle": "28/11/2026 → 13/03/2027",
+      "partido": "VALCUDE ALCOBENDAS VERDE vs CB Arganda",
+      "tipo": "cambio_fecha"
+    },
+    {
+      "calendario": "infantil-masc-pref",
+      "detalle": "EL TEJAR, PABELLON (ROMERO, 1, Majadahonda) → EL TEJAR, PABELLON (PISTA CENTRAL) (ROMERO, 1, Majadahonda)",
+      "partido": "MAJADAHONDA BLANCO vs CB Arganda",
+      "tipo": "cambio_pabellon"
+    },
+    {
+      "calendario": "infantil-masc-pref",
+      "detalle": "13/03/2027 → 28/11/2026",
+      "partido": "CB Arganda vs VALCUDE ALCOBENDAS VERDE",
+      "tipo": "cambio_fecha"
+    },
+    {
+      "calendario": "infantil-masc-pref",
+      "detalle": "11:30",
+      "partido": "CB Arganda vs VALCUDE ALCOBENDAS VERDE",
+      "tipo": "hora_confirmada"
     }
   ],
   "equipos": {
@@ -60,7 +78,7 @@
         "Infantil Masc. Pref. - PRIMERA 1ª DIVISION - GRUPO 2"
       ],
       "partidos_en_calendario": 22,
-      "partidos_sin_hora": 16,
+      "partidos_sin_hora": 14,
       "proximo_partido": {
         "fecha": "2026-11-14",
         "hora": "13:15",
@@ -71,6 +89,6 @@
     }
   },
   "resultado": "ok",
-  "tipo": "comprobación de las 17:00 del lunes",
-  "ultima_comprobacion_correcta": "2026-11-09T22:21+01:00"
+  "tipo": "confirmación final de las 17:00 del viernes",
+  "ultima_comprobacion_correcta": "2026-11-13T19:27+01:00"
 }
