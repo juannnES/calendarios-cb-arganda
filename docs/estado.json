@@ -3,39 +3,27 @@
   "cambios": [
     {
       "calendario": "cadete-masc-1-ano",
-      "detalle": "GERARDO DIEGO, I.E.S. (IRLANDA, S/N, Pozuelo de Alarcón) → GERARDO DIEGO, I.E.S. (CALLE INGLATERRA esquina C/ POLONIA, Pozuelo de Alarcón)",
-      "partido": "CB POZUELO VERDE vs CB Arganda",
-      "tipo": "cambio_pabellon"
+      "detalle": "52-63",
+      "partido": "CB Arganda vs MADRID FSM C.D.B.",
+      "tipo": "resultado"
+    },
+    {
+      "calendario": "infantil-masc-1-ano",
+      "detalle": "68-46",
+      "partido": "VILLALBA \"B\" FOTOQUO vs CB Arganda",
+      "tipo": "resultado"
     },
     {
       "calendario": "infantil-masc-pref",
-      "detalle": "19:45",
-      "partido": "PATROCINIO SAN JOSE vs CB Arganda",
-      "tipo": "hora_confirmada"
+      "detalle": "14-64",
+      "partido": "CB Arganda vs ISAAC NEWTON \"A\"",
+      "tipo": "resultado"
     },
     {
       "calendario": "infantil-masc-pref",
-      "detalle": "28/11/2026 → 13/03/2027",
-      "partido": "VALCUDE ALCOBENDAS VERDE vs CB Arganda",
-      "tipo": "cambio_fecha"
-    },
-    {
-      "calendario": "infantil-masc-pref",
-      "detalle": "EL TEJAR, PABELLON (ROMERO, 1, Majadahonda) → EL TEJAR, PABELLON (PISTA CENTRAL) (ROMERO, 1, Majadahonda)",
-      "partido": "MAJADAHONDA BLANCO vs CB Arganda",
-      "tipo": "cambio_pabellon"
-    },
-    {
-      "calendario": "infantil-masc-pref",
-      "detalle": "13/03/2027 → 28/11/2026",
+      "detalle": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL) (MALLORCA, S/N, Arganda del Rey) → VIRGEN DEL CARMEN, Pista 1 (MALLORCA, S/N, Arganda del Rey)",
       "partido": "CB Arganda vs VALCUDE ALCOBENDAS VERDE",
-      "tipo": "cambio_fecha"
-    },
-    {
-      "calendario": "infantil-masc-pref",
-      "detalle": "11:30",
-      "partido": "CB Arganda vs VALCUDE ALCOBENDAS VERDE",
-      "tipo": "hora_confirmada"
+      "tipo": "cambio_pabellon"
     }
   ],
   "equipos": {
@@ -48,11 +36,11 @@
       "partidos_en_calendario": 20,
       "partidos_sin_hora": 12,
       "proximo_partido": {
-        "fecha": "2026-11-14",
-        "hora": "13:15",
+        "fecha": "2026-11-21",
+        "hora": "09:45",
         "local": "CARNICERIA DMORATA ARGANDA",
-        "pabellon": "VIRGEN DEL CARMEN, Pista 2",
-        "visitante": "MADRID FSM C.D.B."
+        "pabellon": "VIRGEN DEL CARMEN, Pista 1",
+        "visitante": "C.B. GETAFE \"MOLERA\""
       }
     },
     "infantil-masc-1-ano": {
@@ -64,10 +52,10 @@
       "partidos_en_calendario": 8,
       "partidos_sin_hora": 3,
       "proximo_partido": {
-        "fecha": "2026-11-14",
-        "hora": "18:45",
-        "local": "VILLALBA \"B\" FOTOQUO",
-        "pabellon": "MIGUEL DE CERVANTES, CEIP",
+        "fecha": "2026-11-28",
+        "hora": "13:00",
+        "local": "SAN VIATOR \"B\"",
+        "pabellon": "PEPE DOMAICA, PABELLON Pista 2",
         "visitante": "CB ARGANDA"
       }
     },
@@ -80,15 +68,15 @@
       "partidos_en_calendario": 22,
       "partidos_sin_hora": 14,
       "proximo_partido": {
-        "fecha": "2026-11-14",
-        "hora": "13:15",
-        "local": "CB ARGANDA",
-        "pabellon": "VIRGEN DEL CARMEN, Pista 3",
-        "visitante": "ISAAC NEWTON \"A\""
+        "fecha": "2026-11-21",
+        "hora": "19:45",
+        "local": "PATROCINIO SAN JOSE",
+        "pabellon": "PATROCINIO SAN JOSE, COLEGIO",
+        "visitante": "CB ARGANDA"
       }
     }
   },
   "resultado": "ok",
-  "tipo": "confirmación final de las 17:00 del viernes",
-  "ultima_comprobacion_correcta": "2026-11-13T19:27+01:00"
+  "tipo": "comprobación de las 17:00 del lunes",
+  "ultima_comprobacion_correcta": "2026-11-16T21:51+01:00"
 }
