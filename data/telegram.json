@@ -147,58 +147,15 @@
     "14b8893b7b7a7d79b3d408a7@calendarios-cb-arganda|cambio_pabellon|2026-11-13T19:27+01:00",
     "28233e46303352c0ab4d3f0f@calendarios-cb-arganda|cambio_fecha|2026-11-13T19:27+01:00",
     "28233e46303352c0ab4d3f0f@calendarios-cb-arganda|hora_confirmada|2026-11-13T19:27+01:00",
-    "b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda|viernes|2026-11-14"
+    "b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda|viernes|2026-11-14",
+    "a3d34502da0a256ea378ed35@calendarios-cb-arganda|resultado|2026-11-16T21:51+01:00",
+    "94a1c2f9ce7d45e4ffb5cb04@calendarios-cb-arganda|lunes|2026-11-21",
+    "d66eee286ed7717c01d6f207@calendarios-cb-arganda|resultado|2026-11-16T21:51+01:00",
+    "b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda|resultado|2026-11-16T21:51+01:00",
+    "28233e46303352c0ab4d3f0f@calendarios-cb-arganda|cambio_pabellon|2026-11-16T21:51+01:00",
+    "77b62fd89cf4a1526aa80649@calendarios-cb-arganda|lunes|2026-11-21"
   ],
-  "pendientes": [
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-11-16T21:51+01:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "a3d34502da0a256ea378ed35@calendarios-cb-arganda|resultado|2026-11-16T21:51+01:00",
-      "texto": "🔄 INFORMACIÓN ACTUALIZADA\n\n🏀 CB Arganda Cadete 1º Año\n🆚 MADRID FSM C.D.B.\n\n🏁 Resultado: CARNICERIA DMORATA ARGANDA 52-63 MADRID FSM C.D.B.\n\n📅 Fecha: Sábado 14/11/2026\n🕐 Hora: 13:15\n📍 Pabellón: VIRGEN DEL CARMEN, Pista 2\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "a3d34502da0a256ea378ed35@calendarios-cb-arganda"
-    },
-    {
-      "clase": "VERIFICADO",
-      "creado": "2026-11-16T21:51+01:00",
-      "equipo": "cadete-masc-1-ano",
-      "id": "94a1c2f9ce7d45e4ffb5cb04@calendarios-cb-arganda|lunes|2026-11-21",
-      "texto": "🔎 PARTIDO DETECTADO\n\n🏀 CB Arganda Cadete 1º Año\n🆚 C.B. GETAFE \"MOLERA\"\n\n📅 Sábado 21/11/2026\n🕐 09:45\n📍 VIRGEN DEL CARMEN, Pista 1\n\nEstado: VERIFICADO\n\nPróxima comprobación:\nViernes 17:05\n\n📅 Calendario: Cadete 1º Año",
-      "uid": "94a1c2f9ce7d45e4ffb5cb04@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-11-16T21:51+01:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "d66eee286ed7717c01d6f207@calendarios-cb-arganda|resultado|2026-11-16T21:51+01:00",
-      "texto": "🔄 INFORMACIÓN ACTUALIZADA\n\n🏀 CB Arganda Infantil 1º Año\n🆚 VILLALBA \"B\" FOTOQUO\n\n🏁 Resultado: VILLALBA \"B\" FOTOQUO 68-46 CB ARGANDA\n\n📅 Fecha: Sábado 14/11/2026\n🕐 Hora: 18:45\n📍 Pabellón: MIGUEL DE CERVANTES, CEIP\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "d66eee286ed7717c01d6f207@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-11-16T21:51+01:00",
-      "equipo": "infantil-masc-pref",
-      "id": "b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda|resultado|2026-11-16T21:51+01:00",
-      "texto": "🔄 INFORMACIÓN ACTUALIZADA\n\n🏀 CB Arganda Infantil Preferente Masc.\n🆚 ISAAC NEWTON \"A\"\n\n🏁 Resultado: CB ARGANDA 14-64 ISAAC NEWTON \"A\"\n\n📅 Fecha: Sábado 14/11/2026\n🕐 Hora: 13:15\n📍 Pabellón: VIRGEN DEL CARMEN, Pista 3\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "b77ebcb98fabd3268f3d96bc@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-11-16T21:51+01:00",
-      "equipo": "infantil-masc-pref",
-      "id": "28233e46303352c0ab4d3f0f@calendarios-cb-arganda|cambio_pabellon|2026-11-16T21:51+01:00",
-      "texto": "📍 CAMBIO DE PABELLÓN\n\n🏀 CB Arganda Infantil Preferente Masc.\n🆚 VALCUDE ALCOBENDAS VERDE\n\n📍 Antes:\nVIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\nMALLORCA, S/N, Arganda del Rey\n\n📍 Ahora:\nVIRGEN DEL CARMEN, Pista 1\nMALLORCA, S/N, Arganda del Rey\n\n📅 Sábado 28/11/2026\n🕐 11:30\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "28233e46303352c0ab4d3f0f@calendarios-cb-arganda"
-    },
-    {
-      "clase": "VERIFICADO",
-      "creado": "2026-11-16T21:51+01:00",
-      "equipo": "infantil-masc-pref",
-      "id": "77b62fd89cf4a1526aa80649@calendarios-cb-arganda|lunes|2026-11-21",
-      "texto": "🔎 PARTIDO DETECTADO\n\n🏀 CB Arganda Infantil Preferente Masc.\n🆚 PATROCINIO SAN JOSE\n\n📅 Sábado 21/11/2026\n🕐 19:45\n📍 PATROCINIO SAN JOSE, COLEGIO\n\nEstado: VERIFICADO\n\nPróxima comprobación:\nViernes 17:05\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "77b62fd89cf4a1526aa80649@calendarios-cb-arganda"
-    }
-  ],
-  "ultimo_envio": "2026-11-13T19:28+01:00",
+  "pendientes": [],
+  "ultimo_envio": "2026-11-16T21:52+01:00",
   "ultimo_error": null
 }
