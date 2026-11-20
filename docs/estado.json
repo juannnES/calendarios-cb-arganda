@@ -2,27 +2,21 @@
   "avisos": [],
   "cambios": [
     {
-      "calendario": "cadete-masc-1-ano",
-      "detalle": "52-63",
-      "partido": "CB Arganda vs MADRID FSM C.D.B.",
-      "tipo": "resultado"
-    },
-    {
       "calendario": "infantil-masc-1-ano",
-      "detalle": "68-46",
-      "partido": "VILLALBA \"B\" FOTOQUO vs CB Arganda",
-      "tipo": "resultado"
+      "detalle": "13:00 → 11:15",
+      "partido": "SAN VIATOR \"B\" vs CB Arganda",
+      "tipo": "cambio_hora"
     },
     {
       "calendario": "infantil-masc-pref",
-      "detalle": "14-64",
-      "partido": "CB Arganda vs ISAAC NEWTON \"A\"",
-      "tipo": "resultado"
+      "detalle": "19:45 → 11:30",
+      "partido": "PATROCINIO SAN JOSE vs CB Arganda",
+      "tipo": "cambio_hora"
     },
     {
       "calendario": "infantil-masc-pref",
-      "detalle": "VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL) (MALLORCA, S/N, Arganda del Rey) → VIRGEN DEL CARMEN, Pista 1 (MALLORCA, S/N, Arganda del Rey)",
-      "partido": "CB Arganda vs VALCUDE ALCOBENDAS VERDE",
+      "detalle": "PATROCINIO SAN JOSE, COLEGIO (CALLE BASÍLICA, frente nº 17, Madrid) → SALESIANOS ESTRECHO, PABELLON COLEGIO (CALLE PAMPLONA, 12, Madrid)",
+      "partido": "PATROCINIO SAN JOSE vs CB Arganda",
       "tipo": "cambio_pabellon"
     }
   ],
@@ -53,7 +47,7 @@
       "partidos_sin_hora": 3,
       "proximo_partido": {
         "fecha": "2026-11-28",
-        "hora": "13:00",
+        "hora": "11:15",
         "local": "SAN VIATOR \"B\"",
         "pabellon": "PEPE DOMAICA, PABELLON Pista 2",
         "visitante": "CB ARGANDA"
@@ -69,14 +63,14 @@
       "partidos_sin_hora": 14,
       "proximo_partido": {
         "fecha": "2026-11-21",
-        "hora": "19:45",
+        "hora": "11:30",
         "local": "PATROCINIO SAN JOSE",
-        "pabellon": "PATROCINIO SAN JOSE, COLEGIO",
+        "pabellon": "SALESIANOS ESTRECHO, PABELLON COLEGIO",
         "visitante": "CB ARGANDA"
       }
     }
   },
   "resultado": "ok",
-  "tipo": "comprobación de las 17:00 del lunes",
-  "ultima_comprobacion_correcta": "2026-11-16T21:51+01:00"
+  "tipo": "confirmación final de las 17:00 del viernes",
+  "ultima_comprobacion_correcta": "2026-11-20T20:00+01:00"
 }
