@@ -2,22 +2,16 @@
   "avisos": [],
   "cambios": [
     {
-      "calendario": "infantil-masc-1-ano",
-      "detalle": "13:00 → 11:15",
-      "partido": "SAN VIATOR \"B\" vs CB Arganda",
-      "tipo": "cambio_hora"
+      "calendario": "cadete-masc-1-ano",
+      "detalle": "35-72",
+      "partido": "CB Arganda vs C.B. GETAFE \"MOLERA\"",
+      "tipo": "resultado"
     },
     {
       "calendario": "infantil-masc-pref",
-      "detalle": "19:45 → 11:30",
+      "detalle": "76-40",
       "partido": "PATROCINIO SAN JOSE vs CB Arganda",
-      "tipo": "cambio_hora"
-    },
-    {
-      "calendario": "infantil-masc-pref",
-      "detalle": "PATROCINIO SAN JOSE, COLEGIO (CALLE BASÍLICA, frente nº 17, Madrid) → SALESIANOS ESTRECHO, PABELLON COLEGIO (CALLE PAMPLONA, 12, Madrid)",
-      "partido": "PATROCINIO SAN JOSE vs CB Arganda",
-      "tipo": "cambio_pabellon"
+      "tipo": "resultado"
     }
   ],
   "equipos": {
@@ -30,11 +24,11 @@
       "partidos_en_calendario": 20,
       "partidos_sin_hora": 12,
       "proximo_partido": {
-        "fecha": "2026-11-21",
-        "hora": "09:45",
-        "local": "CARNICERIA DMORATA ARGANDA",
-        "pabellon": "VIRGEN DEL CARMEN, Pista 1",
-        "visitante": "C.B. GETAFE \"MOLERA\""
+        "fecha": "2026-12-12",
+        "hora": null,
+        "local": "BALONCESTO FUENLABRADA 2012",
+        "pabellon": "EL ARROYO, PABELLON",
+        "visitante": "CARNICERIA DMORATA ARGANDA"
       }
     },
     "infantil-masc-1-ano": {
@@ -62,15 +56,15 @@
       "partidos_en_calendario": 22,
       "partidos_sin_hora": 14,
       "proximo_partido": {
-        "fecha": "2026-11-21",
+        "fecha": "2026-11-28",
         "hora": "11:30",
-        "local": "PATROCINIO SAN JOSE",
-        "pabellon": "SALESIANOS ESTRECHO, PABELLON COLEGIO",
-        "visitante": "CB ARGANDA"
+        "local": "CB ARGANDA",
+        "pabellon": "VIRGEN DEL CARMEN, Pista 1",
+        "visitante": "VALCUDE ALCOBENDAS VERDE"
       }
     }
   },
   "resultado": "ok",
-  "tipo": "confirmación final de las 17:00 del viernes",
-  "ultima_comprobacion_correcta": "2026-11-20T20:00+01:00"
+  "tipo": "comprobación de las 17:00 del lunes",
+  "ultima_comprobacion_correcta": "2026-11-23T23:29+01:00"
 }
