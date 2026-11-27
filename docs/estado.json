@@ -2,16 +2,16 @@
   "avisos": [],
   "cambios": [
     {
-      "calendario": "cadete-masc-1-ano",
-      "detalle": "35-72",
-      "partido": "CB Arganda vs C.B. GETAFE \"MOLERA\"",
-      "tipo": "resultado"
+      "calendario": "infantil-masc-pref",
+      "detalle": "CB ARGANDA - JYA FOTOVOLTAICA CB NAVALCARNERO → CB ARGANDA - (RETIRADO) JYA FOTOVOLTAICA CB NAVALCARNERO",
+      "partido": "CB Arganda vs (RETIRADO) JYA FOTOVOLTAICA CB NAVALCARNERO",
+      "tipo": "rival_renombrado"
     },
     {
       "calendario": "infantil-masc-pref",
-      "detalle": "76-40",
-      "partido": "PATROCINIO SAN JOSE vs CB Arganda",
-      "tipo": "resultado"
+      "detalle": "JYA FOTOVOLTAICA CB NAVALCARNERO - CB ARGANDA → (RETIRADO) JYA FOTOVOLTAICA CB NAVALCARNERO - CB ARGANDA",
+      "partido": "(RETIRADO) JYA FOTOVOLTAICA CB NAVALCARNERO vs CB Arganda",
+      "tipo": "rival_renombrado"
     }
   ],
   "equipos": {
@@ -65,6 +65,6 @@
     }
   },
   "resultado": "ok",
-  "tipo": "comprobación de las 17:00 del lunes",
-  "ultima_comprobacion_correcta": "2026-11-23T23:29+01:00"
+  "tipo": "confirmación final de las 17:00 del viernes",
+  "ultima_comprobacion_correcta": "2026-11-27T20:50+01:00"
 }
