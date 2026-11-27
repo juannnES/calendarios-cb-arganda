@@ -162,42 +162,13 @@
     "94a1c2f9ce7d45e4ffb5cb04@calendarios-cb-arganda|resultado|2026-11-23T23:29+01:00",
     "47b8db586ecca9fa3320055b@calendarios-cb-arganda|lunes|2026-11-28",
     "77b62fd89cf4a1526aa80649@calendarios-cb-arganda|resultado|2026-11-23T23:29+01:00",
-    "28233e46303352c0ab4d3f0f@calendarios-cb-arganda|lunes|2026-11-28"
+    "28233e46303352c0ab4d3f0f@calendarios-cb-arganda|lunes|2026-11-28",
+    "47b8db586ecca9fa3320055b@calendarios-cb-arganda|viernes|2026-11-28",
+    "7ecaeab301ddbdefd1d0e7a4@calendarios-cb-arganda|rival_renombrado|2026-11-27T20:50+01:00",
+    "5aaf25f6978296cad69c3519@calendarios-cb-arganda|rival_renombrado|2026-11-27T20:50+01:00",
+    "28233e46303352c0ab4d3f0f@calendarios-cb-arganda|viernes|2026-11-28"
   ],
-  "pendientes": [
-    {
-      "clase": "CONFIRMADO",
-      "creado": "2026-11-27T20:50+01:00",
-      "equipo": "infantil-masc-1-ano",
-      "id": "47b8db586ecca9fa3320055b@calendarios-cb-arganda|viernes|2026-11-28",
-      "texto": "✅ PARTIDO CONFIRMADO\n\n🏀 CB Arganda Infantil 1º Año\n🆚 SAN VIATOR \"B\"\n\n📅 Sábado 28/11/2026\n🕐 11:15\n📍 PEPE DOMAICA, PABELLON Pista 2\n\nLa información ha sido comprobada nuevamente en la fuente oficial.\n\n📅 Calendario: Infantil 1º Año",
-      "uid": "47b8db586ecca9fa3320055b@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-11-27T20:50+01:00",
-      "equipo": "infantil-masc-pref",
-      "id": "7ecaeab301ddbdefd1d0e7a4@calendarios-cb-arganda|rival_renombrado|2026-11-27T20:50+01:00",
-      "texto": "🔄 INFORMACIÓN ACTUALIZADA\n\n🏀 CB Arganda Infantil Preferente Masc.\n\n🆚 Antes: JYA FOTOVOLTAICA CB NAVALCARNERO\n🆚 Ahora: (RETIRADO) JYA FOTOVOLTAICA CB NAVALCARNERO\n🚌 Equipo visitante: JYA FOTOVOLTAICA CB NAVALCARNERO → (RETIRADO) JYA FOTOVOLTAICA CB NAVALCARNERO\n\n📅 Fecha: Sábado 12/12/2026\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: VIRGEN DEL CARMEN, PABELLON (PISTA CENTRAL)\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "7ecaeab301ddbdefd1d0e7a4@calendarios-cb-arganda"
-    },
-    {
-      "clase": "MODIFICADO",
-      "creado": "2026-11-27T20:50+01:00",
-      "equipo": "infantil-masc-pref",
-      "id": "5aaf25f6978296cad69c3519@calendarios-cb-arganda|rival_renombrado|2026-11-27T20:50+01:00",
-      "texto": "🔄 INFORMACIÓN ACTUALIZADA\n\n🏀 CB Arganda Infantil Preferente Masc.\n\n🆚 Antes: JYA FOTOVOLTAICA CB NAVALCARNERO\n🆚 Ahora: (RETIRADO) JYA FOTOVOLTAICA CB NAVALCARNERO\n🏠 Equipo local: JYA FOTOVOLTAICA CB NAVALCARNERO → (RETIRADO) JYA FOTOVOLTAICA CB NAVALCARNERO\n\n📅 Fecha: Sábado 03/04/2027\n🕐 Hora: Pendiente de confirmación (se muestra a las 00:00)\n📍 Pabellón: LA ESTACION, PABELLON MUNICIPAL\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "5aaf25f6978296cad69c3519@calendarios-cb-arganda"
-    },
-    {
-      "clase": "CONFIRMADO",
-      "creado": "2026-11-27T20:50+01:00",
-      "equipo": "infantil-masc-pref",
-      "id": "28233e46303352c0ab4d3f0f@calendarios-cb-arganda|viernes|2026-11-28",
-      "texto": "✅ PARTIDO CONFIRMADO\n\n🏀 CB Arganda Infantil Preferente Masc.\n🆚 VALCUDE ALCOBENDAS VERDE\n\n📅 Sábado 28/11/2026\n🕐 11:30\n📍 VIRGEN DEL CARMEN, Pista 1\n\nLa información ha sido comprobada nuevamente en la fuente oficial.\n\n📅 Calendario: Infantil Preferente Masc.",
-      "uid": "28233e46303352c0ab4d3f0f@calendarios-cb-arganda"
-    }
-  ],
-  "ultimo_envio": "2026-11-23T23:30+01:00",
+  "pendientes": [],
+  "ultimo_envio": "2026-11-27T20:51+01:00",
   "ultimo_error": null
 }
